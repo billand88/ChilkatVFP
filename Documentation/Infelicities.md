@@ -2,11 +2,11 @@
 
 1) The Chilkat VFP library does not come with subclasses for the Chilkat named classes.
 One day I made the 103 subclasses. The next day I looked at the ChilkatVFP class library in the class browser. I removed them. 
-Somehwhere else I describe it as "muddy". The VFP Class Browser gives a high-level overview of how things are structured, and these subclasses made it more difficult to see how the full class library was organized.
+Somewhere else I describe it as "muddy". The VFP Class Browser gives a high-level overview of how things are structured, and these subclasses made it more difficult to see how the full class library was organized.
 
 2) In some cases, the Chilkat documentation indicates a property or method exists when that is simply not the case. This doesn't happen often, but it's there. In this case I followed the documentation and added it. Some examples: SFTPDir and SFTPFile are both missing LastBinaryResult and LastStringResultLen for starters. Crypt2 is missing a lot of documented ASync methods.
 
-3) The Version property is missing for the Chilkat CkString, SFTPDir and SFTPFile objects. I can see why it could be missing in the CkString class, a really old class. But there's no reasion SFPTDir and SFTPFile don't have the Version property. These are "active" classes. 
+3) The Version property is missing for the Chilkat CkString, SFTPDir and SFTPFile objects. I can see why it could be missing in the CkString class, a really old class. But there's no reason SFPTDir and SFTPFile don't have the Version property. These are "active" classes. 
 
 4) This is littered everywhere in the Chilkat on line documentation: If the non-asynchronous message came in after, say version 40 or so and is correctly documented as such, the related Async method would state it came in the same version. If the Async method is documented to be before version 52 it is wrong. The Async methods came as part of version 52. ChilkatVFP corrects this.
 
@@ -21,5 +21,7 @@ Somehwhere else I describe it as "muddy". The VFP Class Browser gives a high-lev
 9) There's plenty of examples whereby the class itself came after version 52 but the LastStringResult property (for example) would say it came in version 52. I generally left that alone. It's not accurate but it is harmless.
 
 10) Doing a PEMSTATUS([Chilkat Object], [PEM], 5) test against an existing Chilkat object method/property will probably work in the command window and in the debugger if the running program is stopped. But when running Visual Foxpro code it's not consistent at all when it works and when it doesn't.
+
+11) There are issues with Chilkat events documentation. Some events are named differently, at least one event has an extra parameter, and at least one was missing. If you get into events (Chilkat calls it event callbacks), use the Visual Foxpro Object Browser as your reference. Normally missing a piece of documentation is not that big a deal. But Visual Foxpro must match the Chilkat COM definition ***exactly*** or the IMPLEMENTS binding will not work. One miss is as good as completely broken. The Object Browser is your friend.
 
 #### Contact: chilkat VFP at gmail dot com.
