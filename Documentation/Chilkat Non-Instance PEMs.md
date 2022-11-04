@@ -37,12 +37,15 @@ The properties of the BaseChilkat class are:
 |cChilkatClass| The Chilkat class name. |
 |cChilkatObjectPrefix| The Chilkat prefix as part of the Chilkat object name to instantiate. |
 |cChilkatProperty| Property used to set the Chilkat property name if it differs from the Visual Foxpro property name. |
+|cEventHandlerClass| The class name of the event handler, if relevant. | 
 |cScratch| Scratch character variable.|
 |GetImplAddrStr| Undocumented property! It looks like a memory address to the specific class. |
 |iBuildNumber| Integer property used to hold the build number for the Chilkat object. |
 |iInstanceBuildNumber| The instance object build number, if relevant. |
+|lAddEventHandler| Logical property used to determine if the Chilkat object (oChilkat) will add an event handler, if relevant. |
 |lReturnBitAsLogical| Property used to determine that bit values are returned as a Visual Foxpro logical value. |
 |oChilkat| The reference to the actual Chilkat object. |
+|oEventHandler| Object property used to hold a reference to the Chilkat event handler, if relevant. |
 |oMsgSvc| Object property used to hold a references to the MsgSvc object. |
 |oProcess_Access| Object property used to hold a reference to the Process_Access object. |
 |oProcess_Assign| Object property used to hold a reference to the Process_Assign object. |
@@ -71,15 +74,71 @@ The methods of the BaseChilkat class are:
 |IsImplemented| Method used to determine if the method or property being referenced has been implemented in the current version of the object. |
 |IsInstance| Method used to determine if class being referenced has been implemented in the current version of the software. |
 |LogicalToBit| Method run to covert a logical value to bit. |
+|lAddEventHandler_Assign| Assign method used to determine that an event handler will be bound to the Chilkat object. |
 |lReturnBitAsLogical_Assign| Assign method used to determine that bit values are returned as a Visual Foxpro logical value. |
 |lWriteChilkatProperty_Assign| Assign method used to determine if we are to write the value out to the Chilkat property name. |
 |MissingObjectError| Error method run for when there is a missing Chilkat object when running a method. |
+|oEventHandler_Assign| Assign method used to hold a reference to the event handler object. |
 |oMsgSvc_Access| Access method used to retrieve a reference to the MsgSvc object. |
 |oMsgSvc_Assign| Assign method used to hold a reference to the MsgSvc object. |
 |Version_Access| Access method used to retrieve the Version property of the referenced Chilkat object. |
 |Version_Assign| Assign method used to hold the Version property of the referenced Chilkat object. |
 
 For clarification, the IsImplemented addresses properties and method implementations while IsInstance determines if a class exists. Both deal with versioning.
+
+## BaseEventHandler
+
+As the time of this writing, Chilkat has 103 classes. 33 of these classes contain events. This event handler class is the base handler for 27 of those 33 classes. The other six classes subclass from this base event handler and have even more events.
+
+Note that for each Chilkat event there are four supporting methods in the event handler. For each Chilkat [*event*] there is a corresponding Event Handler [*event*], [*event name*]_pre, [*event name*]_process and [*event name*]_post methods. The event handler methods are "hooked". 
+
+For reference, please read Steven Black's seminal work about the subject here: <a href="http://stevenblack.com/articles/hooks-and-anchors/" target="_blank">http://stevenblack.com/articles/hooks-and-anchors/</a>
+
+The four event handler classes can be used (or for that matter, ignored) any way you want. The intent is thus: 
+
+| Method | Purpose                        |
+|--------|--------------------------------|
+|*event*| The "governor" of the support event methods. |
+|*event*_pre| A pre-processing method. You can set up the environment here.  |
+|*event*_process| The "work" is done in this method. |
+|*event*_post| A post-processing method to update the environment as necessary. |
+
+Think of the _pre as a Textbox **When** method and the _post as a Textbox **LostFocus** method and you wouldn't be far off at all. 
+
+Do your setup in the _pre method (Do I have a file? Is the directory good? Etc.). 
+Do your "real work" in the _process method.
+If the "work" is done successfully, call the _post method to "report" the success, clean up, etc.
+
+Why do it this way? Well, the individual pieces of the process can be their own hooks! Hooks can call hooks, etc. No need to repeat Steve's article here...
+
+The methods of the BaseEventHandler class are:
+
+| Method | Purpose                        |
+|--------|--------------------------------|
+|AbortCheck| Provides the opportunity for a method call to be aborted. The AbortCheck event is fired periodically based on the value of the HeartbeatMs property. If HeartbeatMs is 0, then no AbortCheck events will fire. |
+|AbortCheck_Post| Template AbortCheck post-processing method. |
+|AbortCheck_Pre| Template AbortCheck pre-processing method. |
+|AbortCheck_Process| Template AbortCheck processing method. |
+|BinaryData| Added in version 58 but as of the time of this writing is unused. |
+|BinaryData_Post| Template BinaryData post-processing method. |
+|BinaryData_Pre| Template BinaryData pre-processing method. |
+|BinaryData_Process| Template BinaryData processing method. |
+|PercentDone| Provides the percentage completed for any method that involves network communications or time-consuming processing (assuming it is a method where a percentage completion can be measured). |
+|PercentDone_Post| Template PercentDone post-processing method. |
+|PercentDone_Pre| Template PercentDone pre-processing method. |
+|PercentDone_Process| Template PercentDone processing method. |
+|ProgressInfo| A general name/value event that provides information about what is happening during a method call. To find out what information is available, write code to handle this event and log the name/value pairs. |
+|ProgressInfo_Post| Template ProgressInfo post-processing method. |
+|ProgressInfo_Pre| Template ProgressInfo pre-processing method. |
+|ProgressInfo_Process| Template ProgressInfo processing method. |
+|TaskCompleted| Method run when a task is complete. |
+|TaskCompleted_Post| Template TaskCompleted post-processing method. |
+|TaskCompleted_Pre| Template TaskCompleted pre-processing method. |
+|TaskCompleted_Process| Template TaskCompleted processing method. |
+|TextData| Added in version 58 but as of the time of this writing is unused. |
+|TextData_Post| Template TextData post-processing method. |
+|TextData_Pre| Template TextData pre-processing method. |
+|TextData_Process| Template TextData processing method. |
 
 ## Process
 
@@ -257,3 +316,5 @@ The methods of the ValidateProperty class are:
 |ZipDefaultAlg| Method run to validate the data for the ZipDefaultAlg property. |
 
 #### Contact: chilkat VFP at gmail dot com.
+
+  [1]: http://stevenblack.com/articles/hooks-and-anchors/
