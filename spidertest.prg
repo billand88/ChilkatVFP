@@ -1,0 +1,171 @@
+
+# INCLUDE [Foxpro.H]
+# DEFINE SpiderCache    [C:\SpiderCache]
+
+CLEAR ALL
+CLOSE ALL
+
+LOCAL loSpider AS [Spider OF Chilkat.VCX], loSeenDomains AS [StringArray OF Chilkat.VCX], ;
+loSeedURLs AS [StringArray OF Chilkat.VCX], liCount AS Integer, lcURL AS Character, ;
+lcDomain AS Character, li AS Integer, llSuccess AS Logical, ;
+liOutboundLinks AS Integer, lcBaseDomain AS Character
+
+*!* LOCAL loChilkatVFPEventHandler 
+PRIVATE loChilkatVFPEventHandler 
+
+STORE NULL TO loSpider, loSeenDomains, loSeedURLs
+STORE [] TO lcURL, lcDomain, lcBaseDomain
+STORE 0 TO liCount, li, liOutboundLinks
+
+llSuccess = .F.
+
+SET CLASSLIB TO [Chilkat.VCX] ADDITIVE
+CLEAR
+
+**
+** Go into the AbortCheck method of the BaseEventHandler.
+** There is a line that begins with a question mark.
+** Uncomment that line and save it.
+**
+
+loSpider = NEWOBJECT([Spider])
+loSeenDomains = NEWOBJECT([StringArray])
+loSeedURLs = NEWOBJECT([StringArray])
+
+llSpiderObject = (TYPE([loSpider.Name]) == T_CHARACTER)
+llSeenDomainsObject = (TYPE([loSeenDomains.Name]) == T_CHARACTER)
+llSeedURLsObject = (TYPE([loSeedURLs.Name]) == T_CHARACTER)
+
+llOKToContinue = llSpiderObject AND llSeenDomainsObject AND llSeedURLsObject
+
+** Okay to continue test
+IF llOKToContinue 
+
+  WITH loSeedURLs
+
+    .Unique = 1
+    .Append([https://www.joelonsoftware.com/])
+    liCount = .Count
+
+  ENDWITH
+
+  loSeenDomains.Unique = 1
+
+  WITH loSpider
+
+    STORE .T. TO .lReturnBitAsLogical, .FetchFromCache, .UpdateCache
+    .CacheDir = SpiderCache
+    .lAddEventHandler = .T.
+    loChilkatVFPEventHandler = .oEventHandler
+    .HeartBeatMs = 500 && half second
+
+    ** Walk through seed URLs loop
+    DO WHILE liCount > 0
+
+      lcURL = loSeedURLs.Pop()
+      .Initialize(lcURL)
+
+      lcDomain = .GetURLDomain(lcURL)
+      loSeenDomains.Append(.GetBaseDomain(lcDomain))
+
+      ** Stop at five URLs loop
+      FOR li = 0 TO 4
+
+        llSuccess = .CrawlNext()
+
+        ** Got to next link test
+        IF llSuccess
+        
+          ? .LastURL
+
+          ** Not fetched from cache test
+          IF NOT .LastFromCache
+
+            .SleepMs(1000)
+ 
+          ENDIF NOT .LastFromCache
+          ** End not fetched from cache test
+
+        ELSE
+
+          EXIT
+
+        ENDIF llSuccess
+        ** End got to next link test
+
+      ENDFOR li = 0 TO 4
+      ** End stop at five URLs loop
+
+      WITH loSeedURLs
+
+        .Remove(lcURL)
+        liCount = .Count
+
+      ENDWITH
+
+    ENDDO WHILE liCount > 0
+    ** End walk through seed URLs loop
+
+    liOutboundLinks = .NumOutboundLinks - 1
+
+    ** Walk through outbound links loop
+    FOR li = 0 TO liOutboundLinks
+
+      lcURL = .GetOutboundLink(li)
+      lcDomain = .GetURLDomain(lcURL)
+      lcBaseDomain = .GetBaseDomain(lcDomain)
+
+      ** Already spidered test
+      IF loSeenDomains.Contains(lcBaseDomain) = 0
+
+        WITH loSeedURLs
+
+          ** Add to list test
+          IF .Count < 1000
+
+            .Append(lcURL)
+
+          ENDIF .Count < 1000
+          ** End add to list test
+
+        ENDWITH
+
+      ENDIF loSeenDomains.Contains(lcBaseDomain) = 0
+      ** End already spidered test
+
+    ENDFOR li = 0 TO liOutboundLinks
+    ** End walk through outbound links loop
+
+  ENDWITH
+  ** End okay to continue test
+
+ENDIF llOKToContinue 
+** End okay to continue test
+
+** Have a Spider object test
+IF llSpiderObject 
+
+  loSpider.Release()
+
+ENDIF llSpiderObject
+** End have a Spider object test
+
+** Have a Seen Domains object test
+IF llSeenDomainsObject 
+
+  loSeenDomains.Release()
+
+ENDIF llSeenDomainsObject
+** End have a Seen Domains object test
+
+** Have a Seed URLs object test
+IF llSeedURLsObject  
+
+  loSeedURLs.Release()
+
+ENDIF llSeedURLsObject
+** End have a Seed URLs object test
+
+STORE NULL TO loSpider, loSeenDomains, loSeedURLs
+
+RETURN
