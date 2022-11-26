@@ -88,7 +88,7 @@ For clarification, the IsImplemented addresses properties and method implementat
 
 ## BaseEventHandler
 
-As the time of this writing, Chilkat has 103 classes. 33 of these classes contain events. This event handler class is the base handler for 27 of those 33 classes. The other six classes subclass from this base event handler and have even more events.
+As the time of this writing, Chilkat has 103 classes. ~~33~~ 35 of these classes contain events. This event handler class is the base handler for 27 of those ~~33~~ 35 classes. The other six classes subclass from this base event handler and have even more events.
 
 Note that for each Chilkat event there are four supporting methods in the event handler. For each Chilkat [*event*] there is a corresponding Event Handler [*event*], [*event name*]_pre, [*event name*]_process and [*event name*]_post methods. The event handler methods are "hooked". 
 

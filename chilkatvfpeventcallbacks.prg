@@ -1005,6 +1005,70 @@ ENDPROC
 ENDDEFINE
 
 **************************
+PROCEDURE PdfEventCallback
+**************************
+
+LPARAMETERS toChilkatVFPPdf AS [Chilkat_9_5_0.Pdf]
+
+LOCAL loPdfEventHandler AS [PdfEvents OF ChilkatVFPEventCallbacks.PRG], ;
+loChilkatVFPPdf AS [Pdf OF Chilkat.VCX], loChilkatPdf AS [Chilkat_9_5_0.Pdf], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+
+loChilkatVFPPdf = toChilkatVFPPdf
+
+STORE NULL TO loPdfEventHandler, loChilkatPdf
+
+DO ChilkatVFPEventCallbackSetup
+
+** Didn't pass an object test
+IF (NOT TYPE([loChilkatVFPPdf.Name]) == T_CHARACTER)
+
+  loChilkatVFPPdf = CREATEOBJECT([Pdf])
+
+ENDIF (NOT TYPE([loChilkatVFPPdf.Name]) == T_CHARACTER)
+** End didn't pass an object test
+
+loPdfEventHandler = CREATEOBJECT([PdfEvents])
+
+WITH loChilkatVFPPdf 
+
+  loChilkatPdf = .oChilkat
+  loChilkatVFPEventHandler = .oEventHandler
+
+ENDWITH
+
+EVENTHANDLER(loChilkatPdf, loPdfEventHandler)
+
+DEFINE CLASS PdfEvents AS SESSION OLEPUBLIC
+IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Pdf"
+
+PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
+RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_BinaryData(tqData AS VarBinary)
+RETURN loChilkatVFPEventHandler.BinaryData(tqData)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_PercentDone(tiPercentDone AS Integer, tiAbort AS Integer)
+RETURN loChilkatVFPEventHandler.PercentDone(tiPercentDone, tiAbort)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character)
+RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_TextData(tcData AS Character)
+RETURN loChilkatVFPEventHandler.TextData(tcData)
+ENDPROC
+
+ENDDEFINE
+
+**************************
 PROCEDURE PemEventCallback
 **************************
 
@@ -1169,6 +1233,70 @@ EVENTHANDLER(loChilkatRss, loRssEventHandler)
 
 DEFINE CLASS RssEvents AS SESSION OLEPUBLIC
 IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Rss"
+
+PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
+RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_BinaryData(tqData AS VarBinary)
+RETURN loChilkatVFPEventHandler.BinaryData(tqData)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_PercentDone(tiPercentDone AS Integer, tiAbort AS Integer)
+RETURN loChilkatVFPEventHandler.PercentDone(tiPercentDone, tiAbort)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character)
+RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_TextData(tcData AS Character)
+RETURN loChilkatVFPEventHandler.TextData(tcData)
+ENDPROC
+
+ENDDEFINE
+
+****************************
+PROCEDURE SCardEventCallback
+****************************
+
+LPARAMETERS toChilkatVFPSCard AS [Chilkat_9_5_0.SCard]
+
+LOCAL loSCardEventHandler AS [SCardEvents OF ChilkatVFPEventCallbacks.PRG], ;
+loChilkatVFPSCard AS [SCard OF Chilkat.VCX], loChilkatSCard AS [Chilkat_9_5_0.SCard], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+
+loChilkatVFPSCard = toChilkatVFPSCard
+
+STORE NULL TO loSCardEventHandler, loChilkatSCard
+
+DO ChilkatVFPEventCallbackSetup
+
+** Didn't pass an object test
+IF (NOT TYPE([loChilkatVFPSCard.Name]) == T_CHARACTER)
+
+  loChilkatVFPSCard = CREATEOBJECT([SCard])
+
+ENDIF (NOT TYPE([loChilkatVFPSCard.Name]) == T_CHARACTER)
+** End didn't pass an object test
+
+loSCardEventHandler = CREATEOBJECT([SCardEvents])
+
+WITH loChilkatVFPSCard 
+
+  loChilkatSCard = .oChilkat
+  loChilkatVFPEventHandler = .oEventHandler
+
+ENDWITH
+
+EVENTHANDLER(loChilkatSCard, loSCardEventHandler)
+
+DEFINE CLASS SCardEvents AS SESSION OLEPUBLIC
+IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.SCard"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)

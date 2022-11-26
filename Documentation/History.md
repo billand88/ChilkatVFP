@@ -1,5 +1,14 @@
 
 ## History
+## Version 1.11
+
+*Released 11/26/2022*
+
+Bug fix version.
+
+The onus for the change is the developer could not instantiate the BinData or the StringBuilder class due to the related Chilkat object not having a Version property. I needed to enhance/tweak/adjust about few methods in the BaseChilkat class. These include (from memory, could be faulty) The Init, Init_Post, Version_Access and the GetChilkatVersionObject methods.
+
+I upgraded my internal Chilkat software to the latest and greatest, version 92. This brought in 5 new classes for me. More importantly, two of them had events that could be wrapped so ChilkatVFPEventCallbacks.PRG has been updated to reflect that.
 
 ## Version 1.1
 *Released 11/04/2022*
