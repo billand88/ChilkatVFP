@@ -1,7 +1,11 @@
 
 ## History
-## Version 1.11
+## Version 1.12
+*Released 12/17/2022*
 
+Finished version 93 compatibility and added a couple of version 94 properties.
+
+## Version 1.11
 *Released 11/26/2022*
 
 Bug fix version.
