@@ -18,7 +18,7 @@ Somewhere else I describe it as "muddy". The VFP Class Browser gives a high-leve
 
 8) There are about a dozen total PEMs that say "To be documented soon." They won't be, but they should.
 
-9) There's plenty of examples whereby the class itself came after version 52 but the LastStringResult property (for example) would say it came in version 52. I generally left that alone. It's not accurate but it is harmless.
+9) ~~There's plenty of examples whereby the class itself came after version 52 but the LastStringResult property (for example) would say it came in version 52. I generally left that alone. It's not accurate but it is harmless.~~ The documentation has been cleaned up in ChilkatVFP version 1.2.
 
 10) Doing a PEMSTATUS([Chilkat Object], [PEM], 5) test against an existing Chilkat object method/property will probably work in the command window and in the debugger if the running program is stopped. But when running Visual Foxpro code it's not consistent at all when it works and when it doesn't.
 

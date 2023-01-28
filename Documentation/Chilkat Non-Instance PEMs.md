@@ -292,7 +292,8 @@ The methods of the ValidateProperty class are:
 |SSLAllowedCiphers| Method run to validate the data for the SSLAllowedCiphers property. |
 |SSLProtocol| Method run to validate the data for the SSLProtocol property. |
 |StructTmMonth| Method run to validate the data for the StructTmMonth property. |
-|UncommonOptions_crypt2| Method run to validate the data for the UncommonOptions property of the Crypt2 object. |
+|UncommonOptions_Crypt2| Method run to validate the data for the UncommonOptions property of the Crypt2 object. |
+|UncommonOptions_Csv| Method run to validate the data for the UncommonOptions property of the Csv object. |
 |UncommonOptions_Email| Method run to validate the data for the UncommonOptions property of the Email object. |
 |UncommonOptions_FTP2| Method run to validate the data for the UncommonOptions property of the FTP2 object. |
 |UncommonOptions_HTTP| Method run to validate the data for the UncommonOptions property of the HTTP object. |
@@ -300,6 +301,7 @@ The methods of the ValidateProperty class are:
 |UncommonOptions_IMAP| Method run to validate the data for the UncommonOptions property of the IMAP object. |
 |UncommonOptions_Mailman| Method run to validate the data for the UncommonOptions property of the Mailman object. |
 |UncommonOptions_OAuth1| Method run to validate the data for the UncommonOptions property of the OAuth1 object. |
+|UncommonOptions_OAuth2| Method run to validate the data for the UncommonOptions property of the OAuth2 object. |
 |UncommonOptions_PDF| Method run to validate the data for the UncommonOptions property of the PDF object. |
 |UncommonOptions_PFX| Method run to validate the data for the PFX UncommonOptions property. |
 |UncommonOptions_Rest| Method run to validate the data for the UncommonOptions property of the Rest object. |
@@ -310,6 +312,8 @@ The methods of the ValidateProperty class are:
 |UncommonOptions_SSHKey| Method run to validate the data for the UncommonOptions property of the SSHKey object. |
 |UncommonOptions_SSHTunnel| Method run to validate the data for the UncommonOptions property of the SSHTunnel object. |
 |UncommonOptions_WebSocket| Method run to validate the data for the UncommonOptions property of the WebSocket object. |
+|UncommonOptions_XmlDSig| Method run to validate the data for the UncommonOptions property of the XmlDSig object. |
+|UncommonOptions_XmlDSigGen| Method run to validate the data for the UncommonOptions property of the XmlDSigGen object. |
 |UncommonOptions_ZIP| Method run to validate the data for the UncommonOptions property of the ZIP object. |
 |WriteFormat| Method run to validate the data for the WriteFormat property. |
 |X509Type| Method run to validate the data for the X509Type property. |

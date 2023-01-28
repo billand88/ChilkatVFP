@@ -10,7 +10,7 @@ ChilkatVFP is a Github <a href="https://github.com/VFPX" target="_blank">VFPX</a
 
 1) Go to (https://www.chilkatsoft.com) and: 
     a) Purchase a license
-    b) Download/install a 30 day trial license
+    b) Download/install a 30 day trial license (use one of the 32-bit ActiveX installers)
     c) Download/install a freeware Chilkat class or two.
 2) Add the Chilkat.VCX library to your <b>SET([ClassLib])</b> settings.
 3) Ensure FoxPro.H is in your path.
