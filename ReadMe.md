@@ -53,7 +53,7 @@ The full Chilkat library consists of 103 classes (one deprecated), containing pr
 * Instance class names match the Chilkat class names (take note of the recommendation above).
 * Properties and methods within the class names match the Chilkat class names (with only a couple of exceptions).
 * If the referenced Chilkat property/method was introduced in a certain version, ChilkatVFP will test to ensure said property/method is available.
-* If the referenced Chilkat class was was introduced in a certain version, ChilkatVFP will test to ensure said class is available before instantiating.
+* If the referenced Chilkat class was introduced in a certain version, ChilkatVFP will test to ensure said class is available before instantiating.
 * For all the Chilkat methods, the associated ChilkatVFP documentation for that method is included at the top of the related ChilkatVFP method.
 * For all the Chilkat properties, the associated ChilkatVFP documentation for that property is contained in the related _Access method.
 * As much documentation as could fit into the description was added to all ChilkatVFP properties and methods. You can scroll the VFP property sheet and get a sense of what that method/property does.
@@ -65,6 +65,7 @@ There already some methods and properties in place for the next release version,
 * You can return .T./.F. from a method or property to represent a Boolean value with a property setting on the ChilkatVFP instance object [lReturnBitAsLogical].
 * Integrated Steven Black's MsgSvc() for message displays.
 * You can send a .T./.F. to a ChilkatVFP method for a Boolean parameter and it will be automatically converted for you.
+* You can send a ChilkatVFP object to a Chilkat method for a Chilkat object parameter and it will automatically be sent for you.
 * All ChilkatVFP objects contain a Release() method to destroy objects as necessary.
 * Code is written in a somewhat "florid" style - for instance, identifying the type of variable as part of the LOCAL definition. The idea is for the code to be digestible and understandable, not turgid. The "guts" of the framework code does get a little heavy, however. 
 * ChilkatVFP PEMs have design time Intellisense, if relevant. See image below. Note that the variable yy was not instantiated, just typed in the method.

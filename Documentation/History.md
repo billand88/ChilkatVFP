@@ -1,15 +1,20 @@
 
 ## History
 
+## Version 1.21
+*Released 04/19/2023*
+
+Chilkat version 94 compatibility and a couple of minor fixes.
+
 ## Version 1.2
 
 Enhancement: You can now pass a ChilkatVFP object as an object parameter to a ChilkatVFP method. The associated Chilkat object will be passed to the Chilkat method and reattached to the ChilkatVFP object upon method return.
 
 Bug Fix/Enhancement: In code, calling properties (and presumably methods) before their implementation would simply fail (which is what should happen since the Chilkat object doesn't have it yet). Now you are told why it failed.
 
-You can see the fix if you add one of the two new version 94 OAuth2 properties or the new version 94 Socket property in code (the current release is version 93)...
+You can see the fix if you add one of the two new version 94 OAuth2 properties in code (the current release is version 93)...
 
-Both of the above enhancements required diving into the code for each ChilkatVFP object. A lot of other side issues were addressed. To implement the first enhancement, the object naming conventions got more consistent, but there were a few cases where the ChilkatVFP parameter didn't match the parameter name going to Chilkat. For the second enhancement, the implementation value for the common Last* properties were set consistently. Previously, if the value was set too low it didn't matter, but in some cases it was clearly set too high (copy/paste errors).
+Both of the above enhancements required diving into the code for each ChilkatVFP object. A lot of other side issues were addressed. To implement the first enhancement, the object naming conventions got more consistent, but there were a few cases where the ChilkatVFP parameter didn't match the parameter name going to Chilkat. For the second enhancement, the implementation value for the common Last* properties were set consistently. Previously, if the value was set too low it usually didn't matter, but in some cases it was clearly set too high (copy/paste errors).
 
 ## Version 1.11
 
