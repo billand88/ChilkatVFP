@@ -1,6 +1,6 @@
 
 # INCLUDE [Foxpro.H]
-# DEFINE SpiderCache    [C:\SpiderCache]
+# DEFINE kcSpiderCache    [C:\SpiderCache]
 
 CLEAR ALL
 CLOSE ALL
@@ -10,10 +10,10 @@ loSeedURLs AS [StringArray OF Chilkat.VCX], liCount AS Integer, lcURL AS Charact
 lcDomain AS Character, li AS Integer, llSuccess AS Logical, ;
 liOutboundLinks AS Integer, lcBaseDomain AS Character
 
-*!* LOCAL loChilkatVFPEventHandler 
-PRIVATE loChilkatVFPEventHandler 
+*!*  LOCAL loChilkatVFPEventHandler && doesn't work! 
+PRIVATE loChilkatVFPEventHandler
 
-STORE NULL TO loSpider, loSeenDomains, loSeedURLs
+STORE NULL TO loSpider, loSeenDomains, loSeedURLs, loChilkatVFPEventHandler
 STORE [] TO lcURL, lcDomain, lcBaseDomain
 STORE 0 TO liCount, li, liOutboundLinks
 
@@ -36,27 +36,35 @@ llSpiderObject = (TYPE([loSpider.Name]) == T_CHARACTER)
 llSeenDomainsObject = (TYPE([loSeenDomains.Name]) == T_CHARACTER)
 llSeedURLsObject = (TYPE([loSeedURLs.Name]) == T_CHARACTER)
 
-llOKToContinue = llSpiderObject AND llSeenDomainsObject AND llSeedURLsObject
+llOKToContinue = (llSpiderObject AND llSeenDomainsObject AND llSeedURLsObject)
 
 ** Okay to continue test
 IF llOKToContinue 
 
   WITH loSeedURLs
 
-    .Unique = 1
+    STORE .T. TO .lReturnBitAsLogical, .Unique
     .Append([https://www.joelonsoftware.com/])
     liCount = .Count
 
   ENDWITH
 
-  loSeenDomains.Unique = 1
+  WITH loSeenDomains
+
+    STORE .T. TO .lReturnBitAsLogical, .Unique
+
+  ENDWITH
 
   WITH loSpider
 
-    STORE .T. TO .lReturnBitAsLogical, .FetchFromCache, .UpdateCache
-    .CacheDir = SpiderCache
-    .lAddEventHandler = .T.
+    STORE .T. TO .lReturnBitAsLogical, .FetchFromCache, .UpdateCache, .lAddEventHandler
+
+    .CacheDir = kcSpiderCache
+
+    ** The line below is necessary for events to fire,
+    ** even though it isn't referenced elsewhere in this program!
     loChilkatVFPEventHandler = .oEventHandler
+
     .HeartBeatMs = 500 && half second
 
     ** Walk through seed URLs loop
@@ -116,7 +124,7 @@ IF llOKToContinue
       lcBaseDomain = .GetBaseDomain(lcDomain)
 
       ** Already spidered test
-      IF loSeenDomains.Contains(lcBaseDomain) = 0
+      IF NOT loSeenDomains.Contains(lcBaseDomain)
 
         WITH loSeedURLs
 
@@ -130,7 +138,7 @@ IF llOKToContinue
 
         ENDWITH
 
-      ENDIF loSeenDomains.Contains(lcBaseDomain) = 0
+      ENDIF NOT loSeenDomains.Contains(lcBaseDomain)
       ** End already spidered test
 
     ENDFOR li = 0 TO liOutboundLinks
@@ -168,4 +176,4 @@ ENDIF llSeedURLsObject
 
 STORE NULL TO loSpider, loSeenDomains, loSeedURLs
 
-RETURN
+RETURN llSuccess
