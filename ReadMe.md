@@ -59,8 +59,8 @@ The full Chilkat library consists of 103 classes (one deprecated), containing pr
 * As much documentation as could fit into the description was added to all ChilkatVFP properties and methods. You can scroll the VFP property sheet and get a sense of what that method/property does.
 * The deprecated class is included (CSP) for completeness - since existing Chilkat applications could still be using it.
 * The deprecated/undocumented methods and properties have been included. I have added documentation if I could find some sort of documentation on the method/property. Some of these methods/properties are actually useful to the VFP developer.
-* At the time of this writing, the release version of Chilkat is 9.5.0.91 (version 91).
-There already some methods and properties in place for the next release version, 9.5.0.92.
+* At the time of this writing, the release version of Chilkat is 9.5.0.94 (version 94).
+There already some methods and properties in place for the next release version, 9.5.0.95.
 * If relevant, properties that only return a certain set of values or a range of values are validated against the documented set/range of values. This is true even if a specific value or keywords were introduced in a specific version. 
 * You can return .T./.F. from a method or property to represent a Boolean value with a property setting on the ChilkatVFP instance object [lReturnBitAsLogical].
 * Integrated Steven Black's MsgSvc() for message displays.
