@@ -1,6 +1,15 @@
 
 ## History
 
+## Version 1.22
+*Released 07/18/2023*
+
+Minor update.
+
+Added iChilkat.VCT/VCX which subclasses the iBaseChilkat instance classes. Use these to instantiate your ChilkatVFP Chilkat classes in code. 
+
+The cEventHandler class was set incorrectly for several classes. A few version 95 methods were added (but as I type we're in Chilkat version 94). The SpiderTest program was updated. I found an empty method and added the appropriate code, etc.
+
 ## Version 1.21
 *Released 04/19/2023*
 
