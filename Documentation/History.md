@@ -1,6 +1,11 @@
 
 ## History
 
+## Version 1.23
+*Released 08/24/2023*
+
+Finished off compatibility changes for Chilkat version 95. Added one version 96 method.
+
 ## Version 1.22
 *Released 07/18/2023*
 
