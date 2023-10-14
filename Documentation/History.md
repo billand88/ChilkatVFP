@@ -1,6 +1,13 @@
 
 ## History
 
+## Version 1.24
+*Released 10/13/2023*
+
+Found several additional Chilkat classes that lacked a Version property (and thereby couldn't instantiate correctly in ChilkatVFP). 
+
+Added a TaskDownloadTest program to demonstrate very basic tasking. Adjusted some example programs to use iChilkat.VCX. Minor documentation fixes. 
+
 ## Version 1.23
 *Released 08/24/2023*
 

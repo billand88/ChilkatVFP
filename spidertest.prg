@@ -1,3 +1,10 @@
+*==============================================================================
+* Purpose:           SpiderTest.PRG
+* Author:            Bill Anderson
+* Notice:            Copyright (c) 2022 The Anderson Files LLC, All Rights Reserved.
+* Returns:           Logical, indicating success.
+* Date Added:        11/03/2022
+*==============================================================================
 
 # INCLUDE [Foxpro.H]
 # DEFINE kcSpiderCache    [C:\SpiderCache]
@@ -5,10 +12,11 @@
 CLEAR ALL
 CLOSE ALL
 
-LOCAL loSpider AS [Spider OF Chilkat.VCX], loSeenDomains AS [StringArray OF Chilkat.VCX], ;
-loSeedURLs AS [StringArray OF Chilkat.VCX], liCount AS Integer, lcURL AS Character, ;
+LOCAL loSpider AS [iSpider OF iChilkat.VCX], loSeenDomains AS [iStringArray OF iChilkat.VCX], ;
+loSeedURLs AS [iStringArray OF iChilkat.VCX], liCount AS Integer, lcURL AS Character, ;
 lcDomain AS Character, li AS Integer, llSuccess AS Logical, ;
-liOutboundLinks AS Integer, lcBaseDomain AS Character
+liOutboundLinks AS Integer, lcBaseDomain AS Character, llSpiderObject AS Logical, ;
+llSeenDomainsObject AS Logical, llSeedURLsObject AS Logical
 
 *!*  LOCAL loChilkatVFPEventHandler && doesn't work! 
 PRIVATE loChilkatVFPEventHandler
@@ -16,10 +24,24 @@ PRIVATE loChilkatVFPEventHandler
 STORE NULL TO loSpider, loSeenDomains, loSeedURLs, loChilkatVFPEventHandler
 STORE [] TO lcURL, lcDomain, lcBaseDomain
 STORE 0 TO liCount, li, liOutboundLinks
+STORE .F. TO llSuccess, llSpiderObject, llSeenDomainsObject, llSeedURLsObject
 
-llSuccess = .F.
+** Alias not set test
+IF NOT ([CHILKAT.VCX] $ UPPER(SET([CLASSLIB])))
 
-SET CLASSLIB TO [Chilkat.VCX] ADDITIVE
+  SET CLASSLIB TO [Chilkat.VCX] ADDITIVE
+
+ENDIF NOT ([CHILKAT.VCX] $ UPPER(SET([CLASSLIB])))
+** End alias not set test
+
+** Alias not set test
+IF NOT ([ICHILKAT.VCX] $ UPPER(SET([CLASSLIB])))
+
+  SET CLASSLIB TO [iChilkat.VCX] ADDITIVE
+
+ENDIF NOT ([ICHILKAT.VCX] $ UPPER(SET([CLASSLIB])))
+** End alias not set test
+
 CLEAR
 
 **

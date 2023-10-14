@@ -20,16 +20,24 @@ IF NOT ([CHILKAT.VCX] $ UPPER(SET([CLASSLIB])))
 ENDIF NOT ([CHILKAT.VCX] $ UPPER(SET([CLASSLIB])))
 ** End alias not set test
 
+** Alias not set test
+IF NOT ([ICHILKAT.VCX] $ UPPER(SET([CLASSLIB])))
+
+  SET CLASSLIB TO [iChilkat.VCX] ADDITIVE
+
+ENDIF NOT ([ICHILKAT.VCX] $ UPPER(SET([CLASSLIB])))
+** End alias not set test
+
 SET PATH TO [\] ADDITIVE
 
 ***************************
 PROCEDURE AtomEventCallback
 ***************************
 
-LPARAMETERS toChilkatVFPAtom AS [Chilkat_9_5_0.Atom]
+LPARAMETERS toChilkatVFPAtom AS [iAtom OF iChilkat.VCX]
 
 LOCAL loAtomEventHandler AS [AtomEvents OF ChilkatVFPEventCallbacksPrev52.PRG], ;
-loChilkatVFPAtom AS [Atom OF Chilkat.VCX], loChilkatAtom AS [Chilkat_9_5_0.Atom], ;
+loChilkatVFPAtom AS [iAtom OF iChilkat.VCX], loChilkatAtom AS [Chilkat_9_5_0.Atom], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
 
 loChilkatVFPAtom = toChilkatVFPAtom 
@@ -41,7 +49,7 @@ DO ChilkatVFPEventCallbackSetup
 ** Didn't pass an object test
 IF (NOT TYPE([loChilkatVFPAtom.Name]) == T_CHARACTER)
 
-  loChilkatVFPAtom = CREATEOBJECT([Atom])
+  loChilkatVFPAtom = CREATEOBJECT([iAtom])
 
 ENDIF (NOT TYPE([loChilkatVFPAtom.Name]) == T_CHARACTER)
 ** End didn't pass an object test
@@ -78,10 +86,10 @@ ENDDEFINE
 PROCEDURE Bz2EventCallback
 **************************
 
-LPARAMETERS toChilkatVFPBz2 AS [Chilkat_9_5_0.Bz2]
+LPARAMETERS toChilkatVFPBz2 AS [iBz2 OF iChilkat.VCX]
 
 LOCAL loBz2EventHandler AS [Bz2Events OF ChilkatVFPEventCallbacksPrev52.PRG], ;
-loChilkatVFPBz2 AS [Bz2 OF Chilkat.VCX], loChilkatBz2 AS [Chilkat_9_5_0.Bz2], ;
+loChilkatVFPBz2 AS [iBz2 OF iChilkat.VCX], loChilkatBz2 AS [Chilkat_9_5_0.Bz2], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
 
 loChilkatVFPBz2 = toChilkatVFPBz2
@@ -93,7 +101,7 @@ DO ChilkatVFPEventCallbackSetup
 ** Didn't pass an object test
 IF (NOT TYPE([loChilkatVFPBz2.Name]) == T_CHARACTER)
 
-  loChilkatVFPBz2 = CREATEOBJECT([Bz2])
+  loChilkatVFPBz2 = CREATEOBJECT([iBz2])
 
 ENDIF (NOT TYPE([loChilkatVFPBz2.Name]) == T_CHARACTER)
 ** End didn't pass an object test
@@ -130,10 +138,10 @@ ENDDEFINE
 PROCEDURE CompressionEventCallback
 **********************************
 
-LPARAMETERS toChilkatVFPCompression AS [Chilkat_9_5_0.Compression]
+LPARAMETERS toChilkatVFPCompression AS [iCompression OF iChilkat.VCX]
 
 LOCAL loCompressionEventHandler AS [CompressionEvents OF ChilkatVFPEventCallbacksPrev52.PRG], ;
-loChilkatVFPCompression AS [Compression OF Chilkat.VCX], ;
+loChilkatVFPCompression AS [iCompression OF iChilkat.VCX], ;
 loChilkatCompression AS [Chilkat_9_5_0.Compression], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
 
@@ -146,7 +154,7 @@ DO ChilkatVFPEventCallbackSetup
 ** Didn't pass an object test
 IF (NOT TYPE([loChilkatVFPCompression.Name]) == T_CHARACTER)
 
-  loChilkatVFPCompression = CREATEOBJECT([Compression])
+  loChilkatVFPCompression = CREATEOBJECT([iCompression])
 
 ENDIF (NOT TYPE([loChilkatVFPCompression.Name]) == T_CHARACTER)
 ** End didn't pass an object test
@@ -183,10 +191,10 @@ ENDDEFINE
 PROCEDURE Crypt2EventCallback
 *****************************
 
-LPARAMETERS toChilkatVFPCrypt2 AS [Chilkat_9_5_0.Crypt2]
+LPARAMETERS toChilkatVFPCrypt2 AS [iCrypt2 OF iChilkat.VCX]
 
 LOCAL loCrypt2EventHandler AS [Crypt2Events OF ChilkatVFPEventCallbacksPrev52.PRG], ;
-loChilkatVFPCrypt2 AS [Crypt2 OF Chilkat.VCX], ;
+loChilkatVFPCrypt2 AS [iCrypt2 OF iChilkat.VCX], ;
 loChilkatCrypt2 AS [Chilkat_9_5_0.Crypt2], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
 
@@ -199,7 +207,7 @@ DO ChilkatVFPEventCallbackSetup
 ** Didn't pass an object test
 IF (NOT TYPE([loChilkatVFPCrypt2.Name]) == T_CHARACTER)
 
-  loChilkatVFPCrypt2 = CREATEOBJECT([Crypt2])
+  loChilkatVFPCrypt2 = CREATEOBJECT([iCrypt2])
 
 ENDIF (NOT TYPE([loChilkatVFPCrypt2.Name]) == T_CHARACTER)
 ** End didn't pass an object test
@@ -236,10 +244,10 @@ ENDDEFINE
 PROCEDURE DkimEventCallback
 ***************************
 
-LPARAMETERS toChilkatVFPDkim AS [Chilkat_9_5_0.Dkim]
+LPARAMETERS toChilkatVFPDkim AS [iDkim OF iChilkat.VCX]
 
 LOCAL loDkimEventHandler AS [DkimEvents OF ChilkatVFPEventCallbacksPrev52.PRG], ;
-loChilkatVFPDkim AS [Dkim OF Chilkat.VCX], loChilkatDkim AS [Chilkat_9_5_0.Dkim], ;
+loChilkatVFPDkim AS [iDkim OF iChilkat.VCX], loChilkatDkim AS [Chilkat_9_5_0.Dkim], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
 
 loChilkatVFPDkim = toChilkatVFPDkim
@@ -251,7 +259,7 @@ DO ChilkatVFPEventCallbackSetup
 ** Didn't pass an object test
 IF (NOT TYPE([loChilkatVFPDkim.Name]) == T_CHARACTER)
 
-  loChilkatVFPDkim = CREATEOBJECT([Dkim])
+  loChilkatVFPDkim = CREATEOBJECT([iDkim])
 
 ENDIF (NOT TYPE([loChilkatVFPDkim.Name]) == T_CHARACTER)
 ** End didn't pass an object test
@@ -288,10 +296,10 @@ ENDDEFINE
 PROCEDURE FTP2EventCallback
 ***************************
 
-LPARAMETERS toChilkatVFPFtp2 AS [Chilkat_9_5_0.Ftp2]
+LPARAMETERS toChilkatVFPFtp2 AS [iFtp2 OF iChilkat.VCX]
 
 LOCAL loFtp2EventHandler AS [Ftp2Events OF ChilkatVFPEventCallbacksPrev52.PRG], ;
-loChilkatVFPFtp2 AS [Ftp2 OF Chilkat.VCX], loChilkatFtp2 AS [Chilkat_9_5_0.Ftp2], ;
+loChilkatVFPFtp2 AS [iFtp2 OF iChilkat.VCX], loChilkatFtp2 AS [Chilkat_9_5_0.Ftp2], ;
 loChilkatVFPEventHandler AS [iFtp2EventHandler OF Chilkat.VCX]
 
 loChilkatVFPFtp2 = toChilkatVFPFtp2
@@ -303,7 +311,7 @@ DO ChilkatVFPEventCallbackSetup
 ** Didn't pass an object test
 IF (NOT TYPE([loChilkatVFPFtp2.Name]) == T_CHARACTER)
 
-  loChilkatVFPFtp2 = CREATEOBJECT([Ftp2])
+  loChilkatVFPFtp2 = CREATEOBJECT([iFtp2])
 
 ENDIF (NOT TYPE([loChilkatVFPFtp2.Name]) == T_CHARACTER)
 ** End didn't pass an object test
@@ -380,10 +388,10 @@ ENDDEFINE
 PROCEDURE GZipEventCallback
 ***************************
 
-LPARAMETERS toChilkatVFPGzip AS [Chilkat_9_5_0.Gzip]
+LPARAMETERS toChilkatVFPGzip AS [iGzip OF iChilkat.VCX]
 
 LOCAL loGzipEventHandler AS [GzipEvents OF ChilkatVFPEventCallbacksPrev52.PRG], ;
-loChilkatVFPGzip AS [Gzip OF Chilkat.VCX], loChilkatGzip AS [Chilkat_9_5_0.Gzip], ;
+loChilkatVFPGzip AS [iGzip OF iChilkat.VCX], loChilkatGzip AS [Chilkat_9_5_0.Gzip], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
 
 loChilkatVFPGZip = toChilkatVFPGZip
@@ -395,7 +403,7 @@ DO ChilkatVFPEventCallbackSetup
 ** Didn't pass an object test
 IF (NOT TYPE([loChilkatVFPGzip.Name]) == T_CHARACTER)
 
-  loChilkatVFPGzip = CREATEOBJECT([Gzip])
+  loChilkatVFPGzip = CREATEOBJECT([iGzip])
 
 ENDIF (NOT TYPE([loChilkatVFPGzip.Name]) == T_CHARACTER)
 ** End didn't pass an object test
@@ -432,10 +440,10 @@ ENDDEFINE
 PROCEDURE HttpEventCallback
 ***************************
 
-LPARAMETERS toChilkatVFPHttp AS [Chilkat_9_5_0.Http]
+LPARAMETERS toChilkatVFPHttp AS [iHttp OF iChilkat.VCX]
 
 LOCAL loHttpEventHandler AS [HttpEvents OF ChilkatVFPEventCallbacksPrev52.PRG], ;
-loChilkatVFPHttp AS [Http OF Chilkat.VCX], loChilkatHttp AS [Chilkat_9_5_0.Http], ;
+loChilkatVFPHttp AS [iHttp OF iChilkat.VCX], loChilkatHttp AS [Chilkat_9_5_0.Http], ;
 loChilkatVFPEventHandler AS [iHTTPEventHandler OF Chilkat.VCX]
 
 loChilkatVFPHttp = toChilkatVFPHttp
@@ -447,7 +455,7 @@ DO ChilkatVFPEventCallbackSetup
 ** Didn't pass an object test
 IF (NOT TYPE([toChilkatVFPHTTP.Name]) == T_CHARACTER)
 
-  loChilkatVFPHttp = CREATEOBJECT([Http])
+  loChilkatVFPHttp = CREATEOBJECT([iHttp])
 
 ENDIF (NOT TYPE([toChilkatVFPHTTP.Name]) == T_CHARACTER)
 ** End didn't pass an object test
@@ -517,10 +525,10 @@ ENDDEFINE
 PROCEDURE IMapEventCallback
 ***************************
 
-LPARAMETERS toChilkatVFPImap AS [Chilkat_9_5_0.Imap]
+LPARAMETERS toChilkatVFPImap AS [iImap OF iChilkat.VCX]
 
 LOCAL loImapEventHandler AS [ImapEvents OF ChilkatVFPEventCallbacksPrev52.PRG], ;
-loChilkatVFPImap AS [Imap OF Chilkat.VCX], loChilkatImap AS [Chilkat_9_5_0.Imap], ;
+loChilkatVFPImap AS [iImap OF iChilkat.VCX], loChilkatImap AS [Chilkat_9_5_0.Imap], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
 
 loChilkatVFPImap = toChilkatVFPImap
@@ -532,7 +540,7 @@ DO ChilkatVFPEventCallbackSetup
 ** Didn't pass an object test
 IF (NOT TYPE([loChilkatVFPImap.Name]) == T_CHARACTER)
 
-  loChilkatVFPImap = CREATEOBJECT([Imap])
+  loChilkatVFPImap = CREATEOBJECT([iImap])
 
 ENDIF (NOT TYPE([loChilkatVFPImap.Name]) == T_CHARACTER)
 ** End didn't pass an object test
@@ -569,10 +577,10 @@ ENDDEFINE
 PROCEDURE MailManEventCallback
 ******************************
 
-LPARAMETERS toChilkatVFPMailMan AS [Chilkat_9_5_0.MailMan]
+LPARAMETERS toChilkatVFPMailMan AS [iMailMan OF iChilkat.VCX]
 
 LOCAL loMailManEventHandler AS [MailManEvents OF ChilkatVFPEventCallbacksPrev52.PRG], ;
-loChilkatVFPMailMan AS [MailMan OF Chilkat.VCX], ;
+loChilkatVFPMailMan AS [iMailMan OF iChilkat.VCX], ;
 loChilkatMailMan AS [Chilkat_9_5_0.MailMan], ;
 loChilkatVFPEventHandler AS [iMailManEventHandler OF Chilkat.VCX]
 
@@ -585,7 +593,7 @@ DO ChilkatVFPEventCallbackSetup
 ** Didn't pass an object test
 IF (NOT TYPE([loChilkatVFPMailMan.Name]) == T_CHARACTER)
 
-  loChilkatVFPMailMan = CREATEOBJECT([MailMan])
+  loChilkatVFPMailMan = CREATEOBJECT([iMailMan])
 
 ENDIF (NOT TYPE([loChilkatVFPMailMan.Name]) == T_CHARACTER)
 ** End didn't pass an object test
@@ -630,10 +638,10 @@ ENDDEFINE
 PROCEDURE MhtEventCallback
 **************************
 
-LPARAMETERS toChilkatVFPMht AS [Chilkat_9_5_0.Mht]
+LPARAMETERS toChilkatVFPMht AS [iMht OF iChilkat.VCX]
 
 LOCAL loMhtEventHandler AS [MhtEvents OF ChilkatVFPEventCallbacksPrev52.PRG], ;
-loChilkatVFPMht AS [Mht OF Chilkat.VCX], loChilkatMht AS [Chilkat_9_5_0.Mht], ;
+loChilkatVFPMht AS [iMht OF iChilkat.VCX], loChilkatMht AS [Chilkat_9_5_0.Mht], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
 
 loChilkatVFPMht = toChilkatVFPMht
@@ -645,7 +653,7 @@ DO ChilkatVFPEventCallbackSetup
 ** Didn't pass an object test
 IF (NOT TYPE([loChilkatVFPMht.Name]) == T_CHARACTER)
 
-  loChilkatVFPMht = CREATEOBJECT([Mht])
+  loChilkatVFPMht = CREATEOBJECT([iMht])
 
 ENDIF (NOT TYPE([loChilkatVFPMht.Name]) == T_CHARACTER)
 ** End didn't pass an object test
@@ -682,10 +690,10 @@ ENDDEFINE
 PROCEDURE PemEventCallback
 **************************
 
-LPARAMETERS toChilkatVFPPem AS [Chilkat_9_5_0.Pem]
+LPARAMETERS toChilkatVFPPem AS [iPem OF iChilkat.VCX]
 
 LOCAL loPemEventHandler AS [PemEvents OF ChilkatVFPEventCallbacksPrev52.PRG], ;
-loChilkatVFPPem AS [Pem OF Chilkat.VCX], loChilkatPem AS [Chilkat_9_5_0.Pem], ;
+loChilkatVFPPem AS [iPem OF iChilkat.VCX], loChilkatPem AS [Chilkat_9_5_0.Pem], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
 
 loChilkatVFPPem = toChilkatVFPPem
@@ -697,7 +705,7 @@ DO ChilkatVFPEventCallbackSetup
 ** Didn't pass an object test
 IF (NOT TYPE([loChilkatVFPPem.Name]) == T_CHARACTER)
 
-  loChilkatVFPPem = CREATEOBJECT([Pem])
+  loChilkatVFPPem = CREATEOBJECT([iPem])
 
 ENDIF (NOT TYPE([loChilkatVFPPem.Name]) == T_CHARACTER)
 ** End didn't pass an object test
@@ -734,10 +742,10 @@ ENDDEFINE
 PROCEDURE RssEventCallback
 **************************
 
-LPARAMETERS toChilkatVFPRss AS [Chilkat_9_5_0.Rss]
+LPARAMETERS toChilkatVFPRss AS [iRss OF iChilkat.VCX]
 
 LOCAL loRssEventHandler AS [RssEvents OF ChilkatVFPEventCallbacksPrev52.PRG], ;
-loChilkatVFPRss AS [Rss OF Chilkat.VCX], loChilkatRss AS [Chilkat_9_5_0.Rss], ;
+loChilkatVFPRss AS [iRss OF iChilkat.VCX], loChilkatRss AS [Chilkat_9_5_0.Rss], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
 
 loChilkatVFPRss = toChilkatVFPRss
@@ -749,7 +757,7 @@ DO ChilkatVFPEventCallbackSetup
 ** Didn't pass an object test
 IF (NOT TYPE([loChilkatVFPRss.Name]) == T_CHARACTER)
 
-  loChilkatVFPRss = CREATEOBJECT([Rss])
+  loChilkatVFPRss = CREATEOBJECT([iRss])
 
 ENDIF (NOT TYPE([loChilkatVFPRss.Name]) == T_CHARACTER)
 ** End didn't pass an object test
@@ -786,10 +794,10 @@ ENDDEFINE
 PROCEDURE ScpEventCallback
 **************************
 
-LPARAMETERS toChilkatVFPScp AS [Chilkat_9_5_0.Scp]
+LPARAMETERS toChilkatVFPScp AS [iScp OF iChilkat.VCX]
 
 LOCAL loScpEventHandler AS [ScpEvents OF ChilkatVFPEventCallbacksPrev52.PRG], ;
-loChilkatVFPScp AS [Scp OF Chilkat.VCX], loChilkatScp AS [Chilkat_9_5_0.Scp], ;
+loChilkatVFPScp AS [iScp OF iChilkat.VCX], loChilkatScp AS [Chilkat_9_5_0.Scp], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
 
 loChilkatVFPScp = toChilkatVFPScp
@@ -801,7 +809,7 @@ DO ChilkatVFPEventCallbackSetup
 ** Didn't pass an object test
 IF (NOT TYPE([loChilkatVFPScp.Name]) == T_CHARACTER)
 
-  loChilkatVFPScp = CREATEOBJECT([Scp])
+  loChilkatVFPScp = CREATEOBJECT([iScp])
 
 ENDIF (NOT TYPE([loChilkatVFPScp.Name]) == T_CHARACTER)
 ** End didn't pass an object test
@@ -838,10 +846,10 @@ ENDDEFINE
 PROCEDURE SFtpEventCallback
 ***************************
 
-LPARAMETERS toChilkatVFPSFtp AS [Chilkat_9_5_0.SFtp]
+LPARAMETERS toChilkatVFPSFtp AS [iSFtp OF iChilkat.VCX]
 
 LOCAL loSFtpEventHandler AS [SFtpEvents OF ChilkatVFPEventCallbacksPrev52.PRG], ;
-loChilkatVFPSFtp AS [SFtp OF Chilkat.VCX], loChilkatSFtp AS [Chilkat_9_5_0.SFtp], ;
+loChilkatVFPSFtp AS [iSFtp OF iChilkat.VCX], loChilkatSFtp AS [Chilkat_9_5_0.SFtp], ;
 loChilkatVFPEventHandler AS [iSFtpEventHandler OF Chilkat.VCX]
 
 loChilkatVFPSFtp = toChilkatVFPSFtp
@@ -853,7 +861,7 @@ DO ChilkatVFPEventCallbackSetup
 ** Didn't pass an object test
 IF (NOT TYPE([loChilkatVFPSFtp.Name]) == T_CHARACTER)
 
-  loChilkatVFPSFtp = CREATEOBJECT([SFtp])
+  loChilkatVFPSFtp = CREATEOBJECT([iSFtp])
 
 ENDIF (NOT TYPE([loChilkatVFPSFtp.Name]) == T_CHARACTER)
 ** End didn't pass an object test
@@ -890,10 +898,10 @@ ENDDEFINE
 PROCEDURE SocketEventCallback
 *****************************
 
-LPARAMETERS toChilkatVFPSocket AS [Chilkat_9_5_0.Socket]
+LPARAMETERS toChilkatVFPSocket AS [iSocket OF iChilkat.VCX]
 
 LOCAL loSocketEventHandler AS [SocketEvents OF ChilkatVFPEventCallbacksPrev52.PRG], ;
-loChilkatVFPSocket AS [Socket OF Chilkat.VCX], ;
+loChilkatVFPSocket AS [iSocket OF iChilkat.VCX], ;
 loChilkatSocket AS [Chilkat_9_5_0.Socket], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
 
@@ -906,7 +914,7 @@ DO ChilkatVFPEventCallbackSetup
 ** Didn't pass an object test
 IF (NOT TYPE([loChilkatVFPSocket.Name]) == T_CHARACTER)
 
-  loChilkatVFPSocket = CREATEOBJECT([Socket])
+  loChilkatVFPSocket = CREATEOBJECT([iSocket])
 
 ENDIF (NOT TYPE([loChilkatVFPSocket.Name]) == T_CHARACTER)
 ** End didn't pass an object test
@@ -943,10 +951,10 @@ ENDDEFINE
 PROCEDURE SpiderEventCallback
 *****************************
 
-LPARAMETERS toChilkatVFPSpider AS [Chilkat_9_5_0.Spider]
+LPARAMETERS toChilkatVFPSpider AS [iSpider OF iChilkat.VCX]
 
 LOCAL loSpiderEventHandler AS [SpiderEvents OF ChilkatVFPEventCallbacksPrev52.PRG], ;
-loChilkatVFPSpider AS [Spider OF Chilkat.VCX], ;
+loChilkatVFPSpider AS [iSpider OF iChilkat.VCX], ;
 loChilkatSpider AS [Chilkat_9_5_0.Spider], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
 
@@ -959,7 +967,7 @@ DO ChilkatVFPEventCallbackSetup
 ** Didn't pass an object test
 IF (NOT TYPE([loChilkatVFPSpider.Name]) == T_CHARACTER)
 
-  loChilkatVFPSpider = CREATEOBJECT([Spider])
+  loChilkatVFPSpider = CREATEOBJECT([iSpider])
 
 ENDIF (NOT TYPE([loChilkatVFPSpider.Name]) == T_CHARACTER)
 ** End didn't pass an object test
@@ -996,10 +1004,10 @@ ENDDEFINE
 PROCEDURE SshEventCallback
 **************************
 
-LPARAMETERS toChilkatVFPSsh AS [Chilkat_9_5_0.Ssh]
+LPARAMETERS toChilkatVFPSsh AS [iSsh OF iChilkat.VCX]
 
 LOCAL loSshEventHandler AS [SshEvents OF ChilkatVFPEventCallbacksPrev52.PRG], ;
-loChilkatVFPSsh AS [Ssh OF Chilkat.VCX], loChilkatSsh AS [Chilkat_9_5_0.Ssh], ;
+loChilkatVFPSsh AS [iSsh OF iChilkat.VCX], loChilkatSsh AS [Chilkat_9_5_0.Ssh], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
 
 loChilkatVFPSsh = toChilkatVFPSsh
@@ -1011,7 +1019,7 @@ DO ChilkatVFPEventCallbackSetup
 ** Didn't pass an object test
 IF (NOT TYPE([loChilkatVFPSsh.Name]) == T_CHARACTER)
 
-  loChilkatVFPSsh = CREATEOBJECT([Ssh])
+  loChilkatVFPSsh = CREATEOBJECT([iSsh])
 
 ENDIF (NOT TYPE([loChilkatVFPSsh.Name]) == T_CHARACTER)
 ** End didn't pass an object test
@@ -1048,10 +1056,10 @@ ENDDEFINE
 PROCEDURE SshTunnelEventCallback
 ********************************
 
-LPARAMETERS toChilkatVFPSshTunnel AS [Chilkat_9_5_0.SshTunnel]
+LPARAMETERS toChilkatVFPSshTunnel AS [iSshTunnel OF iChilkat.VCX]
 
 LOCAL loSshTunnelEventHandler AS [SshTunnelEvents OF ChilkatVFPEventCallbacksPrev52.PRG], ;
-loChilkatVFPSshTunnel AS [SshTunnel OF Chilkat.VCX], ;
+loChilkatVFPSshTunnel AS [iSshTunnel OF iChilkat.VCX], ;
 loChilkatSshTunnel AS [Chilkat_9_5_0.SshTunnel], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
 
@@ -1064,7 +1072,7 @@ DO ChilkatVFPEventCallbackSetup
 ** Didn't pass an object test
 IF (NOT TYPE([loChilkatVFPSshTunnel.Name]) == T_CHARACTER)
 
-  loChilkatVFPSshTunnel = CREATEOBJECT([SshTunnel])
+  loChilkatVFPSshTunnel = CREATEOBJECT([iSshTunnel])
 
 ENDIF (NOT TYPE([loChilkatVFPSshTunnel.Name]) == T_CHARACTER)
 ** End didn't pass an object test
@@ -1101,10 +1109,10 @@ ENDDEFINE
 PROCEDURE TarEventCallback
 **************************
 
-LPARAMETERS toChilkatVFPTar AS [Chilkat_9_5_0.Tar]
+LPARAMETERS toChilkatVFPTar AS [iTar OF iChilkat.VCX]
 
 LOCAL loTarEventHandler AS [TarEvents OF ChilkatVFPEventCallbacksPrev52.PRG], ;
-loChilkatVFPTar AS [Tar OF Chilkat.VCX], loChilkatTar AS [Chilkat_9_5_0.Tar], ;
+loChilkatVFPTar AS [iTar OF iChilkat.VCX], loChilkatTar AS [Chilkat_9_5_0.Tar], ;
 loChilkatVFPEventHandler AS [iTarEventHandler OF Chilkat.VCX]
 
 loChilkatVFPTar = toChilkatVFPTar
@@ -1116,7 +1124,7 @@ DO ChilkatVFPEventCallbackSetup
 ** Didn't pass an object test
 IF (NOT TYPE([loChilkatVFPTar.Name]) == T_CHARACTER)
 
-  loChilkatVFPTar = CREATEOBJECT([Tar])
+  loChilkatVFPTar = CREATEOBJECT([iTar])
 
 ENDIF (NOT TYPE([loChilkatVFPTar.Name]) == T_CHARACTER)
 ** End didn't pass an object test
@@ -1158,10 +1166,10 @@ ENDDEFINE
 PROCEDURE TrustedRootsEventCallback
 ***********************************
 
-LPARAMETERS toChilkatVFPTrustedRoots AS [Chilkat_9_5_0.TrustedRoots]
+LPARAMETERS toChilkatVFPTrustedRoots AS [iTrustedRoots OF iChilkat.VCX]
 
 LOCAL loTrustedRootsEventHandler AS [TrustedRootsEvents OF ChilkatVFPEventCallbacksPrev52.PRG], ;
-loChilkatVFPTrustedRoots AS [TrustedRoots OF Chilkat.VCX], ;
+loChilkatVFPTrustedRoots AS [iTrustedRoots OF iChilkat.VCX], ;
 loChilkatTrustedRoots AS [Chilkat_9_5_0.TrustedRoots], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
 
@@ -1174,7 +1182,7 @@ DO ChilkatVFPEventCallbackSetup
 ** Didn't pass an object test
 IF (NOT TYPE([loChilkatVFPTrustedRoots.Name]) == T_CHARACTER)
 
-  loChilkatVFPTrustedRoots = CREATEOBJECT([TrustedRoots])
+  loChilkatVFPTrustedRoots = CREATEOBJECT([iTrustedRoots])
 
 ENDIF (NOT TYPE([loChilkatVFPTrustedRoots.Name]) == T_CHARACTER)
 ** End didn't pass an object test
@@ -1211,10 +1219,10 @@ ENDDEFINE
 PROCEDURE UnixCompressEventCallback
 ***********************************
 
-LPARAMETERS toChilkatVFPUnixCompress AS [Chilkat_9_5_0.UnixCompress]
+LPARAMETERS toChilkatVFPUnixCompress AS [iUnixCompress OF iChilkat.VCX]
 
 LOCAL loUnixCompressEventHandler AS [UnixCompressEvents OF ChilkatVFPEventCallbacksPrev52.PRG], ;
-loChilkatVFPUnixCompress AS [UnixCompress OF Chilkat.VCX], ;
+loChilkatVFPUnixCompress AS [iUnixCompress OF iChilkat.VCX], ;
 loChilkatUnixCompress AS [Chilkat_9_5_0.UnixCompress], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
 
@@ -1227,7 +1235,7 @@ DO ChilkatVFPEventCallbackSetup
 ** Didn't pass an object test
 IF (NOT TYPE([loChilkatVFPUnixCompress.Name]) == T_CHARACTER)
 
-  loChilkatVFPUnixCompress = CREATEOBJECT([UnixCompress])
+  loChilkatVFPUnixCompress = CREATEOBJECT([iUnixCompress])
 
 ENDIF (NOT TYPE([loChilkatVFPUnixCompress.Name]) == T_CHARACTER)
 ** End didn't pass an object test
@@ -1264,10 +1272,10 @@ ENDDEFINE
 PROCEDURE UploadEventCallback
 *****************************
 
-LPARAMETERS toChilkatVFPUpload AS [Chilkat_9_5_0.Upload]
+LPARAMETERS toChilkatVFPUpload AS [iUpload OF iChilkat.VCX]
 
 LOCAL loUploadEventHandler AS [UploadEvents OF ChilkatVFPEventCallbacksPrev52.PRG], ;
-loChilkatVFPUpload AS [Upload OF Chilkat.VCX], ;
+loChilkatVFPUpload AS [iUpload OF iChilkat.VCX], ;
 loChilkatUpload AS [Chilkat_9_5_0.Upload], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
 
@@ -1280,7 +1288,7 @@ DO ChilkatVFPEventCallbackSetup
 ** Didn't pass an object test
 IF (NOT TYPE([loChilkatVFPUpload.Name]) == T_CHARACTER)
 
-  loChilkatVFPUpload = CREATEOBJECT([Upload])
+  loChilkatVFPUpload = CREATEOBJECT([iUpload])
 
 ENDIF (NOT TYPE([loChilkatVFPUpload.Name]) == T_CHARACTER)
 ** End didn't pass an object test
@@ -1317,10 +1325,10 @@ ENDDEFINE
 PROCEDURE ZipEventCallback
 **************************
 
-LPARAMETERS toChilkatVFPZip AS [Chilkat_9_5_0.Zip]
+LPARAMETERS toChilkatVFPZip AS [iZip OF iChilkat.VCX]
 
 LOCAL loZipEventHandler AS [ZipEvents OF ChilkatVFPEventCallbacksPrev52.PRG], ;
-loChilkatVFPZip AS [Zip OF Chilkat.VCX], loChilkatZip AS [Chilkat_9_5_0.Zip], ;
+loChilkatVFPZip AS [iZip OF iChilkat.VCX], loChilkatZip AS [Chilkat_9_5_0.Zip], ;
 loChilkatVFPEventHandler AS [iZipEventHandler OF Chilkat.VCX]
 
 loChilkatVFPZip = toChilkatVFPZip
@@ -1332,7 +1340,7 @@ DO ChilkatVFPEventCallbackSetup
 ** Didn't pass an object test
 IF (NOT TYPE([loChilkatVFPZip.Name]) == T_CHARACTER)
 
-  loChilkatVFPZip = CREATEOBJECT([Zip])
+  loChilkatVFPZip = CREATEOBJECT([iZip])
 
 ENDIF (NOT TYPE([loChilkatVFPZip.Name]) == T_CHARACTER)
 ** End didn't pass an object test
@@ -1432,10 +1440,10 @@ ENDDEFINE
 PROCEDURE ZipCRCEventCallback
 *****************************
 
-LPARAMETERS toChilkatVFPZipCrc AS [Chilkat_9_5_0.ZipCrc]
+LPARAMETERS toChilkatVFPZipCrc AS [iZipCrc OF iChilkat.VCX]
 
 LOCAL loZipCrcEventHandler AS [ZipCrcEvents OF ChilkatVFPEventCallbacksPrev52.PRG], ;
-loChilkatVFPZipCrc AS [ZipCrc OF Chilkat.VCX], ;
+loChilkatVFPZipCrc AS [iZipCrc OF iChilkat.VCX], ;
 loChilkatZipCrc AS [Chilkat_9_5_0.ZipCrc], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
 
@@ -1448,7 +1456,7 @@ DO ChilkatVFPEventCallbackSetup
 ** Didn't pass an object test
 IF (NOT TYPE([loChilkatVFPZipCrc.Name]) == T_CHARACTER)
 
-  loChilkatVFPZipCrc = CREATEOBJECT([ZipCrc])
+  loChilkatVFPZipCrc = CREATEOBJECT([iZipCrc])
 
 ENDIF (NOT TYPE([loChilkatVFPZipCrc.Name]) == T_CHARACTER)
 ** End didn't pass an object test
@@ -1485,10 +1493,10 @@ ENDDEFINE
 PROCEDURE ZipEntryEventCallback
 *******************************
 
-LPARAMETERS toChilkatVFPZipEntry AS [Chilkat_9_5_0.ZipEntry]
+LPARAMETERS toChilkatVFPZipEntry AS [iZipEntry OF iChilkat.VCX]
 
 LOCAL loZipEntryEventHandler AS [ZipEntryEvents OF ChilkatVFPEventCallbacksPrev52.PRG], ;
-loChilkatVFPZipEntry AS [ZipEntry OF Chilkat.VCX], ;
+loChilkatVFPZipEntry AS [iZipEntry OF iChilkat.VCX], ;
 loChilkatZipEntry AS [Chilkat_9_5_0.ZipEntry], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
 
@@ -1501,7 +1509,7 @@ DO ChilkatVFPEventCallbackSetup
 ** Didn't pass an object test
 IF (NOT TYPE([loChilkatVFPZipEntry.Name]) == T_CHARACTER)
 
-  loChilkatVFPZipEntry = CREATEOBJECT([ZipEntry])
+  loChilkatVFPZipEntry = CREATEOBJECT([iZipEntry])
 
 ENDIF (NOT TYPE([loChilkatVFPZipEntry.Name]) == T_CHARACTER)
 ** End didn't pass an object test
