@@ -277,6 +277,16 @@ DEFINE CLASS idkim AS dkim OF "chilkat.vcx" 		&& Subclass of the ChilkatVFP DKIM
 
 ENDDEFINE
 
+DEFINE CLASS idns AS dns OF "chilkat.vcx" 		&& Subclass of the ChilkatVFP DNS class.
+ 	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
+
+	#INCLUDE "foxpro.h"
+	*<PropValue>
+		Name = "idns"
+	*</PropValue>
+
+ENDDEFINE
+
 DEFINE CLASS idsa AS dsa OF "chilkat.vcx" 		&& Subclass of the ChilkatVFP DSA class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
