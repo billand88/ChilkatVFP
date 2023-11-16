@@ -288,6 +288,71 @@ ENDPROC
 
 ENDDEFINE
 
+***************************
+PROCEDURE CertEventCallback
+***************************
+
+LPARAMETERS toChilkatVFPCert AS [iCert OF iChilkat.VCX]
+
+LOCAL loCertEventHandler AS [CertEvents OF ChilkatVFPEventCallbacks.PRG], ;
+loChilkatVFPCert AS [iCert OF iChilkat.VCX], ;
+loChilkatCert AS [Chilkat_9_5_0.Cert], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+
+loChilkatVFPCert = toChilkatVFPCert
+
+STORE NULL TO loCertEventHandler, loChilkatCert
+
+DO ChilkatVFPEventCallbackSetup
+
+** Didn't pass an object test
+IF (NOT TYPE([loChilkatVFPCert.Name]) == T_CHARACTER)
+
+  loChilkatVFPCert = CREATEOBJECT([iCert])
+
+ENDIF (NOT TYPE([loChilkatVFPCert.Name]) == T_CHARACTER)
+** End didn't pass an object test
+
+loCertEventHandler = CREATEOBJECT([CertEvents])
+
+WITH loChilkatVFPCert 
+
+  loChilkatCert = .oChilkat
+  loChilkatVFPEventHandler = .oEventHandler
+
+ENDWITH
+
+EVENTHANDLER(loChilkatCert, loCertEventHandler)
+
+DEFINE CLASS CertEvents AS SESSION OLEPUBLIC
+IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Cert"
+
+PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
+RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_BinaryData(tqData AS VarBinary)
+RETURN loChilkatVFPEventHandler.BinaryData(tqData)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_PercentDone(tiPercentDone AS Integer, tiAbort AS Integer)
+RETURN loChilkatVFPEventHandler.PercentDone(tiPercentDone, tiAbort)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character)
+RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_TextData(tcData AS Character)
+RETURN loChilkatVFPEventHandler.TextData(tcData)
+ENDPROC
+
+ENDDEFINE
+
 **********************************
 PROCEDURE CompressionEventCallback
 **********************************
@@ -455,6 +520,70 @@ EVENTHANDLER(loChilkatDkim, loDkimEventHandler)
 
 DEFINE CLASS DkimEvents AS SESSION OLEPUBLIC
 IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Dkim"
+
+PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
+RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_BinaryData(tqData AS VarBinary)
+RETURN loChilkatVFPEventHandler.BinaryData(tqData)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_PercentDone(tiPercentDone AS Integer, tiAbort AS Integer)
+RETURN loChilkatVFPEventHandler.PercentDone(tiPercentDone, tiAbort)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character)
+RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_TextData(tcData AS Character)
+RETURN loChilkatVFPEventHandler.TextData(tcData)
+ENDPROC
+
+ENDDEFINE
+
+**************************
+PROCEDURE DnsEventCallback
+**************************
+
+LPARAMETERS toChilkatVFPDns AS [iDns OF iChilkat.VCX]
+
+LOCAL loDnsEventHandler AS [DnsEvents OF ChilkatVFPEventCallbacks.PRG], ;
+loChilkatVFPDns AS [iDns OF iChilkat.VCX], loChilkatDns AS [Chilkat_9_5_0.Dns], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+
+loChilkatVFPDns = toChilkatVFPDns
+
+STORE NULL TO loDnsEventHandler, loChilkatDns
+
+DO ChilkatVFPEventCallbackSetup
+
+** Didn't pass an object test
+IF (NOT TYPE([loChilkatVFPDns.Name]) == T_CHARACTER)
+
+  loChilkatVFPDns = CREATEOBJECT([iDns])
+
+ENDIF (NOT TYPE([loChilkatVFPDns.Name]) == T_CHARACTER)
+** End didn't pass an object test
+
+loDnsEventHandler = CREATEOBJECT([DnsEvents])
+
+WITH loChilkatVFPDns 
+
+  loChilkatDns = .oChilkat
+  loChilkatVFPEventHandler = .oEventHandler
+
+ENDWITH
+
+EVENTHANDLER(loChilkatDns, loDnsEventHandler)
+
+DEFINE CLASS DnsEvents AS SESSION OLEPUBLIC
+IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Dns"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -1140,6 +1269,71 @@ ENDPROC
 
 ENDDEFINE
 
+*********************************
+PROCEDURE PrivateKeyEventCallback
+*********************************
+
+LPARAMETERS toChilkatVFPPrivateKey AS [iPrivateKey OF iChilkat.VCX]
+
+LOCAL loPrivateKeyEventHandler AS [PrivateKeyEvents OF ChilkatVFPEventCallbacks.PRG], ;
+loChilkatVFPPrivateKey AS [iPrivateKey OF iChilkat.VCX], ;
+loChilkatPrivateKey AS [Chilkat_9_5_0.PrivateKey], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+
+loChilkatVFPPrivateKey = toChilkatVFPPrivateKey
+
+STORE NULL TO loPrivateKeyEventHandler, loChilkatPrivateKey
+
+DO ChilkatVFPEventCallbackSetup
+
+** Didn't pass an object test
+IF (NOT TYPE([loChilkatVFPPrivateKey.Name]) == T_CHARACTER)
+
+  loChilkatVFPPrivateKey = CREATEOBJECT([iPrivateKey])
+
+ENDIF (NOT TYPE([loChilkatVFPPrivateKey.Name]) == T_CHARACTER)
+** End didn't pass an object test
+
+loPrivateKeyEventHandler = CREATEOBJECT([PrivateKeyEvents])
+
+WITH loChilkatVFPPrivateKey
+
+  loChilkatPrivateKey = .oChilkat
+  loChilkatVFPEventHandler = .oEventHandler
+
+ENDWITH
+
+EVENTHANDLER(loChilkatPrivateKey, loPrivateKeyEventHandler)
+
+DEFINE CLASS PrivateKeyEvents AS SESSION OLEPUBLIC
+IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.PrivateKey"
+
+PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
+RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_BinaryData(tqData AS VarBinary)
+RETURN loChilkatVFPEventHandler.BinaryData(tqData)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_PercentDone(tiPercentDone AS Integer, tiAbort AS Integer)
+RETURN loChilkatVFPEventHandler.PercentDone(tiPercentDone, tiAbort)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character)
+RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_TextData(tcData AS Character)
+RETURN loChilkatVFPEventHandler.TextData(tcData)
+ENDPROC
+
+ENDDEFINE
+
 ***************************
 PROCEDURE RestEventCallback
 ***************************
@@ -1565,7 +1759,6 @@ DEFINE CLASS SpiderEvents AS SESSION OLEPUBLIC
 IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Spider"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
-
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
 ENDPROC
 
