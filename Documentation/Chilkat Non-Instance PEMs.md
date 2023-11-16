@@ -240,6 +240,7 @@ The methods of the ValidateProperty class are:
 |HashAlgorithm_Crypt2| Method run to validate the data for the Crypt2 HashAlgorithm property. |
 |HashAlgorithm_CSR| Method run to validate the data for the CSR HashAlgorithm property. |
 |HAVALRounds| Method run to validate the data for the HAVALRounds property. |
+|HeartbeatMs| Method run to validate the data for the HeartbeatMs property. |
 |HostKeyAlg| Method run to validate the data for the HostKeyAlg property. |
 |Hour| Method run to validate the data for the Hour property. |
 |HTTPProxyAuthMethod| Method run to validate the data for the HTTPProxyAuthMethod property. |
@@ -250,6 +251,7 @@ The methods of the ValidateProperty class are:
 |MACAlgorithm| Method run to validate the data for the MACAlgorithm property. |
 |MaintainHash| Method run to validate the data for the MaintainHash property. |
 |MaxThreads| Method run to validate the data for the MaxThreads property. |
+|MaxWaitMs| Method run to validate the data for the MaxWaitMs property. |
 |MGFHashAlg| Method run to validate the data for the MGFHashAlg property. |
 |MicAlg| Method run to validate the data for the MicAlg property. |
 |Minute| Method run to validate the data for the Minute property. |
@@ -291,7 +293,9 @@ The methods of the ValidateProperty class are:
 |SOCKSVersion| Method run to validate the data for the SOCKSVersion property. |
 |SSLAllowedCiphers| Method run to validate the data for the SSLAllowedCiphers property. |
 |SSLProtocol| Method run to validate the data for the SSLProtocol property. |
-|StructTmMonth| Method run to validate the data for the StructTmMonth property. |
+|StructTmMonth| Method run to validate the data for the StructTmMonth property
+|TlsPref| Method run to validate the data for the TlsPref property. |
+|UncommonOptions_Cert| Method run to validate the data for the UncommonOptions property of the Cert object. |
 |UncommonOptions_Crypt2| Method run to validate the data for the UncommonOptions property of the Crypt2 object. |
 |UncommonOptions_Csv| Method run to validate the data for the UncommonOptions property of the Csv object. |
 |UncommonOptions_Email| Method run to validate the data for the UncommonOptions property of the Email object. |

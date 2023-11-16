@@ -59,7 +59,7 @@ llSeenDomainsObject = (TYPE([loSeenDomains.Name]) == T_CHARACTER)
 llSeedURLsObject = (TYPE([loSeedURLs.Name]) == T_CHARACTER)
 
 llOKToContinue = (llSpiderObject AND llSeenDomainsObject AND llSeedURLsObject)
-
+ 
 ** Okay to continue test
 IF llOKToContinue 
 

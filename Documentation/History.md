@@ -1,6 +1,21 @@
 
 ## History
 
+## Version 1.3
+*Released 11/15/2023*
+
+Completed version 96 compatibility changes. Version 96 is a pretty big release.
+
+This update includes the new DNS/iDNS classes in Chilkat.VCX/iChilkat.VCX. ChilkatVFPEventCallbacks.PRG gets three new event procedures. The new DNS class has Chilkat events, what about the other two? Cert and PrivateKey now have events (and Async() methods) starting in Chilkat version 96. But take note of that: Cert and PrivateKey classes do not have events prior to version 96. ChilkatVFP handles this distinction during event handling validation.
+
+As always, there's fixes and enhancements to the documentation. For instance, this update adds missing copyright notices in the documentation (not very exciting, I know). 
+
+Found about a dozen or so missing ChilkatVFP methods and properties between Chilkat versions 90 - 95. Turns out Chilkat's release notes will miss a few things.
+
+Some minor bug fixes done when stumbling around in the code.
+
+I'm told that some suggestions of mine will make the version 97 code base.
+
 ## Version 1.24
 *Released 10/13/2023*
 

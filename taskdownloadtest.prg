@@ -87,7 +87,7 @@ IF llOKToContinue
       ** Call worked test
       IF llMethodCallWorked
 
-       loTaskChain.Append(loChilkatTask)
+        loTaskChain.Append(loChilkatTask)
 
       ELSE
 

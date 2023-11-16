@@ -37,7 +37,7 @@ Recently I started another job based in the east coast that to my surprise used 
 
 # Chilkat Primer
 
-The full Chilkat library consists of 103 classes (one deprecated), containing properties, methods and events. ~~Events are ignored as documentation indicates it is not supported in Visual Foxpro.~~ A property or method can return the following: String, Variant, Long and DateTime (undocumented). Any Chilkat property or method can be read only or read/write. Chilkat properties/methods will return a 0 (false) or 1 (true) to indicate a Boolean value.
+The full Chilkat library consists of ~~103~~ 104 classes (one deprecated), containing properties, methods and events. ~~Events are ignored as documentation indicates it is not supported in Visual Foxpro.~~ A property or method can return the following: String, Variant, Long and DateTime (undocumented). Any Chilkat property or method can be read only or read/write. Chilkat properties/methods will return a 0 (false) or 1 (true) to indicate a Boolean value.
 
 # Class Browser Layout
 
@@ -46,7 +46,7 @@ The full Chilkat library consists of 103 classes (one deprecated), containing pr
  * Items of note:
     * The relevant class library matches the name of the Chilkat library. 
     * There's an empty iLayer class between all the "working" classes. You can put your own fixes/enhancements/changes here, as I am deliberately leaving these empty. There is one exception which I will explain below.
-        * I had added an iLayer for the instance classes but it made the class library too "muddy" - it was hard to see the forest from the trees, so to speak. Technically it'd be nice to make an iLayer for the instance classes you use - make an iCert class as a subclass of Cert, then instantiate iCert and using this newly made class for enhancements and fixes. But it isn't necessary, just recommended.
+        * I had added an iLayer for the instance classes but it made the class library too "muddy" - it was hard to see the forest from the trees, so to speak. Technically it'd be nice to make an iLayer for the instance classes you use (Note: Done!) - make an iCert class as a subclass of Cert, then instantiate iCert and using this newly made class for enhancements and fixes. But it isn't necessary, just recommended.
 
 # ChilkatVFP Primer
 
