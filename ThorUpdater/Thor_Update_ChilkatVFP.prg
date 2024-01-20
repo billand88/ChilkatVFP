@@ -63,12 +63,20 @@ return toUpdateObject
 procedure GetNotes
 local lcNotes
 text to lcNotes noshow
-My Project
+ChilkatVFP
 
 Project Manager: Bill Anderson
 
-This is a VFPX project that contains one VFP class library 
-to wrap the Chilkat library objects (https://www.chilkatsoft.com/).
+This is a VFPX project that contains one VFP class library to wrap the Chilkat library objects (https://www.chilkatsoft.com/).
+
+Version 1.31 Updates
+
+	1) Added "m." (mdots) to all the memory variables within Chilkat.VCX where necessary. 
+	2) Tweaked the copyright notice in the header to span multiple years.
+	3) BinData, IMAP and StringTable classes didn't compile cleanly. Fixed.
+	4) The SFTP Event handler code didn't bind as it was missing two methods. Fixed.
+	5) Added the ChilkatVFP By The Numbers document in the Documentation folder.
+	
 
 endtext
 return lcNotes

@@ -1,7 +1,7 @@
 *==============================================================================
 * Purpose:           ChilkatVFP Event Callbacks
 * Author:            Bill Anderson
-* Notice:            Copyright (c) 2022 The Anderson Files LLC, All Rights Reserved.
+* Notice:            Copyright (c) 2022 - 2024 The Anderson Files LLC, All Rights Reserved.
 * Returns:           Logical, indicating success.
 * Date Added:        10/07/2022
 *==============================================================================
@@ -655,7 +655,6 @@ ENDPROC
 PROCEDURE _IChilkatMailManEvents_EmailReceived(tcSubject AS Character, ;
 tcFromAddr AS Character, tcFromName AS Character, tcReturnPath AS Character, ;
 tcDate AS Character, tcUIDL AS Character, tiSizeInBytes AS Integer)
-
 RETURN loChilkatVFPEventHandler.EmailReceived(tcSubject, ;
 tcFromAddr, tcFromName, tcReturnPath, tcDate, tcUIDL, tiSizeInBytes)
 ENDPROC
@@ -940,6 +939,10 @@ PROCEDURE _IChilkatSFtpEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
 ENDPROC
 
+PROCEDURE _IChilkatSFtpEvents_DownloadRate(tiByteCount AS Integer, tiBytesPerSec AS Integer)
+RETURN loChilkatVFPEventHandler.DownloadRate(tiByteCount, tiBytesPerSec)
+ENDPROC
+
 PROCEDURE _IChilkatSFtpEvents_PercentDone(tiPercentDone AS Integer, tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.PercentDone(tiPercentDone, tiAbort)
 ENDPROC
@@ -950,6 +953,10 @@ ENDPROC
 
 PROCEDURE _IChilkatSFtpEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
+ENDPROC
+
+PROCEDURE _IChilkatSFtpEvents_UploadRate(tiByteCount AS Integer, tiBytesPerSec AS Integer)
+RETURN loChilkatVFPEventHandler.UploadRate(tiByteCount, tiBytesPerSec)
 ENDPROC
 
 ENDDEFINE

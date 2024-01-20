@@ -1,7 +1,7 @@
 *==============================================================================
 * Purpose:           SpiderTest.PRG
 * Author:            Bill Anderson
-* Notice:            Copyright (c) 2022 The Anderson Files LLC, All Rights Reserved.
+* Notice:            Copyright (c) 2022 - 2024 The Anderson Files LLC, All Rights Reserved.
 * Returns:           Logical, indicating success.
 * Date Added:        11/03/2022
 *==============================================================================
