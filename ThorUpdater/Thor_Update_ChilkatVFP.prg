@@ -67,7 +67,7 @@ ChilkatVFP
 
 Project Manager: Bill Anderson
 
-This is a VFPX project that contains one VFP class library to wrap the Chilkat library objects https://www.chilkatsoft.com
+This is a VFPX project that contains one VFP class library to wrap the Chilkat library objects at chilkatsoft.com.
 
 Version 1.31 Updates
 
