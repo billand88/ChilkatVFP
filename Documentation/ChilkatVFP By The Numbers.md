@@ -16,21 +16,21 @@ I ran the numbers and here's what I got:
 
 ChilkatVFP version - **1.31**
 
-Total Properties - **2413**
+Total Properties - **2414**
 
-Total Methods - **8606**
+Total Methods - **8608**
 
-Total Access methods - **2419**
+Total Access methods - **2420**
 
-Total Assign methods - **2419**
+Total Assign methods - **2420**
 
 --
 
-Total Elements - **11019**
+Total Elements - **11022**
 
 Total NonAccess/Assign Methods - **3768**
 
-Total Properties and NonAccess/Assign Methods - **6181**
+Total Properties and NonAccess/Assign Methods - **6182**
 
 --
 
