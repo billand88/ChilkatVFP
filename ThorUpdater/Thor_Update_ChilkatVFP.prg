@@ -65,18 +65,19 @@ local lcNotes
 text to lcNotes noshow
 ChilkatVFP
 
-Project Manager: Bill Anderson
+Project Manager: Bill Anderson - <chilkatvfp@gmail.com>
 
-This is a VFPX project that contains one VFP class library to wrap the Chilkat library objects at chilkatsoft.com.
+This is a VFPX project that contains one VFP class library to wrap the Chilkat library objects: https://www.chilkatsoft.com/
 
-Version 1.31 Updates
+Version 1.32 Updates
 
-	1) Added "m." (mdots) to all the memory variables within Chilkat.VCX where necessary. 
-	2) Tweaked the copyright notice in the header to span multiple years.
-	3) BinData, IMAP and StringTable classes didn't compile cleanly. Fixed.
-	4) The SFTP Event handler code didn't bind as it was missing two methods. Fixed.
-	5) Added the ChilkatVFP By The Numbers document in the Documentation folder.
-	
+  1) Added Version 97 compatibility, which includes the new CodeSign class.
+  2) The LogicalToBit method was fixed.
+  3) Added bug fixes and documentation fixes where I noticed them. 
+     See the History.md document for some details.
+  4) Added lots of documentation within the instance classes methods/properties. 
+  5) Added the ChilkatChangeLog method to all instance classes to serve as historical documentation. 
+     Cross referenced all the Chilkat release notes to their affected individual classes.
 
 endtext
 return lcNotes

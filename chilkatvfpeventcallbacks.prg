@@ -8,6 +8,11 @@
 
 #INCLUDE FoxPro.H
 
+**
+** Fixed for Version 29: Fixed the AbortCheck and PercentDone events for the Single-DLL ActiveX. 
+** These events did not fire. This was a problem that only affected the Single-DLL ActiveX.
+**
+
 **************************************
 PROCEDURE ChilkatVFPEventCallbackSetup
 **************************************
@@ -230,6 +235,10 @@ PROCEDURE Bz2EventCallback
 
 LPARAMETERS toChilkatVFPBz2 AS [iBz2 OF iChilkat.VCX]
 
+**
+** Fixed for Version 77: PercentDone callbacks were not working.
+** 
+
 LOCAL loBz2EventHandler AS [Bz2Events OF ChilkatVFPEventCallbacks.PRG], ;
 loChilkatVFPBz2 AS [iBz2 OF iChilkat.VCX], loChilkatBz2 AS [Chilkat_9_5_0.Bz2], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
@@ -326,6 +335,71 @@ EVENTHANDLER(loChilkatCert, loCertEventHandler)
 
 DEFINE CLASS CertEvents AS SESSION OLEPUBLIC
 IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Cert"
+
+PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
+RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_BinaryData(tqData AS VarBinary)
+RETURN loChilkatVFPEventHandler.BinaryData(tqData)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_PercentDone(tiPercentDone AS Integer, tiAbort AS Integer)
+RETURN loChilkatVFPEventHandler.PercentDone(tiPercentDone, tiAbort)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character)
+RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_TextData(tcData AS Character)
+RETURN loChilkatVFPEventHandler.TextData(tcData)
+ENDPROC
+
+ENDDEFINE
+
+*******************************
+PROCEDURE CodeSignEventCallback
+*******************************
+
+LPARAMETERS toChilkatVFPCodeSign AS [iCodeSign OF iChilkat.VCX]
+
+LOCAL loCodeSignEventHandler AS [CodeSignEvents OF ChilkatVFPEventCallbacks.PRG], ;
+loChilkatVFPCodeSign AS [iCodeSign OF iChilkat.VCX], ;
+loChilkatCodeSign AS [Chilkat_9_5_0.CodeSign], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+
+loChilkatVFPCodeSign = toChilkatVFPCodeSign
+
+STORE NULL TO loCodeSignEventHandler, loChilkatCodeSign
+
+DO ChilkatVFPEventCallbackSetup
+
+** Didn't pass an object test
+IF (NOT TYPE([loChilkatVFPCodeSign.Name]) == T_CHARACTER)
+
+  loChilkatVFPCodeSign = CREATEOBJECT([iCodeSign])
+
+ENDIF (NOT TYPE([loChilkatVFPCodeSign.Name]) == T_CHARACTER)
+** End didn't pass an object test
+
+loCodeSignEventHandler = CREATEOBJECT([CodeSignEvents])
+
+WITH loChilkatVFPCodeSign 
+
+  loChilkatCodeSign = .oChilkat
+  loChilkatVFPEventHandler = .oEventHandler
+
+ENDWITH
+
+EVENTHANDLER(loChilkatCodeSign, loCodeSignEventHandler)
+
+DEFINE CLASS CodeSignEvents AS SESSION OLEPUBLIC
+IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.CodeSign"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -617,6 +691,21 @@ PROCEDURE FTP2EventCallback
 
 LPARAMETERS toChilkatVFPFtp2 AS [iFtp2 OF iChilkat.VCX]
 
+**
+** Enhancement for Version 47: Ensured that a final DownloadRate event callback 
+** happens at the end of an operation to provide a final rate and byte count.
+** 
+** Fixed for Version 49: UploadRate/DownloadRate events stopped at 4GB.
+**
+** Fixed for Version 49: FTP resume/restart percent-done progress monitoring fixed.
+**
+** Fixed for Version 51: The control/command connection is maintained (if possible) 
+** when an upload or download is aborted. Previously, a file transfer aborted 
+** by an application event callback caused the command connection to also be aborted.
+**
+** Fixed for Version 59: Fixed SyncRemoteTree/SyncRemoteTree2 progress monitoring callbacks.
+**
+
 LOCAL loFtp2EventHandler AS [Ftp2Events OF ChilkatVFPEventCallbacks.PRG], ;
 loChilkatVFPFtp2 AS [iFtp2 OF iChilkat.VCX], loChilkatFtp2 AS [Chilkat_9_5_0.Ftp2], ;
 loChilkatVFPEventHandler AS [iFtp2EventHandler OF Chilkat.VCX]
@@ -784,6 +873,27 @@ PROCEDURE HttpEventCallback
 ***************************
 
 LPARAMETERS toChilkatVFPHttp AS [iHttp OF iChilkat.VCX]
+
+**
+** Fixed for Version 32: For HTTP requests that have KeepAlive indicated in the response header, 
+** the internal connection is not closed so that a subsequent request may continue 
+** using the existing connection. However, when the client application aborts in the middle 
+** of receiving the response, the connection must be closed to avoid being left in an invalid state 
+** (where the some of the remainder of the aborted request may have already been received 
+** and would incorrectly be read as the first bytes of the nexxt response). 
+** The internal fix was to always close the connection after an abort (AbortCheck) 
+** so that the next HTTP operation starts afresh on a new connection.
+**
+** Fixed for Version 35: The PercentDone callback always began at 0 when resuming a download. 
+** If a partial file exists locally, and the download is resumed, 
+** the percent done now begins at the place based on the size of the partial file. 
+** (If 50% of the file already exists, then the percent done begins at 50%)
+** 
+** Enhancement for Version 46: The percent done event will track the sending of the HTTP request 
+** (i.e. the upload) rather than the receiving of the HTTP request. 
+** The choice of whether percent-done tracks the request or response is automatic 
+** and is determined by the size of the request.
+** 
 
 LOCAL loHttpEventHandler AS [HttpEvents OF ChilkatVFPEventCallbacks.PRG], ;
 loChilkatVFPHttp AS [iHttp OF iChilkat.VCX], loChilkatHttp AS [Chilkat_9_5_0.Http], ;
@@ -1595,6 +1705,13 @@ PROCEDURE SFtpEventCallback
 
 LPARAMETERS toChilkatVFPSFtp AS [iSFtp OF iChilkat.VCX]
 
+**
+** Enhancement for Version 47: Ensured that a final DownloadRate event callback 
+** happens at the end of an operation to provide a final rate and byte count.
+**
+** Fixed for version 73: The SyncTreeDownload method was not firing the DownloadRate callback.
+** 
+
 LOCAL loSFtpEventHandler AS [SFtpEvents OF ChilkatVFPEventCallbacks.PRG], ;
 loChilkatVFPSFtp AS [iSFtp OF iChilkat.VCX], loChilkatSFtp AS [Chilkat_9_5_0.SFtp], ;
 loChilkatVFPEventHandler AS [iSFtpEventHandler OF Chilkat.VCX]
@@ -2318,6 +2435,15 @@ PROCEDURE ZipEventCallback
 **************************
 
 LPARAMETERS toChilkatVFPZip AS [iZip OF iChilkat.VCX]
+
+**
+** Fixed for Version 48: For files skipped because of access-denied or file-not-found, 
+** the FileZipped event fired when it should not have. This was fixed, 
+** and in addition a ProgressInfo event was added for each occurance, 
+** using the names “fileAccessDenied” and “fileNotFound”. 
+** (Each Progress info event has two params: a name and value 
+** where the name identifies the event, and the value contains information specific to the event.)
+** 
 
 LOCAL loZipEventHandler AS [ZipEvents OF ChilkatVFPEventCallbacks.PRG], ;
 loChilkatVFPZip AS [iZip OF iChilkat.VCX], loChilkatZip AS [Chilkat_9_5_0.Zip], ;

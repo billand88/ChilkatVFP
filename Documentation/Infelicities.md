@@ -2,7 +2,7 @@
 
 1) The Chilkat VFP library does not come with subclasses for the Chilkat named classes.
 One day I made the 103 subclasses (now 104). The next day I looked at the ChilkatVFP class library in the class browser. I removed them. 
-Somewhere else I describe it as "muddy". The VFP Class Browser gives a high-level overview of how things are structured, and these subclasses made it more difficult to see how the full class library was organized. (Note: Starting in version 1.22 there is an included iChilkat.VCX which subclasses the ~~103~~ 104 ChilkatVFP instance classes.)
+Somewhere else I describe it as "muddy". The VFP Class Browser gives a high-level overview of how things are structured, and these subclasses made it more difficult to see how the full class library was organized. (Note: Starting in version 1.22 there is an included iChilkat.VCX which subclasses the ~~103~~ 105 ChilkatVFP instance classes.)
 
 2) In some cases, the Chilkat documentation indicates a property or method exists when that is simply not the case. This doesn't happen often, but it's there. In this case I followed the documentation and added it. Some examples: SFTPDir and SFTPFile are both missing LastBinaryResult and LastStringResultLen for starters. Crypt2 is missing a lot of documented ASync methods. (Note: These are fixed in more recent versions of Chilkat.)
 

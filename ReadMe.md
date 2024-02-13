@@ -37,7 +37,7 @@ Recently I started another job based in the east coast that to my surprise used 
 
 # Chilkat Primer
 
-The full Chilkat library consists of ~~103~~ 104 classes (one deprecated), containing properties, methods and events. ~~Events are ignored as documentation indicates it is not supported in Visual Foxpro.~~ A property or method can return the following: String, Variant, Long and DateTime (undocumented). Any Chilkat property or method can be read only or read/write. Chilkat properties/methods will return a 0 (false) or 1 (true) to indicate a Boolean value.
+The full Chilkat library consists of ~~103~~ 105 classes (two deprecated), containing properties, methods and events. ~~Events are ignored as documentation indicates it is not supported in Visual Foxpro.~~ A property or method can return the following: String, Variant, Long and DateTime (undocumented). Any Chilkat property or method can be read only or read/write. Chilkat properties/methods will return a 0 (false) or 1 (true) to indicate a Boolean value.
 
 # Class Browser Layout
 

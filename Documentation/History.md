@@ -1,6 +1,17 @@
 
 ## History
 
+## Version 1.32
+*Released 02/13/2024*
+
+Added Version 97 compatibility (Version 97 was released on 01/31/2024) such as the new CodeSign class. Fixed code bugs and documentation bugs when I ran into them (For instance, the DNS.cChilkatClass property was incorrectly set; there were a couple methods with "...**En**code..." in the Chilkat method name, but the VFP code indicated "...Code...""). 
+
+The LogicalToBit method was fixed.
+
+Added lots of documentation within the instance classes. 
+
+Added the ChilkatChangeLog method to all instance classes to serve as historical documentation. Cross referenced all the Chilkat release notes to their affected individual classes.
+
 ## Version 1.31
 *Released 01/20/2024*
 

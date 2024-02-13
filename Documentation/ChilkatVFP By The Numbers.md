@@ -14,23 +14,23 @@ Note that the totals are somewhat skewed. When I match a Chilkat method in Chilk
 
 I ran the numbers and here's what I got:
 
-ChilkatVFP version - **1.31**
+ChilkatVFP version - **1.32**
 
-Total Properties - **2414**
+Total Properties - **2427**
 
-Total Methods - **8608**
+Total Methods - **8643**
 
-Total Access methods - **2420**
+Total Access methods - **2433**
 
-Total Assign methods - **2420**
+Total Assign methods - **2433**
 
 --
 
-Total Elements - **11022**
+Total Elements - **11070**
 
-Total NonAccess/Assign Methods - **3768**
+Total NonAccess/Assign Methods - **3777**
 
-Total Properties and NonAccess/Assign Methods - **6182**
+Total Properties and NonAccess/Assign Methods - **6204**
 
 --
 
@@ -46,7 +46,7 @@ If you wish to make VFP 9 as flaky as can be, try to add an Access method to the
 
 VFP is not happy. 
 
-A couple things. Instantiating an object with an Access/Assign method on the Name property will trigger the Name Access method. The ChilkatVFP object instantiation tries to first set up oMsgSvc (I think, looking at the code. I don't care to try this again...). When it reached the end of the oMsgSvc Access method, the Name Access method ran three times and then hung. 
+A couple things. Instantiating a ChilkatVFP object with an Access/Assign method on the Name property will trigger the Name Access method. The ChilkatVFP object instantiation (in this case, MIME) tries to first set up oMsgSvc (I think, looking at the code. I don't care to try this again...). When it reached the end of the oMsgSvc Access method, the Name Access method ran three times and then hung. 
 
 That's rather odd... I reran it several times to ensure I wasn't hallucinating. I wasn't.
 
@@ -58,4 +58,4 @@ I got a few things out of this exercise: 1) Internally, ASTACKINFO() is internal
 
 --
 
-The ChilkatVFP MailMan AutoFixSettings method is not a method with a direct mapping to a Chilkat Mailman method. When a ChilkatVFP Mailman connection is made, this method is called to set other values on the ChilkatVFP object. There may be other methods like this within ChilkatVFP but this is the only one I can remember offhand.
+The ChilkatVFP MailMan AutoFixSettings method is not a method with a direct mapping to a Chilkat Mailman method. When a ChilkatVFP Mailman connection is made, this method is called to set other values on the ChilkatVFP object. And in Version 1.32 I added the ChilkatChangeLog method. There may be other methods like this within ChilkatVFP but these are the only one I can remember offhand.

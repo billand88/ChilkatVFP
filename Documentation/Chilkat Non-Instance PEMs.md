@@ -296,6 +296,7 @@ The methods of the ValidateProperty class are:
 |StructTmMonth| Method run to validate the data for the StructTmMonth property
 |TlsPref| Method run to validate the data for the TlsPref property. |
 |UncommonOptions_Cert| Method run to validate the data for the UncommonOptions property of the Cert object. |
+|UncommonOptions_CodeSign| Method run to validate the data for the UncommonOptions property of the CodeSign object. |
 |UncommonOptions_Crypt2| Method run to validate the data for the UncommonOptions property of the Crypt2 object. |
 |UncommonOptions_Csv| Method run to validate the data for the UncommonOptions property of the Csv object. |
 |UncommonOptions_Email| Method run to validate the data for the UncommonOptions property of the Email object. |
