@@ -69,15 +69,10 @@ Project Manager: Bill Anderson - <chilkatvfp@gmail.com>
 
 This is a VFPX project that contains one VFP class library to wrap the Chilkat library objects: https://www.chilkatsoft.com/
 
-Version 1.32 Updates
+Version 1.33 Updates
 
-  1) Added Version 97 compatibility, which includes the new CodeSign class.
-  2) The LogicalToBit method was fixed.
-  3) Added bug fixes and documentation fixes where I noticed them. 
-     See the History.md document for some details.
-  4) Added lots of documentation within the instance classes methods/properties. 
-  5) Added the ChilkatChangeLog method to all instance classes to serve as historical documentation. 
-     Cross referenced all the Chilkat release notes to their affected individual classes.
+  1) Added Chilkat Version 98 compatibility
+  2) Added integrated multi-language support.
 
 endtext
 return lcNotes

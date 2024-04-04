@@ -1,6 +1,18 @@
 
 ## History
 
+## Version 1.33
+*Released 04/04/2024*
+
+The last big change I had to work on was a true integration of MsgSvc. This involved minor modifications of MsgSvc, now named ChMsgSvc. So the MsgSvc program will be deprecated and replaced with ChMsgSvc.PRG.
+
+There's a new instance class property called **cMsgSvcLanguage**. This property references the MsgSvc.DBF field to retrieve for message displays. The default value is "Original", pointing to the MsgSvc.cOriginal field (English). Other supported values are "French", "Spanish", "German" and "Test". 
+For my international users, please let me know if the translations work for you. If you would like me to add a language or fix translations, please send me an email at chilkatvfp@gmail.com.
+
+There is Chilkat version 98 support. This appears to be more of a Chilkat bug fix version. I can only find two new properties in this version, and no new methods (there are several new UncommonOptions clauses). One of them - CodeSign.HeartBeatMs - I recommended to ChilkatSoft.
+
+There is a new document in the Documentation folder, "Using the Chilkat Class Library". This document goes over some solutions for implementing a language change within ChilkatVFP. 
+
 ## Version 1.32
 *Released 02/13/2024*
 

@@ -38,6 +38,7 @@ The properties of the BaseChilkat class are:
 |cChilkatObjectPrefix| The Chilkat prefix as part of the Chilkat object name to instantiate. |
 |cChilkatProperty| Property used to set the Chilkat property name if it differs from the Visual Foxpro property name. |
 |cEventHandlerClass| The class name of the event handler, if relevant. | 
+|cMsgSvcLanguage| Property used to hold the name of the language used for MsgSvc dialogs. Currently supports the value of Original (English), French, German, Spanish and Test. |
 |cScratch| Scratch character variable.|
 |GetImplAddrStr| Undocumented property! It looks like a memory address to the specific class. |
 |iBuildNumber| Integer property used to hold the build number for the Chilkat object. |

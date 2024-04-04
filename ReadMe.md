@@ -63,7 +63,7 @@ The full Chilkat library consists of ~~103~~ 105 classes (two deprecated), conta
 There already some methods and properties in place for the next release version, 9.5.0.95.
 * If relevant, properties that only return a certain set of values or a range of values are validated against the documented set/range of values. This is true even if a specific value or keywords were introduced in a specific version. 
 * You can return .T./.F. from a method or property to represent a Boolean value with a property setting on the ChilkatVFP instance object [lReturnBitAsLogical].
-* Integrated Steven Black's MsgSvc() for message displays.
+* Integrated Steven Black's MsgSvc() for message displays (Modified: Now named ChMsgSvc()).
 * You can send a .T./.F. to a ChilkatVFP method for a Boolean parameter and it will be automatically converted for you.
 * You can send a ChilkatVFP object to a Chilkat method for a Chilkat object parameter and it will automatically be sent for you.
 * All ChilkatVFP objects contain a Release() method to destroy objects as necessary.
