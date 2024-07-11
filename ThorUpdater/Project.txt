@@ -1,5 +1,5 @@
 appName = ChilkatVFP
 appID = ChilkatVFP
-majorVersion = 1.33
+majorVersion = 1.34
 excludeFiles = *.bak,*.fxp,README.md,.gitignore
 excludeFolders = *ThorUpdater*

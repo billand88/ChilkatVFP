@@ -1,6 +1,13 @@
 
 ## History
 
+## Version 1.34
+*Released 07/10/2024*
+
+Chilkat version 99 compatibility release.
+
+Also added the enhancement/bug fix notes in the method documentation to the associated *ASync method if such a method existed.
+
 ## Version 1.33
 *Released 04/04/2024*
 

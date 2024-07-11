@@ -310,6 +310,7 @@ The methods of the ValidateProperty class are:
 |UncommonOptions_OAuth2| Method run to validate the data for the UncommonOptions property of the OAuth2 object. |
 |UncommonOptions_PDF| Method run to validate the data for the UncommonOptions property of the PDF object. |
 |UncommonOptions_PFX| Method run to validate the data for the PFX UncommonOptions property. |
+|UncommonOptions_Pkcs11| Method run to validate the data for the Pkcs11 UncommonOptions property. |
 |UncommonOptions_Rest| Method run to validate the data for the UncommonOptions property of the Rest object. |
 |UncommonOptions_SCP| Method run to validate the data for the UncommonOptions property of the SCP object. |
 |UncommonOptions_SFTP| Method run to validate the data for the UncommonOptions property of the SFTP object. |
