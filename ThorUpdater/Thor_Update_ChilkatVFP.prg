@@ -69,9 +69,14 @@ Project Manager: Bill Anderson - <chilkatvfp@gmail.com>
 
 This is a VFPX project that contains one VFP class library to wrap the Chilkat library objects: https://www.chilkatsoft.com/
 
-Version 1.34 Updates
+Version 1.40 Updates
 
- Added Chilkat Version 99 compatibility
+  1) Changed the main ChilkatVFP class library name to ChilkatVFP.VCX.
+  2) Many changes to support Chilkat Version 10 compatibility.
+  3) Added support for new versioning technique.
+  4) Added the Secrets class.
+  5) Added class retirement support.
+  
 
 endtext
 return lcNotes

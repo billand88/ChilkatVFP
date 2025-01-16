@@ -1,0 +1,131 @@
+
+### Version 1.40 -- Released 01/14/2025
+
+* Changed the name of the main ChilkatVFP library from Chilkat.VCX to ChilkatVFP.VCX.
+
+* Chilkat 10.0.0/Chilkat 10.1.0 compatibility release. Note the versioning format changed from 9.5.0.xx (where only "xx" incremented) to 10.0.0 (where all digits have meaning).
+
+* New (internal) Versioning class to handle version calculations across the two different versioning formats.
+
+* Changed processing to handle versioning calculations across both formats.
+
+* Added class retirement support.
+
+### Version 1.34 -- Released 07/10/2024
+
+* Chilkat version 99 compatibility release.
+
+* Also added the enhancement/bug fix notes in the method documentation to the associated *ASync method if such a method existed.
+
+
+### Version 1.33 -- Released 04/04/2024
+
+
+* Built and incorporated a modified MsgSvc to work with ChilkatVFP. MsgSvc deprecated.
+
+* Added the cMsgSvcLanguage property for the Chilkat instance classes.
+
+* Some Chilkat Version 98 compatibility.
+
+* Added the document "Using the Chilkat Class Library".
+ 
+
+### Version 1.32 -- Released 02/13/2024
+
+
+* Added Version 97 compatibility. Added new CodeSign class.
+
+* Fixed code bugs and documentation bugs.
+
+
+### Version 1.31 -- Released 01/20/2024
+
+
+* Internal fix: Based on Rick Schummer's session at Southwest Fox October 2023, I added "m." (mdots) to all the memory variables within Chilkat.VCX where necessary.
+
+* The StringTable, BinData and IMAP classes didn't even compile cleanly.
+
+* The SFTP event handling was fixed.
+
+* Added two Chilkat version 97 properties to ChilkatVFP.
+
+
+### Version 1.3 -- Released 11/15/2023
+
+
+* Completed version 96 compatibility changes. Added the DNS class. Added support for Cert and PrivateKey events support.
+
+* Found about a dozen or so missing ChilkatVFP methods and properties between Chilkat versions 90 - 95.
+
+
+### Version 1.24 -- Released 10/13/2023
+
+
+* Found several additional Chilkat classes that lacked a Version property (and thereby couldn't instantiate correctly in ChilkatVFP). 
+
+* Added a TaskDownloadTest program to demonstrate very basic tasking. Adjusted some example programs to use iChilkat.VCX. Minor documentation fixes. 
+
+
+### Version 1.23 -- Released 08/24/2023
+
+
+* Finished off compatibility changes for Chilkat version 95. Added one version 96 method.
+
+
+### Version 1.22 -- Released 07/18/2023
+
+
+* Minor update.
+
+* Added iChilkat.VCT/VCX which subclasses the iBaseChilkat instance classes. Use these to instantiate your ChilkatVFP Chilkat classes in code. 
+
+* The cEventHandler class was set incorrectly for several classes. A few version 95 methods were added.
+
+
+### Version 1.21 -- Released 04/19/2023
+
+
+* Chilkat version 94 compatibility and a couple of minor fixes.
+
+
+### Version 1.2
+
+
+* Enhancement: You can now pass a ChilkatVFP object as an object parameter to a ChilkatVFP method. 
+
+* Bug Fix/Enhancement: In code, calling properties (and presumably methods) before their implementation would simply fail (which is what should happen since the Chilkat object doesn't have it yet). Now you are told why it failed.
+
+* Within the code, the object naming conventions got more consistent.
+
+
+### Version 1.11 
+
+
+* Bug fix version. BinData/StringBuilder class couldn't be instantiated. 
+
+* Added support for 5 recent Chilkat classes.
+
+* Event code updated to support new classes.
+
+
+### Version 1.1 -- Released 11/04/2022
+
+
+* Added support for all Chilkat event callbacks. Added document "How Events Work".
+
+* Added the cEventHandlerClass, lAddEventHandler and oEventHandler properties to the BaseChilkat class. Added the BaseEventHandler class and about a dozen subclasses to support Chilkat event callbacks.
+
+* ChilkatVFPEventCallbacks.PRG, ChilkatVFPEventCallbacksPreV52.PRG and ChilkatVFPEventCallbacksPreV58.PRG are added to support Chilkat event callbacks. SpiderTest.PRG included as a Chilkat event callback implementation example.
+
+
+### Version 1.01 -- Released 10/16/2022
+
+
+* Finished version 92 compatibility. 
+* Found some Chilkat behavior changes in prior versions and coded for them.
+
+
+### Version 1.0 -- Released 09/18/2022
+
+
+* The initial release! 

@@ -1,5 +1,34 @@
+ History
 
-## History
+## Version 1.40
+
+*Released 01/14/2025*
+
+Well, Chilkat is changing and ChilkatVFP needs to follow suit. 
+
+First off: It turns out I need to change the name of the main library from Chilkat.VCX to ChilkatVFP.VCX. The reason why is explained in this [document](Class%20Library%20Name%20Change.md).
+
+Chilkat is changing how they do versioning. The Chilkat objects for version 99 would return "9.5.0.xx" where "xx" represented the version for the Version property. Starting with the *next* Chilkat version, Chilkat will return xx.yy.zz where "xx" represents the major version, "yy" represents the minor version, and "zz" represents a patch version. As I write this, the Version property returns "10.0.0".
+
+Not only is the major version in the front and not at the end, Chilkat 1.34 had no concept of major or minor versions. There was only "version" at the end, the rest was static.
+
+Chilkat will support both naming conventions for version 10 only. Starting with version 11.0.0, the old naming convention will be dropped. But ChilkatVFP needs to support both.
+
+The other permutation is it will break Events. Or better stated, there needs to be a separate set of Chilkat Event classes that support version 11.0.0 and above. The Chilkat COM definition has changed.
+
+--
+
+The internal mechanism for testing versioning has had to change with the version format change. To support this, there is a new Versioning object to do the appropriate calculations. Some of the methods contained in the BaseChilkat class have moved to the Versioning object.
+
+--
+
+Added new Secrets class arriving in Chilkat version 10.1.0. 
+
+Added the ability to support Chilkat class retirements coming in version 11. Added a MsgSvc record pertaining to class retirements.
+
+Changed all source code to support the new versioning.
+
+Found two classes that didn't get the "m." prefix for variables as described in Version 1.31 changes as well as other random missed methods.
 
 ## Version 1.34
 *Released 07/10/2024*

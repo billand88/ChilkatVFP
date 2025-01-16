@@ -2,9 +2,9 @@ lparameters toUpdateObject
 local ldDate, ;
 	lnJulian, ;
 	lcJulian
-ldDate   = date(2024,07,10)
+ldDate   = date(2025,01,14)
 lnJulian = val(sys(11, ldDate)) - val(sys(11, {^2000-01-01}))
 lcJulian = padl(transform(lnJulian), 4, '0')
-toUpdateObject.AvailableVersion = 'ChilkatVFP-1.34.' + lcJulian + ;
+toUpdateObject.AvailableVersion = 'ChilkatVFP-1.40.' + lcJulian + ;
 	'-update-' + dtoc(ldDate, 1)
 return toUpdateObject

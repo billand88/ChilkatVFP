@@ -379,4 +379,4 @@ If the "work" is done successfully, call the _post method to "report" the succes
 
 OK, but why? Think of every decision point within your hook. Can that decision point be its' own hook? And so on. Thinking in hooks and how to put the pieces together becomes an assemblage of Lego blocks or Tinkertoys, ripe for reuse. See? Shangri-La is a fun place to be!
 
-#### Contact: chilkat VFP at gmail dot com.
+#### Contact: chilkatVFP at gmail dot com.

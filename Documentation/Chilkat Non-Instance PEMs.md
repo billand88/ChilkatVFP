@@ -41,15 +41,27 @@ The properties of the BaseChilkat class are:
 |cMsgSvcLanguage| Property used to hold the name of the language used for MsgSvc dialogs. Currently supports the value of Original (English), French, German, Spanish and Test. |
 |cScratch| Scratch character variable.|
 |GetImplAddrStr| Undocumented property! It looks like a memory address to the specific class. |
-|iBuildNumber| Integer property used to hold the build number for the Chilkat object. |
-|iInstanceBuildNumber| The instance object build number, if relevant. |
+|iBuildMajor|Property used to hold the major version of the running Chilkat version for this object.|
+|iBuildMinor|Property used to hold the minor version of the running Chilkat version for this object.|
+|iBuildNumber| Integer property used to hold the build number for the Chilkat object. (*Note: This will be removed in a future ChilkatVFP version.*) |
+|iBuildPatch|Property used to hold the patch version of the running Chilkat version for this object.|
+|iCalculatedBuildNumber|Method used to generate a build number that can be used for comparisons.|
+|iInstanceBuildNumber| The instance object build number, if relevant. (*Note: This will be removed in a future ChilkatVFP version.*)|
+|iInstanceMajor|Property used to hold the major version number of when the Chilkat object existed.|
+|iInstanceMajor|Property used to hold the minor version number of when the Chilkat object existed.|
+|iInstancePatch|Property used to hold the patch version number of when the Chilkat object existed.|
+|iRetirementMajor|Property used to hold the major version number of when the Chilkat object is retired, if ever.|
+|iRetirementMinor|Property used to hold the minor version number of when the Chilkat object is retired, if ever.|
+|iRetirementPatch|Property used to hold the patch version number of when the Chilkat object is retired, if ever.|
 |lAddEventHandler| Logical property used to determine if the Chilkat object (oChilkat) will add an event handler, if relevant. |
 |lReturnBitAsLogical| Property used to determine that bit values are returned as a Visual Foxpro logical value. |
+|lSupportsSemanticVersioning|Logical property used to determine if the Chilkat object supports semantic versioning.|
 |oChilkat| The reference to the actual Chilkat object. |
 |oEventHandler| Object property used to hold a reference to the Chilkat event handler, if relevant. |
 |oMsgSvc| Object property used to hold a references to the MsgSvc object. |
 |oProcess_Access| Object property used to hold a reference to the Process_Access object. |
 |oProcess_Assign| Object property used to hold a reference to the Process_Assign object. |
+|oVersioning|Object property used to handle versioning calculations.|
 |qScratch| Scratch VarBinary variable.|
 |Version| Version of the component/library, such as "9.5.0.63" |
 
@@ -63,17 +75,29 @@ The methods of the BaseChilkat class are:
 |CallAssignObject| Method run from property assign methods to run generic property type methods from the Process_Assign object. |
 |CallToChilkatError| Method run when the call to Chilkat's method fails for some reason. |
 |cChilkatClass_Assign| Assign method used to retrieve the cChilkatClass property. |
+|cEventHandlerClass_Assign|Assign method used to determine that the event handler class is returned as a character value.|
+|ChilkatChangeLog|Documentation method used to hold the Chilkat class changes per release version.|
 |GetBuildNumber| Method used to determine the build number of the Chilkat object. |
 |GetChilkatObject| Method run to retrieve or create the Chilkat object. |
+|GetChilkatVersionObject|Method used to return a Chilkat object that contains a Version property.|
 |GetImplAddrStr_Access| Access method used to retrieve the GetImplAddrStr property. |
 |GetImplAddrStr_Assign| Assign method used to hold the GetImplAddrStr property of the referenced Chilkat object. |
-|iBuildNumber_Access| Access method used to retrieve the iBuildNumber property. |
-|iBuildNumber_Assign| Assign method used to hold the iBuildNumber property, generated from the Version number of the Chilkat object. |
+|iBuildNumber_Access| Access method used to retrieve the iBuildNumber property. (*Note: This will be removed in a future ChilkatVFP version.*)|
+|iBuildNumber_Assign| Assign method used to hold the iBuildNumber property, generated from the Version number of the Chilkat object. (*Note: This will be removed in a future ChilkatVFP version.*)|
+|iCalculatedBuildNumber_Access|Access method used to retrieve the iCalculatedBuildNumber property.|
 |Init_Post | Method used to run a post-initialization process. |
-|iInstanceBuildNumber_Assign| Assign method used to retrieve the iInstanceBuildNumber property. |
+|iInstanceBuildNumber_Assign| Assign method used to retrieve the iInstanceBuildNumber property. (*Note: This will be removed in a future ChilkatVFP version.*)|
+|iInstanceMajor_Assign|Access method used to retrieve the iInstanceMajor property.|
+|iInstanceMinor_Assign|Access method used to retrieve the iInstanceMinor property.|
+|iInstancePatch_Assign|Access method used to retrieve the iInstancePatch property.|
 |InitializeMsgSvc| Method run to initialize MsgSvc. |
+|iRetirementMajor_Assign|Access method used to retrieve the iRetirementMajor property.|
+|iRetirementMinor_Assign|Access method used to retrieve the iRetirementMinor property.|
+|iRetirementPatch_Assign|Access method used to retrieve the iRetirementPatch property.|
 |IsImplemented| Method used to determine if the method or property being referenced has been implemented in the current version of the object. |
-|IsInstance| Method used to determine if class being referenced has been implemented in the current version of the software. |
+|IsInstance| Method used to determine if class being referenced has been implemented in the current version of the software. (*Note: This will be removed in a future ChilkatVFP version.*)|
+|IsPEMImplemented|Method used to determine if the method or property being referenced has been implemented in the current version of the object.|
+|IsRetired|Method used to determine if the object has been retired (deprecated).|
 |LogicalToBit| Method run to covert a logical value to bit. |
 |lAddEventHandler_Assign| Assign method used to determine that an event handler will be bound to the Chilkat object. |
 |lReturnBitAsLogical_Assign| Assign method used to determine that bit values are returned as a Visual Foxpro logical value. |
@@ -82,6 +106,8 @@ The methods of the BaseChilkat class are:
 |oEventHandler_Assign| Assign method used to hold a reference to the event handler object. |
 |oMsgSvc_Access| Access method used to retrieve a reference to the MsgSvc object. |
 |oMsgSvc_Assign| Assign method used to hold a reference to the MsgSvc object. |
+|oVersioning_Access|Access method used to retrieve a reference to the oVersioning object. |
+|oVersioning_Assign|Assign method used to retrieve a reference to the oVersioning object. |
 |Version_Access| Access method used to retrieve the Version property of the referenced Chilkat object. |
 |Version_Assign| Assign method used to hold the Version property of the referenced Chilkat object. |
 
@@ -89,11 +115,11 @@ For clarification, the IsImplemented addresses properties and method implementat
 
 ## BaseEventHandler
 
-As the time of this writing, Chilkat has 103 classes. ~~33~~ 35 of these classes contain events. This event handler class is the base handler for 27 of those ~~33~~ 35 classes. The other six classes subclass from this base event handler and have even more events.
+As the time of this writing, Chilkat has 106 classes. ~~33~~ 39 of these classes contain events. This event handler class is the base handler for ~~27~~ 33 of those ~~33~~ 39 classes. The other six classes subclass from this base event handler and have even more events.
 
 Note that for each Chilkat event there are four supporting methods in the event handler. For each Chilkat [*event*] there is a corresponding Event Handler [*event*], [*event name*]_pre, [*event name*]_process and [*event name*]_post methods. The event handler methods are "hooked". 
 
-For reference, please read Steven Black's seminal work about the subject here: <a href="http://stevenblack.com/articles/hooks-and-anchors/" target="_blank">http://stevenblack.com/articles/hooks-and-anchors/</a>
+For reference, please read Steven Black's seminal work about the subject here: <a href="http://stevenblack.com/articles/hooks-and-anchors/" target="_blank">http://stevenblack.com/articles/hooks-and-anchors/</a>  
 
 The four event handler classes can be used (or for that matter, ignored) any way you want. The intent is thus: 
 
@@ -249,6 +275,7 @@ The methods of the ValidateProperty class are:
 |LegacyKeySpec| Method run to validate the data for the LegacyKeySpec property. |
 |Level| Method run to validate the data for the Level property. |
 |LMFactor| Method run to validate the data for the LMFactor property. |
+|Location| Method run to validate the data for the Location property.|
 |MACAlgorithm| Method run to validate the data for the MACAlgorithm property. |
 |MaintainHash| Method run to validate the data for the MaintainHash property. |
 |MaxThreads| Method run to validate the data for the MaxThreads property. |
@@ -297,6 +324,7 @@ The methods of the ValidateProperty class are:
 |StructTmMonth| Method run to validate the data for the StructTmMonth property
 |TlsPref| Method run to validate the data for the TlsPref property. |
 |UncommonOptions_Cert| Method run to validate the data for the UncommonOptions property of the Cert object. |
+|UncommonOptions_CertChain| Method run to validate the data for the UncommonOptions property of the CertChain object. |
 |UncommonOptions_CodeSign| Method run to validate the data for the UncommonOptions property of the CodeSign object. |
 |UncommonOptions_Crypt2| Method run to validate the data for the UncommonOptions property of the Crypt2 object. |
 |UncommonOptions_Csv| Method run to validate the data for the UncommonOptions property of the Csv object. |
@@ -326,6 +354,38 @@ The methods of the ValidateProperty class are:
 |X509Type| Method run to validate the data for the X509Type property. |
 |ZipDefaultAlg| Method run to validate the data for the ZipDefaultAlg property. |
 
-#### Contact: chilkat VFP at gmail dot com.
+## Versioning
 
-  [1]: http://stevenblack.com/articles/hooks-and-anchors/
+Lightweight class used for version testing.
+
+The properties of the Versioning class are:
+
+| Property | Purpose                        |
+|--------|--------------------------------|
+|cChilkatObjectPrefix|Character property used to hold a reference to the Chilkat prefix expression used to make the COM call.|
+|iBuildMajor|Property used to hold the iBuildMajor property of the Chilkat object.|
+|iBuildMinor|Property used to hold the iBuildMinor property of the Chilkat object.|
+|iBuildPatch|Property used to hold the iBuildPatch property of the Chilkat object.|
+|iInstanceMajor|Property used to hold the iInstanceMajor property of the Chilkat object.|
+|iInstanceMinor|Property used to hold the iInstanceMinor property of the Chilkat object.|
+|iInstancePatch|Property used to hold the iInstancePatch property of the Chilkat object.|
+|lRetired|Logical property used to determine if the class has been retired (deprecated).|
+|lSupportsSemanticVersioning|Logical property used to determine if the Chilkat object supports semantic versioning.|
+|oChilkatVersion|Object property used to hold the Chilkat object with a Version property.|
+|oChilkatVFP|Object property used to hold a reference to the ChilkatVFP object.|
+
+The methods of the Versioning class are:
+
+| Method | Purpose                        |
+|--------|--------------------------------|
+|CalculateMajorMinorPatch|Method used to calculate the major/minor/patch pieces of Chilkat object when it originally existed and the current version being used.
+|GenerateVersionNumber|Method run to generate a usable version number.|
+|GetChilkatVersioningObject|Method used to return a Chilkat object that contains a Version property.|
+|GetVersioningAttributes|Method acting as a controller to the versioning properties of the Chilkat and ChilkatVFP objects.|
+|IsImplemented|Method used to determine if the property or class or method is implemented.|
+
+
+#### Contact: chilkatVFP at gmail dot com.
+
+[1]: http://stevenblack.com/articles/hooks-and-anchors/
+

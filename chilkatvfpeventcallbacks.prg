@@ -1,7 +1,7 @@
 *==============================================================================
 * Purpose:           ChilkatVFP Event Callbacks
 * Author:            Bill Anderson
-* Notice:            Copyright (c) 2022 - 2024 The Anderson Files LLC, All Rights Reserved.
+* Notice:            Copyright (c) 2022 - 2025 The Anderson Files LLC, All Rights Reserved.
 * Returns:           Logical, indicating success.
 * Date Added:        10/07/2022
 *==============================================================================
@@ -9,6 +9,8 @@
 #INCLUDE FoxPro.H
 
 **
+** 09/28/2024 - Changed the ActiveX references to use the new Chilkat ActiveX object notation.
+** 
 ** Fixed for Version 29: Fixed the AbortCheck and PercentDone events for the Single-DLL ActiveX. 
 ** These events did not fire. This was a problem that only affected the Single-DLL ActiveX.
 **
@@ -18,19 +20,19 @@ PROCEDURE ChilkatVFPEventCallbackSetup
 **************************************
 
 ** Alias not set test
-IF NOT ([CHILKAT.VCX] $ UPPER(SET([CLASSLIB])))
+IF NOT ([CHILKATVFP.VCX] $ UPPER(SET([CLASSLIB])))
 
-  SET CLASSLIB TO [Chilkat.VCX] ADDITIVE
+  SET CLASSLIB TO [ChilkatVFP.VCX] ADDITIVE
 
-ENDIF NOT ([CHILKAT.VCX] $ UPPER(SET([CLASSLIB])))
+ENDIF NOT ([CHILKATVFP.VCX] $ UPPER(SET([CLASSLIB])))
 ** End alias not set test
 
 ** Alias not set test
-IF NOT ([ICHILKAT.VCX] $ UPPER(SET([CLASSLIB])))
+IF NOT ([ICHILKATVFP.VCX] $ UPPER(SET([CLASSLIB])))
 
-  SET CLASSLIB TO [iChilkat.VCX] ADDITIVE
+  SET CLASSLIB TO [iChilkatVFP.VCX] ADDITIVE
 
-ENDIF NOT ([ICHILKAT.VCX] $ UPPER(SET([CLASSLIB])))
+ENDIF NOT ([ICHILKATVFP.VCX] $ UPPER(SET([CLASSLIB])))
 ** End alias not set test
 
 SET PATH TO [\] ADDITIVE
@@ -39,11 +41,11 @@ SET PATH TO [\] ADDITIVE
 PROCEDURE AtomEventCallback
 ***************************
 
-LPARAMETERS toChilkatVFPAtom AS [iAtom OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPAtom AS [iAtom OF iChilkatVFP.VCX]
 
 LOCAL loAtomEventHandler AS [AtomEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPAtom AS [iAtom OF iChilkat.VCX], loChilkatAtom AS [Chilkat_9_5_0.Atom], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPAtom AS [iAtom OF iChilkatVFP.VCX], loChilkatAtom AS [Chilkat.Atom], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPAtom = toChilkatVFPAtom 
 
@@ -71,7 +73,7 @@ ENDWITH
 EVENTHANDLER(loChilkatAtom, loAtomEventHandler)
 
 DEFINE CLASS AtomEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Atom"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.Atom"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -89,7 +91,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -103,12 +105,12 @@ ENDDEFINE
 PROCEDURE AuthAzureADEventCallback
 **********************************
 
-LPARAMETERS toChilkatVFPAuthAzureAD AS [iAuthAzureAD OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPAuthAzureAD AS [iAuthAzureAD OF iChilkatVFP.VCX]
 
 LOCAL loAuthAzureADEventHandler AS [AuthAzureADEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPAuthAzureAD AS [iAuthAzureAD OF iChilkat.VCX], ;
-loChilkatAuthAzureAD AS [Chilkat_9_5_0.AuthAzureAD], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPAuthAzureAD AS [iAuthAzureAD OF iChilkatVFP.VCX], ;
+loChilkatAuthAzureAD AS [Chilkat.AuthAzureAD], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPAuthAzureAD = toChilkatVFPAuthAzureAD 
 
@@ -136,7 +138,7 @@ ENDWITH
 EVENTHANDLER(loChilkatAuthAzureAD, loAuthAzureADEventHandler)
 
 DEFINE CLASS AuthAzureADEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.AuthAzureAD"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.AuthAzureAD"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -154,7 +156,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -168,12 +170,12 @@ ENDDEFINE
 PROCEDURE AuthGoogleEventCallback
 *********************************
 
-LPARAMETERS toChilkatVFPAuthGoogle AS [iAuthGoogle OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPAuthGoogle AS [iAuthGoogle OF iChilkatVFP.VCX]
 
 LOCAL loAuthGoogleEventHandler AS [AuthGoogleEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPAuthGoogle AS [iAuthGoogle OF iChilkat.VCX], ;
-loChilkatAuthGoogle AS [Chilkat_9_5_0.AuthGoogle], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPAuthGoogle AS [iAuthGoogle OF iChilkatVFP.VCX], ;
+loChilkatAuthGoogle AS [Chilkat.AuthGoogle], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPAuthGoogle = toChilkatVFPAuthGoogle 
 
@@ -201,7 +203,7 @@ ENDWITH
 EVENTHANDLER(loChilkatAuthGoogle, loAuthGoogleEventHandler)
 
 DEFINE CLASS AuthGoogleEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.AuthGoogle"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.AuthGoogle"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -219,7 +221,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -233,15 +235,15 @@ ENDDEFINE
 PROCEDURE Bz2EventCallback
 **************************
 
-LPARAMETERS toChilkatVFPBz2 AS [iBz2 OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPBz2 AS [iBz2 OF iChilkatVFP.VCX]
 
 **
 ** Fixed for Version 77: PercentDone callbacks were not working.
 ** 
 
 LOCAL loBz2EventHandler AS [Bz2Events OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPBz2 AS [iBz2 OF iChilkat.VCX], loChilkatBz2 AS [Chilkat_9_5_0.Bz2], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPBz2 AS [iBz2 OF iChilkatVFP.VCX], loChilkatBz2 AS [Chilkat.Bz2], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPBz2 = toChilkatVFPBz2
 
@@ -269,7 +271,7 @@ ENDWITH
 EVENTHANDLER(loChilkatBz2, loBz2EventHandler)
 
 DEFINE CLASS Bz2Events AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Bz2"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.Bz2"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -287,7 +289,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -301,12 +303,12 @@ ENDDEFINE
 PROCEDURE CertEventCallback
 ***************************
 
-LPARAMETERS toChilkatVFPCert AS [iCert OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPCert AS [iCert OF iChilkatVFP.VCX]
 
 LOCAL loCertEventHandler AS [CertEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPCert AS [iCert OF iChilkat.VCX], ;
-loChilkatCert AS [Chilkat_9_5_0.Cert], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPCert AS [iCert OF iChilkatVFP.VCX], ;
+loChilkatCert AS [Chilkat.Cert], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPCert = toChilkatVFPCert
 
@@ -334,7 +336,7 @@ ENDWITH
 EVENTHANDLER(loChilkatCert, loCertEventHandler)
 
 DEFINE CLASS CertEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Cert"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.Cert"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -352,7 +354,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -366,12 +368,12 @@ ENDDEFINE
 PROCEDURE CodeSignEventCallback
 *******************************
 
-LPARAMETERS toChilkatVFPCodeSign AS [iCodeSign OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPCodeSign AS [iCodeSign OF iChilkatVFP.VCX]
 
 LOCAL loCodeSignEventHandler AS [CodeSignEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPCodeSign AS [iCodeSign OF iChilkat.VCX], ;
-loChilkatCodeSign AS [Chilkat_9_5_0.CodeSign], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPCodeSign AS [iCodeSign OF iChilkatVFP.VCX], ;
+loChilkatCodeSign AS [Chilkat.CodeSign], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPCodeSign = toChilkatVFPCodeSign
 
@@ -399,7 +401,7 @@ ENDWITH
 EVENTHANDLER(loChilkatCodeSign, loCodeSignEventHandler)
 
 DEFINE CLASS CodeSignEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.CodeSign"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.CodeSign"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -417,7 +419,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -431,12 +433,12 @@ ENDDEFINE
 PROCEDURE CompressionEventCallback
 **********************************
 
-LPARAMETERS toChilkatVFPCompression AS [iCompression OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPCompression AS [iCompression OF iChilkatVFP.VCX]
 
 LOCAL loCompressionEventHandler AS [CompressionEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPCompression AS [iCompression OF iChilkat.VCX], ;
-loChilkatCompression AS [Chilkat_9_5_0.Compression], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPCompression AS [iCompression OF iChilkatVFP.VCX], ;
+loChilkatCompression AS [Chilkat.Compression], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPCompression = toChilkatVFPCompression
 
@@ -464,7 +466,7 @@ ENDWITH
 EVENTHANDLER(loChilkatCompression, loCompressionEventHandler)
 
 DEFINE CLASS CompressionEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Compression"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.Compression"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -482,7 +484,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -496,12 +498,12 @@ ENDDEFINE
 PROCEDURE Crypt2EventCallback
 *****************************
 
-LPARAMETERS toChilkatVFPCrypt2 AS [iCrypt2 OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPCrypt2 AS [iCrypt2 OF iChilkatVFP.VCX]
 
 LOCAL loCrypt2EventHandler AS [Crypt2Events OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPCrypt2 AS [iCrypt2 OF iChilkat.VCX], ;
-loChilkatCrypt2 AS [Chilkat_9_5_0.Crypt2], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPCrypt2 AS [iCrypt2 OF iChilkatVFP.VCX], ;
+loChilkatCrypt2 AS [Chilkat.Crypt2], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPCrypt2 = toChilkatVFPCrypt2
 
@@ -529,7 +531,7 @@ ENDWITH
 EVENTHANDLER(loChilkatCrypt2, loCrypt2EventHandler)
 
 DEFINE CLASS Crypt2Events AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Crypt2"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.Crypt2"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -547,7 +549,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -561,11 +563,11 @@ ENDDEFINE
 PROCEDURE DkimEventCallback
 ***************************
 
-LPARAMETERS toChilkatVFPDkim AS [iDkim OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPDkim AS [iDkim OF iChilkatVFP.VCX]
 
 LOCAL loDkimEventHandler AS [DkimEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPDkim AS [iDkim OF iChilkat.VCX], loChilkatDkim AS [Chilkat_9_5_0.Dkim], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPDkim AS [iDkim OF iChilkatVFP.VCX], loChilkatDkim AS [Chilkat.Dkim], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPDkim = toChilkatVFPDkim
 
@@ -593,7 +595,7 @@ ENDWITH
 EVENTHANDLER(loChilkatDkim, loDkimEventHandler)
 
 DEFINE CLASS DkimEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Dkim"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.Dkim"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -611,7 +613,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -625,11 +627,11 @@ ENDDEFINE
 PROCEDURE DnsEventCallback
 **************************
 
-LPARAMETERS toChilkatVFPDns AS [iDns OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPDns AS [iDns OF iChilkatVFP.VCX]
 
 LOCAL loDnsEventHandler AS [DnsEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPDns AS [iDns OF iChilkat.VCX], loChilkatDns AS [Chilkat_9_5_0.Dns], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPDns AS [iDns OF iChilkatVFP.VCX], loChilkatDns AS [Chilkat.Dns], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPDns = toChilkatVFPDns
 
@@ -657,7 +659,7 @@ ENDWITH
 EVENTHANDLER(loChilkatDns, loDnsEventHandler)
 
 DEFINE CLASS DnsEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Dns"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.Dns"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -675,7 +677,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -689,7 +691,7 @@ ENDDEFINE
 PROCEDURE FTP2EventCallback
 ***************************
 
-LPARAMETERS toChilkatVFPFtp2 AS [iFtp2 OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPFtp2 AS [iFtp2 OF iChilkatVFP.VCX]
 
 **
 ** Enhancement for Version 47: Ensured that a final DownloadRate event callback 
@@ -707,8 +709,8 @@ LPARAMETERS toChilkatVFPFtp2 AS [iFtp2 OF iChilkat.VCX]
 **
 
 LOCAL loFtp2EventHandler AS [Ftp2Events OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPFtp2 AS [iFtp2 OF iChilkat.VCX], loChilkatFtp2 AS [Chilkat_9_5_0.Ftp2], ;
-loChilkatVFPEventHandler AS [iFtp2EventHandler OF Chilkat.VCX]
+loChilkatVFPFtp2 AS [iFtp2 OF iChilkatVFP.VCX], loChilkatFtp2 AS [Chilkat.Ftp2], ;
+loChilkatVFPEventHandler AS [iFtp2EventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPFtp2 = toChilkatVFPFtp2
 
@@ -736,7 +738,7 @@ ENDWITH
 EVENTHANDLER(loChilkatFtp2, loFtp2EventHandler)
 
 DEFINE CLASS Ftp2Events AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatFtp2Events IN "Chilkat_9_5_0.Ftp2"
+IMPLEMENTS _IChilkatFtp2Events IN "Chilkat.Ftp2"
 
 PROCEDURE _IChilkatFtp2Events_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -774,7 +776,7 @@ PROCEDURE _IChilkatFtp2Events_ProgressInfo(tcName AS Character, tcValue AS Chara
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatFtp2Events_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatFtp2Events_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -808,11 +810,11 @@ ENDDEFINE
 PROCEDURE GZipEventCallback
 ***************************
 
-LPARAMETERS toChilkatVFPGzip AS [iGzip OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPGzip AS [iGzip OF iChilkatVFP.VCX]
 
 LOCAL loGzipEventHandler AS [GzipEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPGzip AS [iGzip OF iChilkat.VCX], loChilkatGzip AS [Chilkat_9_5_0.Gzip], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPGzip AS [iGzip OF iChilkatVFP.VCX], loChilkatGzip AS [Chilkat.Gzip], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPGZip = toChilkatVFPGZip
 
@@ -840,7 +842,7 @@ ENDWITH
 EVENTHANDLER(loChilkatGzip, loGzipEventHandler)
 
 DEFINE CLASS GzipEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Gzip"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.Gzip"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -858,7 +860,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -872,7 +874,7 @@ ENDDEFINE
 PROCEDURE HttpEventCallback
 ***************************
 
-LPARAMETERS toChilkatVFPHttp AS [iHttp OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPHttp AS [iHttp OF iChilkatVFP.VCX]
 
 **
 ** Fixed for Version 32: For HTTP requests that have KeepAlive indicated in the response header, 
@@ -896,8 +898,8 @@ LPARAMETERS toChilkatVFPHttp AS [iHttp OF iChilkat.VCX]
 ** 
 
 LOCAL loHttpEventHandler AS [HttpEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPHttp AS [iHttp OF iChilkat.VCX], loChilkatHttp AS [Chilkat_9_5_0.Http], ;
-loChilkatVFPEventHandler AS [iHTTPEventHandler OF Chilkat.VCX]
+loChilkatVFPHttp AS [iHttp OF iChilkatVFP.VCX], loChilkatHttp AS [Chilkat.Http], ;
+loChilkatVFPEventHandler AS [iHTTPEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPHttp = toChilkatVFPHttp
 
@@ -925,7 +927,7 @@ ENDWITH
 EVENTHANDLER(loChilkatHttp, loHttpEventHandler)
 
 DEFINE CLASS HttpEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatHttpEvents IN "Chilkat_9_5_0.Http"
+IMPLEMENTS _IChilkatHttpEvents IN "Chilkat.Http"
 
 PROCEDURE _IChilkatHttpEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -976,7 +978,7 @@ PROCEDURE _IChilkatHttpEvents_SendRate(tiByteCount AS Integer, tiBytesPerSec AS 
 RETURN loChilkatVFPEventHandler.SendRate(tiByteCount, tiBytesPerSec)
 ENDPROC
 
-PROCEDURE _IChilkatHttpEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatHttpEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -990,11 +992,11 @@ ENDDEFINE
 PROCEDURE IMapEventCallback
 ***************************
 
-LPARAMETERS toChilkatVFPImap AS [iImap OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPImap AS [iImap OF iChilkatVFP.VCX]
 
 LOCAL loImapEventHandler AS [ImapEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPImap AS [iImap OF iChilkat.VCX], loChilkatImap AS [Chilkat_9_5_0.Imap], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPImap AS [iImap OF iChilkatVFP.VCX], loChilkatImap AS [Chilkat.Imap], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPImap = toChilkatVFPImap
 
@@ -1022,7 +1024,7 @@ ENDWITH
 EVENTHANDLER(loChilkatImap, loImapEventHandler)
 
 DEFINE CLASS ImapEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Imap"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.Imap"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -1040,7 +1042,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -1054,12 +1056,12 @@ ENDDEFINE
 PROCEDURE MailManEventCallback
 ******************************
 
-LPARAMETERS toChilkatVFPMailMan AS [iMailMan OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPMailMan AS [iMailMan OF iChilkatVFP.VCX]
 
 LOCAL loMailManEventHandler AS [MailManEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPMailMan AS [iMailMan OF iChilkat.VCX], ;
-loChilkatMailMan AS [Chilkat_9_5_0.MailMan], ;
-loChilkatVFPEventHandler AS [iMailManEventHandler OF Chilkat.VCX]
+loChilkatVFPMailMan AS [iMailMan OF iChilkatVFP.VCX], ;
+loChilkatMailMan AS [Chilkat.MailMan], ;
+loChilkatVFPEventHandler AS [iMailManEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPMailMan = toChilkatVFPMailMan
 
@@ -1087,7 +1089,7 @@ ENDWITH
 EVENTHANDLER(loChilkatMailMan, loMailManEventHandler)
 
 DEFINE CLASS MailManEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatMailManEvents IN "Chilkat_9_5_0.MailMan"
+IMPLEMENTS _IChilkatMailManEvents IN "Chilkat.MailMan"
 
 PROCEDURE _IChilkatMailManEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -1112,7 +1114,7 @@ PROCEDURE _IChilkatMailManEvents_ProgressInfo(tcName AS Character, tcValue AS Ch
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatMailManEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatMailManEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -1126,11 +1128,11 @@ ENDDEFINE
 PROCEDURE MhtEventCallback
 **************************
 
-LPARAMETERS toChilkatVFPMht AS [iMht OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPMht AS [iMht OF iChilkatVFP.VCX]
 
 LOCAL loMhtEventHandler AS [MhtEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPMht AS [iMht OF iChilkat.VCX], loChilkatMht AS [Chilkat_9_5_0.Mht], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPMht AS [iMht OF iChilkatVFP.VCX], loChilkatMht AS [Chilkat.Mht], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPMht = toChilkatVFPMht
 
@@ -1158,7 +1160,7 @@ ENDWITH
 EVENTHANDLER(loChilkatMht, loMhtEventHandler)
 
 DEFINE CLASS MhtEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Mht"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.Mht"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -1176,7 +1178,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -1190,11 +1192,11 @@ ENDDEFINE
 PROCEDURE OAuth2EventCallback
 *****************************
 
-LPARAMETERS toChilkatVFPOAuth2 AS [iOAuth2 OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPOAuth2 AS [iOAuth2 OF iChilkatVFP.VCX]
 
 LOCAL loOAuth2EventHandler AS [OAuth2Events OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPOAuth2 AS [iOAuth2 OF iChilkat.VCX], loChilkatOAuth2 AS [Chilkat_9_5_0.OAuth2], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPOAuth2 AS [iOAuth2 OF iChilkatVFP.VCX], loChilkatOAuth2 AS [Chilkat.OAuth2], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPOAuth2 = toChilkatVFPOAuth2
 
@@ -1222,7 +1224,7 @@ ENDWITH
 EVENTHANDLER(loChilkatOAuth2, loOAuth2EventHandler)
 
 DEFINE CLASS OAuth2Events AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.OAuth2"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.OAuth2"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -1240,7 +1242,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -1254,11 +1256,11 @@ ENDDEFINE
 PROCEDURE PdfEventCallback
 **************************
 
-LPARAMETERS toChilkatVFPPdf AS [iPdf OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPPdf AS [iPdf OF iChilkatVFP.VCX]
 
 LOCAL loPdfEventHandler AS [PdfEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPPdf AS [iPdf OF iChilkat.VCX], loChilkatPdf AS [Chilkat_9_5_0.Pdf], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPPdf AS [iPdf OF iChilkatVFP.VCX], loChilkatPdf AS [Chilkat.Pdf], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPPdf = toChilkatVFPPdf
 
@@ -1286,7 +1288,7 @@ ENDWITH
 EVENTHANDLER(loChilkatPdf, loPdfEventHandler)
 
 DEFINE CLASS PdfEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Pdf"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.Pdf"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -1304,7 +1306,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -1318,11 +1320,11 @@ ENDDEFINE
 PROCEDURE PemEventCallback
 **************************
 
-LPARAMETERS toChilkatVFPPem AS [iPem OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPPem AS [iPem OF iChilkatVFP.VCX]
 
 LOCAL loPemEventHandler AS [PemEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPPem AS [iPem OF iChilkat.VCX], loChilkatPem AS [Chilkat_9_5_0.Pem], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPPem AS [iPem OF iChilkatVFP.VCX], loChilkatPem AS [Chilkat.Pem], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPPem = toChilkatVFPPem
 
@@ -1350,7 +1352,7 @@ ENDWITH
 EVENTHANDLER(loChilkatPem, loPemEventHandler)
 
 DEFINE CLASS PemEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Pem"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.Pem"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -1368,7 +1370,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -1382,12 +1384,12 @@ ENDDEFINE
 PROCEDURE PrivateKeyEventCallback
 *********************************
 
-LPARAMETERS toChilkatVFPPrivateKey AS [iPrivateKey OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPPrivateKey AS [iPrivateKey OF iChilkatVFP.VCX]
 
 LOCAL loPrivateKeyEventHandler AS [PrivateKeyEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPPrivateKey AS [iPrivateKey OF iChilkat.VCX], ;
-loChilkatPrivateKey AS [Chilkat_9_5_0.PrivateKey], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPPrivateKey AS [iPrivateKey OF iChilkatVFP.VCX], ;
+loChilkatPrivateKey AS [Chilkat.PrivateKey], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPPrivateKey = toChilkatVFPPrivateKey
 
@@ -1415,7 +1417,7 @@ ENDWITH
 EVENTHANDLER(loChilkatPrivateKey, loPrivateKeyEventHandler)
 
 DEFINE CLASS PrivateKeyEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.PrivateKey"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.PrivateKey"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -1433,7 +1435,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -1447,11 +1449,11 @@ ENDDEFINE
 PROCEDURE RestEventCallback
 ***************************
 
-LPARAMETERS toChilkatVFPRest AS [iRest OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPRest AS [iRest OF iChilkatVFP.VCX]
 
 LOCAL loRestEventHandler AS [RestEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPRest AS [iRest OF iChilkat.VCX], loChilkatRest AS [Chilkat_9_5_0.Rest], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPRest AS [iRest OF iChilkatVFP.VCX], loChilkatRest AS [Chilkat.Rest], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPRest = toChilkatVFPRest
 
@@ -1479,7 +1481,7 @@ ENDWITH
 EVENTHANDLER(loChilkatRest, loRestEventHandler)
 
 DEFINE CLASS RestEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Rest"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.Rest"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -1497,7 +1499,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -1511,11 +1513,11 @@ ENDDEFINE
 PROCEDURE RssEventCallback
 **************************
 
-LPARAMETERS toChilkatVFPRss AS [iRss OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPRss AS [iRss OF iChilkatVFP.VCX]
 
 LOCAL loRssEventHandler AS [RssEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPRss AS [iRss OF iChilkat.VCX], loChilkatRss AS [Chilkat_9_5_0.Rss], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPRss AS [iRss OF iChilkatVFP.VCX], loChilkatRss AS [Chilkat.Rss], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPRss = toChilkatVFPRss
 
@@ -1543,7 +1545,7 @@ ENDWITH
 EVENTHANDLER(loChilkatRss, loRssEventHandler)
 
 DEFINE CLASS RssEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Rss"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.Rss"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -1561,7 +1563,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -1575,11 +1577,11 @@ ENDDEFINE
 PROCEDURE SCardEventCallback
 ****************************
 
-LPARAMETERS toChilkatVFPSCard AS [iSCard OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPSCard AS [iSCard OF iChilkatVFP.VCX]
 
 LOCAL loSCardEventHandler AS [SCardEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPSCard AS [iSCard OF iChilkat.VCX], loChilkatSCard AS [Chilkat_9_5_0.SCard], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPSCard AS [iSCard OF iChilkatVFP.VCX], loChilkatSCard AS [Chilkat.SCard], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPSCard = toChilkatVFPSCard
 
@@ -1607,7 +1609,7 @@ ENDWITH
 EVENTHANDLER(loChilkatSCard, loSCardEventHandler)
 
 DEFINE CLASS SCardEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.SCard"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.SCard"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -1625,7 +1627,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -1639,11 +1641,11 @@ ENDDEFINE
 PROCEDURE ScpEventCallback
 **************************
 
-LPARAMETERS toChilkatVFPScp AS [iScp OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPScp AS [iScp OF iChilkatVFP.VCX]
 
 LOCAL loScpEventHandler AS [ScpEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPScp AS [iScp OF iChilkat.VCX], loChilkatScp AS [Chilkat_9_5_0.Scp], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPScp AS [iScp OF iChilkatVFP.VCX], loChilkatScp AS [Chilkat.Scp], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPScp = toChilkatVFPScp
 
@@ -1671,7 +1673,7 @@ ENDWITH
 EVENTHANDLER(loChilkatScp, loScpEventHandler)
 
 DEFINE CLASS ScpEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Scp"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.Scp"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -1689,7 +1691,71 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
+RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_TextData(tcData AS Character)
+RETURN loChilkatVFPEventHandler.TextData(tcData)
+ENDPROC
+
+ENDDEFINE
+
+******************************
+PROCEDURE SecretsEventCallback
+******************************
+
+LPARAMETERS toChilkatVFPSecrets AS [iSecrets OF iChilkatVFP.VCX]
+
+LOCAL loSecretsEventHandler AS [SecretsEvents OF ChilkatVFPEventCallbacks.PRG], ;
+loChilkatVFPSecrets AS [iSecrets OF iChilkatVFP.VCX], loChilkatSecrets AS [Chilkat.Secrets], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
+
+loChilkatVFPSecrets = toChilkatVFPSecrets
+
+STORE NULL TO loSecretsEventHandler, loChilkatSecrets
+
+DO ChilkatVFPEventCallbackSetup
+
+** Didn't pass an object test
+IF (NOT TYPE([loChilkatVFPSecrets.Name]) == T_CHARACTER)
+
+  loChilkatVFPSecrets = CREATEOBJECT([iSecrets])
+
+ENDIF (NOT TYPE([loChilkatVFPSecrets.Name]) == T_CHARACTER)
+** End didn't pass an object test
+
+loSecretsEventHandler = CREATEOBJECT([SecretsEvents])
+
+WITH loChilkatVFPSecrets 
+
+  loChilkatSecrets = .oChilkat
+  loChilkatVFPEventHandler = .oEventHandler
+
+ENDWITH
+
+EVENTHANDLER(loChilkatSecrets, loSecretsEventHandler)
+
+DEFINE CLASS SecretsEvents AS SESSION OLEPUBLIC
+IMPLEMENTS _IChilkatEvents IN "Chilkat.Secrets"
+
+PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
+RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_BinaryData(tqData AS VarBinary)
+RETURN loChilkatVFPEventHandler.BinaryData(tqData)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_PercentDone(tiPercentDone AS Integer, tiAbort AS Integer)
+RETURN loChilkatVFPEventHandler.PercentDone(tiPercentDone, tiAbort)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character)
+RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -1703,7 +1769,7 @@ ENDDEFINE
 PROCEDURE SFtpEventCallback
 ***************************
 
-LPARAMETERS toChilkatVFPSFtp AS [iSFtp OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPSFtp AS [iSFtp OF iChilkatVFP.VCX]
 
 **
 ** Enhancement for Version 47: Ensured that a final DownloadRate event callback 
@@ -1713,8 +1779,8 @@ LPARAMETERS toChilkatVFPSFtp AS [iSFtp OF iChilkat.VCX]
 ** 
 
 LOCAL loSFtpEventHandler AS [SFtpEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPSFtp AS [iSFtp OF iChilkat.VCX], loChilkatSFtp AS [Chilkat_9_5_0.SFtp], ;
-loChilkatVFPEventHandler AS [iSFtpEventHandler OF Chilkat.VCX]
+loChilkatVFPSFtp AS [iSFtp OF iChilkatVFP.VCX], loChilkatSFtp AS [Chilkat.SFtp], ;
+loChilkatVFPEventHandler AS [iSFtpEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPSFtp = toChilkatVFPSFtp
 
@@ -1742,7 +1808,7 @@ ENDWITH
 EVENTHANDLER(loChilkatSFtp, loSFtpEventHandler)
 
 DEFINE CLASS SFtpEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatSFtpEvents IN "Chilkat_9_5_0.SFtp"
+IMPLEMENTS _IChilkatSFtpEvents IN "Chilkat.SFtp"
 
 PROCEDURE _IChilkatSFtpEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -1764,7 +1830,7 @@ PROCEDURE _IChilkatSFtpEvents_ProgressInfo(tcName AS Character, tcValue AS Chara
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatSFtpEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatSFtpEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -1782,12 +1848,12 @@ ENDDEFINE
 PROCEDURE SocketEventCallback
 *****************************
 
-LPARAMETERS toChilkatVFPSocket AS [iSocket OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPSocket AS [iSocket OF iChilkatVFP.VCX]
 
 LOCAL loSocketEventHandler AS [SocketEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPSocket AS [iSocket OF iChilkat.VCX], ;
-loChilkatSocket AS [Chilkat_9_5_0.Socket], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPSocket AS [iSocket OF iChilkatVFP.VCX], ;
+loChilkatSocket AS [Chilkat.Socket], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPSocket = toChilkatVFPSocket
 
@@ -1815,7 +1881,7 @@ ENDWITH
 EVENTHANDLER(loChilkatSocket, loSocketEventHandler)
 
 DEFINE CLASS SocketEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Socket"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.Socket"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -1833,7 +1899,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -1847,12 +1913,12 @@ ENDDEFINE
 PROCEDURE SpiderEventCallback
 *****************************
 
-LPARAMETERS toChilkatVFPSpider AS [iSpider OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPSpider AS [iSpider OF iChilkatVFP.VCX]
 
 LOCAL loSpiderEventHandler AS [SpiderEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPSpider AS [iSpider OF iChilkat.VCX], ;
-loChilkatSpider AS [Chilkat_9_5_0.Spider], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPSpider AS [iSpider OF iChilkatVFP.VCX], ;
+loChilkatSpider AS [Chilkat.Spider], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPSpider = toChilkatVFPSpider
 
@@ -1880,7 +1946,7 @@ ENDWITH
 EVENTHANDLER(loChilkatSpider, loSpiderEventHandler)
 
 DEFINE CLASS SpiderEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Spider"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.Spider"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -1898,7 +1964,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -1912,11 +1978,11 @@ ENDDEFINE
 PROCEDURE SshEventCallback
 **************************
 
-LPARAMETERS toChilkatVFPSsh AS [iSsh OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPSsh AS [iSsh OF iChilkatVFP.VCX]
 
 LOCAL loSshEventHandler AS [SshEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPSsh AS [iSsh OF iChilkat.VCX], loChilkatSsh AS [Chilkat_9_5_0.Ssh], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPSsh AS [iSsh OF iChilkatVFP.VCX], loChilkatSsh AS [Chilkat.Ssh], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPSsh = toChilkatVFPSsh
 
@@ -1944,7 +2010,7 @@ ENDWITH
 EVENTHANDLER(loChilkatSsh, loSshEventHandler)
 
 DEFINE CLASS SshEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Ssh"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.Ssh"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -1962,7 +2028,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -1976,12 +2042,12 @@ ENDDEFINE
 PROCEDURE SshTunnelEventCallback
 ********************************
 
-LPARAMETERS toChilkatVFPSshTunnel AS [iSshTunnel OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPSshTunnel AS [iSshTunnel OF iChilkatVFP.VCX]
 
 LOCAL loSshTunnelEventHandler AS [SshTunnelEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPSshTunnel AS [iSshTunnel OF iChilkat.VCX], ;
-loChilkatSshTunnel AS [Chilkat_9_5_0.SshTunnel], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPSshTunnel AS [iSshTunnel OF iChilkatVFP.VCX], ;
+loChilkatSshTunnel AS [Chilkat.SshTunnel], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPSshTunnel = toChilkatVFPSshTunnel
 
@@ -2009,7 +2075,7 @@ ENDWITH
 EVENTHANDLER(loChilkatSshTunnel, loSshTunnelEventHandler)
 
 DEFINE CLASS SshTunnelEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.SshTunnel"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.SshTunnel"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -2027,7 +2093,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -2041,11 +2107,11 @@ ENDDEFINE
 PROCEDURE TarEventCallback
 **************************
 
-LPARAMETERS toChilkatVFPTar AS [iTar OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPTar AS [iTar OF iChilkatVFP.VCX]
 
 LOCAL loTarEventHandler AS [TarEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPTar AS [iTar OF iChilkat.VCX], loChilkatTar AS [Chilkat_9_5_0.Tar], ;
-loChilkatVFPEventHandler AS [iTarEventHandler OF Chilkat.VCX]
+loChilkatVFPTar AS [iTar OF iChilkatVFP.VCX], loChilkatTar AS [Chilkat.Tar], ;
+loChilkatVFPEventHandler AS [iTarEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPTar = toChilkatVFPTar
 
@@ -2073,7 +2139,7 @@ ENDWITH
 EVENTHANDLER(loChilkatTar, loTarEventHandler)
 
 DEFINE CLASS TarEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatTarEvents IN "Chilkat_9_5_0.Tar"
+IMPLEMENTS _IChilkatTarEvents IN "Chilkat.Tar"
 
 PROCEDURE _IChilkatTarEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -2096,7 +2162,7 @@ PROCEDURE _IChilkatTarEvents_ProgressInfo(tcName AS Character, tcValue AS Charac
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatTarEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatTarEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -2110,11 +2176,11 @@ ENDDEFINE
 PROCEDURE TaskEventCallback
 ***************************
 
-LPARAMETERS toChilkatVFPTask AS [iTask OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPTask AS [iTask OF iChilkatVFP.VCX]
 
 LOCAL loTaskEventHandler AS [TaskEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPTask AS [iTask OF iChilkat.VCX], loChilkatTask AS [Chilkat_9_5_0.Task], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPTask AS [iTask OF iChilkatVFP.VCX], loChilkatTask AS [Chilkat.Task], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPTask = toChilkatVFPTask
 
@@ -2142,7 +2208,7 @@ ENDWITH
 EVENTHANDLER(loChilkatTask, loTaskEventHandler)
 
 DEFINE CLASS TaskEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Task"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.Task"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -2160,7 +2226,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -2174,12 +2240,12 @@ ENDDEFINE
 PROCEDURE TaskChainEventCallback
 ********************************
 
-LPARAMETERS toChilkatVFPTaskChain AS [iTaskChain OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPTaskChain AS [iTaskChain OF iChilkatVFP.VCX]
 
 LOCAL loTaskChainEventHandler AS [TaskChainEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPTaskChain AS [iTaskChain OF iChilkat.VCX], ;
-loChilkatTaskChain AS [Chilkat_9_5_0.TaskChain], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPTaskChain AS [iTaskChain OF iChilkatVFP.VCX], ;
+loChilkatTaskChain AS [Chilkat.TaskChain], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPTaskChain = toChilkatVFPTaskChain
 
@@ -2207,7 +2273,7 @@ ENDWITH
 EVENTHANDLER(loChilkatTaskChain, loTaskChainEventHandler)
 
 DEFINE CLASS TaskChainEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.TaskChain"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.TaskChain"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -2225,7 +2291,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -2239,12 +2305,12 @@ ENDDEFINE
 PROCEDURE TrustedRootsEventCallback
 ***********************************
 
-LPARAMETERS toChilkatVFPTrustedRoots AS [iTrustedRoots OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPTrustedRoots AS [iTrustedRoots OF iChilkatVFP.VCX]
 
 LOCAL loTrustedRootsEventHandler AS [TrustedRootsEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPTrustedRoots AS [iTrustedRoots OF iChilkat.VCX], ;
-loChilkatTrustedRoots AS [Chilkat_9_5_0.TrustedRoots], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPTrustedRoots AS [iTrustedRoots OF iChilkatVFP.VCX], ;
+loChilkatTrustedRoots AS [Chilkat.TrustedRoots], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPTrustedRoots = toChilkatVFPTrustedRoots
 
@@ -2272,7 +2338,7 @@ ENDWITH
 EVENTHANDLER(loChilkatTrustedRoots, loTrustedRootsEventHandler)
 
 DEFINE CLASS TrustedRootsEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.TrustedRoots"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.TrustedRoots"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -2290,7 +2356,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -2304,12 +2370,12 @@ ENDDEFINE
 PROCEDURE UnixCompressEventCallback
 ***********************************
 
-LPARAMETERS toChilkatVFPUnixCompress AS [iUnixCompress OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPUnixCompress AS [iUnixCompress OF iChilkatVFP.VCX]
 
 LOCAL loUnixCompressEventHandler AS [UnixCompressEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPUnixCompress AS [iUnixCompress OF iChilkat.VCX], ;
-loChilkatUnixCompress AS [Chilkat_9_5_0.UnixCompress], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPUnixCompress AS [iUnixCompress OF iChilkatVFP.VCX], ;
+loChilkatUnixCompress AS [Chilkat.UnixCompress], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPUnixCompress = toChilkatVFPUnixCompress
 
@@ -2337,7 +2403,7 @@ ENDWITH
 EVENTHANDLER(loChilkatUnixCompress, loUnixCompressEventHandler)
 
 DEFINE CLASS UnixCompressEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.UnixCompress"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.UnixCompress"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -2355,7 +2421,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -2369,12 +2435,12 @@ ENDDEFINE
 PROCEDURE UploadEventCallback
 *****************************
 
-LPARAMETERS toChilkatVFPUpload AS [iUpload OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPUpload AS [iUpload OF iChilkatVFP.VCX]
 
 LOCAL loUploadEventHandler AS [UploadEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPUpload AS [iUpload OF iChilkat.VCX], ;
-loChilkatUpload AS [Chilkat_9_5_0.Upload], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPUpload AS [iUpload OF iChilkatVFP.VCX], ;
+loChilkatUpload AS [Chilkat.Upload], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPUpload = toChilkatVFPUpload
 
@@ -2402,7 +2468,7 @@ ENDWITH
 EVENTHANDLER(loChilkatUpload, loUploadEventHandler)
 
 DEFINE CLASS UploadEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.Upload"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.Upload"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -2420,7 +2486,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -2434,7 +2500,7 @@ ENDDEFINE
 PROCEDURE ZipEventCallback
 **************************
 
-LPARAMETERS toChilkatVFPZip AS [iZip OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPZip AS [iZip OF iChilkatVFP.VCX]
 
 **
 ** Fixed for Version 48: For files skipped because of access-denied or file-not-found, 
@@ -2446,8 +2512,8 @@ LPARAMETERS toChilkatVFPZip AS [iZip OF iChilkat.VCX]
 ** 
 
 LOCAL loZipEventHandler AS [ZipEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPZip AS [iZip OF iChilkat.VCX], loChilkatZip AS [Chilkat_9_5_0.Zip], ;
-loChilkatVFPEventHandler AS [iZipEventHandler OF Chilkat.VCX]
+loChilkatVFPZip AS [iZip OF iChilkatVFP.VCX], loChilkatZip AS [Chilkat.Zip], ;
+loChilkatVFPEventHandler AS [iZipEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPZip = toChilkatVFPZip
 
@@ -2475,7 +2541,7 @@ ENDWITH
 EVENTHANDLER(loChilkatZip, loZipEventHandler)
 
 DEFINE CLASS ZipEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatZipEvents IN "Chilkat_9_5_0.Zip"
+IMPLEMENTS _IChilkatZipEvents IN "Chilkat.Zip"
 
 PROCEDURE _IChilkatZipEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -2525,7 +2591,7 @@ tiCompressedSize AS Integer, tiFileSize AS Integer)
 RETURN loChilkatVFPEventHandler.SkippedForUnzip(tcPath, tiCompressedSize, tiFileSize)
 ENDPROC
 
-PROCEDURE _IChilkatZipEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatZipEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -2570,12 +2636,12 @@ ENDDEFINE
 PROCEDURE ZipCRCEventCallback
 *****************************
 
-LPARAMETERS toChilkatVFPZipCrc AS [iZipCrc OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPZipCrc AS [iZipCrc OF iChilkatVFP.VCX]
 
 LOCAL loZipCrcEventHandler AS [ZipCrcEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPZipCrc AS [iZipCrc OF iChilkat.VCX], ;
-loChilkatZipCrc AS [Chilkat_9_5_0.ZipCrc], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPZipCrc AS [iZipCrc OF iChilkatVFP.VCX], ;
+loChilkatZipCrc AS [Chilkat.ZipCrc], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPZipCrc = toChilkatVFPZipCrc
 
@@ -2603,7 +2669,7 @@ ENDWITH
 EVENTHANDLER(loChilkatZipCrc, loZipCrcEventHandler)
 
 DEFINE CLASS ZipCrcEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.ZipCrc"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.ZipCrc"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -2621,7 +2687,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 
@@ -2635,12 +2701,12 @@ ENDDEFINE
 PROCEDURE ZipEntryEventCallback
 *******************************
 
-LPARAMETERS toChilkatVFPZipEntry AS [iZipEntry OF iChilkat.VCX]
+LPARAMETERS toChilkatVFPZipEntry AS [iZipEntry OF iChilkatVFP.VCX]
 
 LOCAL loZipEntryEventHandler AS [ZipEntryEvents OF ChilkatVFPEventCallbacks.PRG], ;
-loChilkatVFPZipEntry AS [iZipEntry OF iChilkat.VCX], ;
-loChilkatZipEntry AS [Chilkat_9_5_0.ZipEntry], ;
-loChilkatVFPEventHandler AS [iBaseEventHandler OF Chilkat.VCX]
+loChilkatVFPZipEntry AS [iZipEntry OF iChilkatVFP.VCX], ;
+loChilkatZipEntry AS [Chilkat.ZipEntry], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
 loChilkatVFPZipEntry = toChilkatVFPZipEntry
 
@@ -2668,7 +2734,7 @@ ENDWITH
 EVENTHANDLER(loChilkatZipEntry, loZipEntryEventHandler)
 
 DEFINE CLASS ZipEntryEvents AS SESSION OLEPUBLIC
-IMPLEMENTS _IChilkatEvents IN "Chilkat_9_5_0.ZipEntry"
+IMPLEMENTS _IChilkatEvents IN "Chilkat.ZipEntry"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
@@ -2686,7 +2752,7 @@ PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character
 RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
 ENDPROC
 
-PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat_9_5_0.Task])
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
 RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
 ENDPROC
 

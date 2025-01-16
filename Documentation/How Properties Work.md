@@ -45,4 +45,4 @@ ChilkatVFP property access methods pass two parameters. The first parameter is t
 ChilkatVFP property assign methods pass three parameters. The first value is simply the value you wish to assign. The second parameter is the same as the first parameter of the access method, one of the 10 
 ChilkatVFP Variable/Parameter types. The third parameter, if relevant, is the name of the method used to validate the value in the first parameter. If not empty, the method should reside in the ValidateProperty class.
 
-#### Contact: chilkat VFP at gmail dot com.
+#### Contact: chilkatVFP at gmail dot com.

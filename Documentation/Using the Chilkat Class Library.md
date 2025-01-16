@@ -1,7 +1,7 @@
 
 ## Using the Chilkat Class Library
 
-I've received some questions about ChilkatVFP along the lines of "What's the best way to do this?". This document will explore some of the ways one can use the Chilkat.VCX and iChilkat.VCX to your advantage.
+I've received some questions about ChilkatVFP along the lines of "What's the best way to do this?". This document will explore some of the ways one can use the ChilkatVFP.VCX and iChilkatVFP.VCX to your advantage.
 
 Let's take a simple scenario. As of ChilkatVFP version 1.33 there's a new property on the BaseChilkat class called cMsgSvcLanguage. It is set to "Original", and the cOriginal field contains English words and phrases. What are the options if you'd like to display French instead of English? In other words, instead of the value being "Original" it should be "French". What's the best way to do this?
 
@@ -27,15 +27,15 @@ Downside: If you lay an update on top of ChilkatVFP, that update would stomp on 
 
 That's straightforward, not difficult at all, and using the framework as intended. 
 
-2) Make the changes in the iChilkat.VCX library. More work upfront, but less maintenance.
+2) Make the changes in the iChilkatVFP.VCX library. More work upfront, but less maintenance.
 
 ![iChilkat Class Library](Images/iChikat.jpg)
 
-It should be clear that iChilkat.iASN is a subclass of Chilkat.ASN, etc.
+It should be clear that iChilkatVFP.iASN is a subclass of ChilkatVFP.ASN, etc.
 
-At the time of this writing there are 105 classes within iChilkat.VCX. Do we need to update this property change 105 times? In theory yes, but there's a workaround...
+At the time of this writing there are ~~105~~ 106 classes within iChilkatVFP.VCX. Do we need to update this property change ~~105~~ 106 times? In theory yes, but there's a workaround...
 
-Change one of the iChilkat cMsgSvcLanguage properties to "French". Save it. Then open the iChilkat.VCX as a table, then issue the following at the command window:
+Change one of the iChilkatVFP cMsgSvcLanguage properties to "French". Save it. Then open the iChilkatVFP.VCX as a table, then issue the following at the command window:
 
 ```foxpro
 REPLACE ALL Properties WITH [cmsgsvclanguage = French] + ;
@@ -43,13 +43,13 @@ CHR(13) + CHR(10) + Properties FOR (NOT EMPTY(CLASS))
 AND (NOT([cmsgsvclanguage = French] $ Properties))
 ```
 
-It's messy code but it works. Close the table, recompile iChilkat.VCX.
+It's messy code but it works. Close the table, recompile iChilkatVFP.VCX.
 
 You could also use the WriteExpression method.
 
-The only maintenance is when there's a new Chilkat class. You will have to manually add the new ChilkatVFP class to your iChilkat.VCX, add the FoxPro.H reference and add your custom code. In theory that would only occur once every few Chilkat releases.
+The only maintenance is when there's a new Chilkat class. You will have to manually add the new ChilkatVFP class to your iChilkatVFP.VCX, add the FoxPro.H reference and add your custom code. In theory that would only occur once every few Chilkat releases.
 
-Now if you're just noodling and not supporting a live application with ChilkatVFP, this isn't really necessary. But if ChilkatVFP is included in your business application with both Chilkat.VCX and iChilkat.VCX, this would be my preferred version.
+Now if you're just noodling and not supporting a live application with ChilkatVFP, this isn't really necessary. But if ChilkatVFP is included in your business application with both ChilkatVFP.VCX and iChilkatVFP.VCX, this would be my preferred version.
 
 3) Manipulate the MsgSvc table.
 

@@ -37,7 +37,7 @@ Recently I started another job based in the east coast that to my surprise used 
 
 # Chilkat Primer
 
-The full Chilkat library consists of ~~103~~ 105 classes (two deprecated), containing properties, methods and events. ~~Events are ignored as documentation indicates it is not supported in Visual Foxpro.~~ A property or method can return the following: String, Variant, Long and DateTime (undocumented). Any Chilkat property or method can be read only or read/write. Chilkat properties/methods will return a 0 (false) or 1 (true) to indicate a Boolean value.
+The full Chilkat library consists of ~~103~~ 105 classes (~~two~~ three deprecated), containing properties, methods and events. ~~Events are ignored as documentation indicates it is not supported in Visual Foxpro.~~ A property or method can return the following: String, Variant, Long and DateTime (undocumented). Any Chilkat property or method can be read only or read/write. Chilkat properties/methods will return a 0 (false) or 1 (true) to indicate a Boolean value.
 
 # Class Browser Layout
 
@@ -54,6 +54,7 @@ The full Chilkat library consists of ~~103~~ 105 classes (two deprecated), conta
 * Properties and methods within the class names match the Chilkat class names (with only a couple of exceptions).
 * If the referenced Chilkat property/method was introduced in a certain version, ChilkatVFP will test to ensure said property/method is available.
 * If the referenced Chilkat class was introduced in a certain version, ChilkatVFP will test to ensure said class is available before instantiating.
+* If the referenced Chilkat class was deprecated in a certain version, ChilkatVFP will test to ensure said class is available before instantiating.
 * For all the Chilkat methods, the associated ChilkatVFP documentation for that method is included at the top of the related ChilkatVFP method.
 * For all the Chilkat properties, the associated ChilkatVFP documentation for that property is contained in the related _Access method.
 * As much documentation as could fit into the description was added to all ChilkatVFP properties and methods. You can scroll the VFP property sheet and get a sense of what that method/property does.
@@ -63,6 +64,7 @@ The full Chilkat library consists of ~~103~~ 105 classes (two deprecated), conta
 There already some methods and properties in place for the next release version, 9.5.0.95.
 * If relevant, properties that only return a certain set of values or a range of values are validated against the documented set/range of values. This is true even if a specific value or keywords were introduced in a specific version. 
 * You can return .T./.F. from a method or property to represent a Boolean value with a property setting on the ChilkatVFP instance object [lReturnBitAsLogical].
+* ChilkatVFP works with the 3 dot notation [9.5.0.59] and the 2 dot notation [10.1.0]
 * Integrated Steven Black's MsgSvc() for message displays (Modified: Now named ChMsgSvc()).
 * You can send a .T./.F. to a ChilkatVFP method for a Boolean parameter and it will be automatically converted for you.
 * You can send a ChilkatVFP object to a Chilkat method for a Chilkat object parameter and it will automatically be sent for you.
@@ -127,5 +129,5 @@ You're now up and running! Browse the instance class source code to get a feel f
 
 For further details please see the Documentation folder.
 
-#### Contact: chilkat VFP at gmail dot com.
+#### Contact: chilkatVFP at gmail dot com.
 
