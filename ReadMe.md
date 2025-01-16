@@ -12,7 +12,7 @@ ChilkatVFP is a Github <a href="https://github.com/VFPX" target="_blank">VFPX</a
     a) Purchase a license
     b) Download/install a 30 day trial license (use one of the 32-bit ActiveX installers)
     c) Download/install a freeware Chilkat class or two.
-2) Add the Chilkat.VCX library to your <b>SET([ClassLib])</b> settings.
+2) Add the ChilkatVFP.VCX library to your <b>SET([ClassLib])</b> settings.
 3) Ensure FoxPro.H is in your path.
     
 You're good to go!
@@ -37,7 +37,7 @@ Recently I started another job based in the east coast that to my surprise used 
 
 # Chilkat Primer
 
-The full Chilkat library consists of ~~103~~ 105 classes (~~two~~ three deprecated), containing properties, methods and events. ~~Events are ignored as documentation indicates it is not supported in Visual Foxpro.~~ A property or method can return the following: String, Variant, Long and DateTime (undocumented). Any Chilkat property or method can be read only or read/write. Chilkat properties/methods will return a 0 (false) or 1 (true) to indicate a Boolean value.
+The full Chilkat library consists of ~~103~~ 106 classes (~~two~~ three deprecated), containing properties, methods and events. ~~Events are ignored as documentation indicates it is not supported in Visual Foxpro.~~ A property or method can return the following: String, Variant, Long and DateTime (undocumented). Any Chilkat property or method can be read only or read/write. Chilkat properties/methods will return a 0 (false) or 1 (true) to indicate a Boolean value.
 
 # Class Browser Layout
 
