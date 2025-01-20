@@ -1,4 +1,4 @@
-*File to control Thor CFU for application FoxGet
+*File to control Thor CFU for application ChilkatVFP
 lparameters;
 	toUpdateObject
 
@@ -12,32 +12,32 @@ local;
 
 * Get the URL for the version and ZIP files.
 
-lcRepositoryURL   = 'https://github.com/DougHennig/FoxGet'
+lcRepositoryURL   = 'https://github.com/billand88/ChilkatVFP'
 	&& the URL for the project's repository
 lcDownloadsBranch = 'main'
 lcDownloadsURL    = strtran(m.lcRepositoryURL, 'github.com', ;
 	'raw.githubusercontent.com') + '/' + m.lcDownloadsBranch + '/ThorUpdater/'
-lcVersionFileURL  = m.lcDownloadsURL + 'FoxGetVersion.txt' &&'FoxGetVersion.txt'
+lcVersionFileURL  = m.lcDownloadsURL + 'ChilkatVFPVersion.txt' &&'ChilkatVFPVersion.txt'
 	&& the URL for the file containing code to get the available version number
-lcZIPFileURL      = m.lcDownloadsURL + 'FoxGet.zip'
+lcZIPFileURL      = m.lcDownloadsURL + 'ChilkatVFP.zip'
 	&& the URL for the zip file containing the project
 
 
 text to lcRegisterWithThor noshow textmerge
-	messagebox('From the Thor menu, choose "More -> Open Folder -> Components" to see the folder where FoxGet was installed', 0, 'FoxGet Installed', 5000)
+	messagebox('From the Thor menu, choose "More -> Open Folder -> Components" to see the folder where ChilkatVFP was installed', 0, 'ChilkatVFP Installed', 5000)
 endtext
 
 * Set the properties of the passed updater object.
 
 with m.toUpdateObject
-	.ApplicationName      = 'FoxGet'
-	.VersionLocalFilename = 'FoxGetVersionFile.txt'
+	.ApplicationName      = 'ChilkatVFP'
+	.VersionLocalFilename = 'ChilkatVFPVersionFile.txt'
 	.VersionFileURL       = m.lcVersionFileURL
 	.SourceFileUrl        = m.lcZIPFileURL
 	.Component            = 'No'
 	.Link                 = m.lcRepositoryURL
-	.LinkPrompt           = 'FoxGet Home Page'
-	.ProjectCreationDate  = date(2023, 12, 28)
+	.LinkPrompt           = 'ChilkatVFP Home Page'
+	.ProjectCreationDate  = date(2022, 09, 18)
 	.Dependencies         = ''	&& a comma or space delimited list of other Thor applications (ApplicationName) that this project depends on
 	.RegisterWithThor     = m.lcRegisterWithThor
 

@@ -1,71 +1,61 @@
-*ProjectSettings.txt to create Thor Deployment for {AppID}
+*ProjectSettings.txt to create Thor deployment
 *See https://github.com/VFPX/VFPXDeployment/blob/main/docs/Documentation.md for help.
 *Paths relative are based on git toplevel directory
 
 *The name to show in Thor. Mandatory
-AppName   = 'ChilkatVFP'
+AppName   = ChilkatVFP
 
 *The ID for Thor operation. Mandatory
-AppID     = 'ChilkatVFP'
+AppID     = ChilkatVFP
 
 *Version number
 *A string, or enter pjx to use _VFP.ActiveProject.VersionNumber or, if defined PJXFile
 Version   = 1.41
 
 *Component of Thor or Tool. Use No for Tool.
-Component = No
+Component = Yes
 
-*Remote repository on a git server. There are three ways for the remote repository.
-*==============================================================================
-*- the builder assumes https://github.com/VFPX/{AppId}/master
-*-------------------------------------------
-*- or enter the single parts of the github URL
-*  A github URL comes like https://github.com/Project/Repository/Branch
-*  first enter the repository, this is "Project/Repository"
-*Repository_URL    = {YourProject/YourRepository}
-* second enter the repository, this is "Branch"
-*Repository_Branch = {YourBranch}
-*-------------------------------------------
-*- or enter the URL here. This has precedence.
-Repository = 'https://github.com/billand88/ChilkatVFP'
+*Remote repository on a git server. There are two ways for the remote repository.
+*- the builder assumes https://github.com/VFPX/{AppId}
+*- or enter the URL here (uncomment to use):
+Repository = https://github.com/billand88/ChilkatVFP
 
 *The changelog file. Might be merged into the {AppID}Version.txt
 *The file installed as template (uncomment to use):
-ChangeLog = documentation\History.md
+ChangeLog = Documentation/History.md
 
 *Create VFPX community folders and files. Will not overwrite existing files.
-Include_VFPX = Yes
+*Include_VFPX = Yes
 
 *Do not create Thor folders and files (uncomment to use):
 *Include_Thor = No
 
-
 * The remaining lines are options that are not mandatory. Uncomment the options to use.
 
-*"Yes" to auto run FoxBin2Prg (Default), else "No" to not run.
+*"Yes" to auto run FoxBin2prg (Default), else "No" to not run.
 *RunBin2Prg = No
 
 *"Yes" to auto run git (Default), else "No" to not run.
 *RunGit = No
 
 *The release date formatted as YYYY-MM-DD; if omitted, today
-*VersionDate = 2025-01-14
+*VersionDate = 1973-09-11
 
 *Yes (Default) to prompt for Version if not specified
-Prompt = Yes
+*Prompt = Yes
 
 *The category to use when adding to the Thor menu. If omitted, "Applications". only when Component is No.
 *Category = {My}
 
 *The relative path to the PJX file to compile. Omit this if that isn't required.
-*PJXFile = {My.Pjx}
+*PJXFile = 
 *The path to the APP or EXE to build from the project, with the extension
-*AppFile = {My.App}
+*AppFile = 
 *Builds the project specified in PJXFile without the RECOMPILE clause.
 *Recompile = No
 
-*A comma-separated list of relative paths to which FoxBin2Prg is to be applied.
-*Bin2PrgFolder = {MySource1,MySource1}
+*A comma-separated list of relative paths to which FoxBin2PRG is to be applied.
+Bin2PRGFolder = Source
 
 *A different name for the staging directory.
 *InstalledFilesFolder = {MyInstallFolder}
@@ -79,7 +69,3 @@ Prompt = Yes
 *A different name for version file used to publish info on the remote server.
 *A help with old projects using a different name for the version file
 *VersionFile_Remote = {AppID}Version.txt
-
-*Allow to create Thor_Update_{AppId}_Test.prg file, used for testing this app from a 1different location.
-*Alter Repository_URL / Repository_Branch or Repository for a test location on the web.
-*DEBUGGING = Yes
