@@ -46,7 +46,7 @@ The full Chilkat library consists of ~~103~~ 106 classes (~~two~~ three deprecat
  * Items of note:
     * The relevant class library matches the name of the Chilkat library. 
     * There's an empty iLayer class between all the "working" classes. You can put your own fixes/enhancements/changes here, as I am deliberately leaving these empty. There is one exception which I will explain below.
-        * I had added an iLayer for the instance classes but it made the class library too "muddy" - it was hard to see the forest from the trees, so to speak. Technically it'd be nice to make an iLayer for the instance classes you use (Note: Done!) - make an iCert class as a subclass of Cert, then instantiate iCert and using this newly made class for enhancements and fixes. But it isn't necessary, just recommended.
+        * I had added an iLayer for the instance classes within ChilkatVFP.VCX but it made the class library too "muddy" - it was hard to see the forest from the trees, so to speak. Technically it'd be nice to make an iLayer for the instance classes you use (Note: Done!) - make an iCert class as a subclass of Cert, then instantiate iCert and using this newly made class for enhancements and fixes. But it isn't necessary, just recommended.
 
 # ChilkatVFP Primer
 
@@ -67,7 +67,8 @@ There already some methods and properties in place for the next release version,
 * ChilkatVFP works with the 3 dot notation [9.5.0.59] and the 2 dot notation [10.1.0]
 * Integrated Steven Black's MsgSvc() for message displays (Modified: Now named ChMsgSvc()).
 * You can send a .T./.F. to a ChilkatVFP method for a Boolean parameter and it will be automatically converted for you.
-* You can send a ChilkatVFP object to a Chilkat method for a Chilkat object parameter and it will automatically be sent for you.
+* You can send a ChilkatVFP object to a Chilkat method with an object parameter and the Chilkat object will automatically be sent for you.
+* ChilkatVFP supports Chilkat events wherever possible. In fact, ChilkatVFP improves on the documentation and handling of Chilkat events.
 * All ChilkatVFP objects contain a Release() method to destroy objects as necessary.
 * Code is written in a somewhat "florid" style - for instance, identifying the type of variable as part of the LOCAL definition. The idea is for the code to be digestible and understandable, not turgid. The "guts" of the framework code does get a little heavy, however. 
 * ChilkatVFP PEMs have design time Intellisense, if relevant. See image below. Note that the variable yy was not instantiated, just typed in the method.

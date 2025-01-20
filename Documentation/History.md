@@ -1,5 +1,22 @@
  History
 
+## Version 1.41
+
+*Released 01/19/2025*
+
+This is a bug fix version of the prior 1.40 release. Version 1.40 was a large, large release.
+
+I ran the SpiderTest.PRG after releasing 1.40 and it didn't work. In looking, the BaseChilkat lAddEventHandler_Assign method had a note I put in that the method needed to be updated. It wasn't updated.
+
+Fixed/adjusted for this version:
+
+   1) Events can be set again.
+   2) An additional CallBack*.PRG was added in 1.40, but never called. Fixed.
+   3) Secrets class added to the list of Chilkat objects that can have an event handler.
+   4) Removed the three depcrecated properties/methods from the BaseChilkat class. Went through the framework to remove all references. At least two classes (One of them HTTPRequest) couldn't instantiate in version 1.40 without this fix.
+   5) Added m. (m dot) prefixes to the BaseEventHandler class and subclasses.
+   6) Other random fixes.
+
 ## Version 1.40
 
 *Released 01/14/2025*

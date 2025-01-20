@@ -36,4 +36,4 @@ Or in other words, try this:
 
 ### SET CLASSLIB TO ChilkatVFP ALIAS Chikat
 
-...and then instantiate the ChilkatVFP's email object. It's not pretty.
+...and then instantiate the ChilkatVFP's email object if you're using Version 10 or greater. It's not pretty.
