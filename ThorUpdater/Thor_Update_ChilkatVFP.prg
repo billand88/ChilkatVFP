@@ -49,12 +49,13 @@ with toUpdateObject
 		&& Set this to Yes if you want the project to be a Thor Component or No
 		&& if you want it to be Thor App
 	.VersionLocalFilename = lcAppID + 'VersionFile.txt'
-	.RegisterWithThor     = lcRegisterWithThor
 	.VersionFileURL       = lcVersionFileURL
 	.SourceFileUrl        = lcZIPFileURL
+ 	.Component            = 'Yes'
 	.Link                 = lcRepositoryURL
 	.LinkPrompt           = lcAppName + ' Home Page'
 	.Notes                = GetNotes()
+  .RegisterWithThor     = lcRegisterWithThor
 endwith
 return toUpdateObject
 
@@ -69,13 +70,14 @@ Project Manager: Bill Anderson - <chilkatvfp@gmail.com>
 
 This is a VFPX project that contains one VFP class library to wrap the Chilkat library objects: https://www.chilkatsoft.com/
 
-Version 1.40 Updates
+Version 1.41 Updates
 
-  1) Changed the main ChilkatVFP class library name to ChilkatVFP.VCX.
-  2) Many changes to support Chilkat Version 10 compatibility.
-  3) Added support for new versioning technique.
-  4) Added the Secrets class.
-  5) Added class retirement support.
+   1) Events can be set again.
+   2) An additional CallBack*.PRG was added in 1.40, but never called. Fixed.
+   3) Secrets class added to the list of Chilkat objects that can have an event handler.
+   4) Removed the three depcrecated properties/methods from the BaseChilkat class. Went through the framework to remove all references. At least two classes (One of them HTTPRequest) couldn't instantiate in version 1.40 without this fix.
+   5) Added m. (m dot) prefixes to the BaseEventHandler class and subclasses.
+   6) Other random fixes.
   
 
 endtext

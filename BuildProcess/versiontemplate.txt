@@ -58,7 +58,6 @@ with loThorInfo
 	.PRGName    = 'Thor_Tool_{APPID}'
 	.FolderName = '##InstallFolder##'
 	.Prompt     = '{APPNAME}'
-	.AppID      = '{APPID}'
 
 * Optional properties.
 

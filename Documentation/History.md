@@ -13,7 +13,7 @@ Fixed/adjusted for this version:
    1) Events can be set again.
    2) An additional CallBack*.PRG was added in 1.40, but never called. Fixed.
    3) Secrets class added to the list of Chilkat objects that can have an event handler.
-   4) Removed the three depcrecated properties/methods from the BaseChilkat class. Went through the framework to remove all references. At least two classes (One of them HTTPRequest) couldn't instantiate in version 1.40 without this fix.
+   4) Removed the three deprecated properties/methods from the BaseChilkat class. Went through the framework to remove all references. At least two classes (One of them HTTPRequest) couldn't instantiate in version 1.40 without this fix.
    5) Added m. (m dot) prefixes to the BaseEventHandler class and subclasses.
    6) Other random fixes.
 

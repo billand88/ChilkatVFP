@@ -44,7 +44,7 @@ PROCEDURE AtomEventCallback
 
 LPARAMETERS toChilkatVFPAtom AS [iAtom OF iChilkatVFP.VCX]
 
-LOCAL loAtomEventHandler AS [AtomEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loAtomEventHandler AS [AtomEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPAtom AS [iAtom OF iChilkatVFP.VCX], loChilkatAtom AS [Chilkat_9_5_0.Atom], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
@@ -108,7 +108,7 @@ PROCEDURE AuthAzureADEventCallback
 
 LPARAMETERS toChilkatVFPAuthAzureAD AS [iAuthAzureAD OF iChilkatVFP.VCX]
 
-LOCAL loAuthAzureADEventHandler AS [AuthAzureADEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loAuthAzureADEventHandler AS [AuthAzureADEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPAuthAzureAD AS [iAuthAzureAD OF iChilkatVFP.VCX], ;
 loChilkatAuthAzureAD AS [Chilkat_9_5_0.AuthAzureAD], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
@@ -173,7 +173,7 @@ PROCEDURE AuthGoogleEventCallback
 
 LPARAMETERS toChilkatVFPAuthGoogle AS [iAuthGoogle OF iChilkatVFP.VCX]
 
-LOCAL loAuthGoogleEventHandler AS [AuthGoogleEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loAuthGoogleEventHandler AS [AuthGoogleEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPAuthGoogle AS [iAuthGoogle OF iChilkatVFP.VCX], ;
 loChilkatAuthGoogle AS [Chilkat_9_5_0.AuthGoogle], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
@@ -242,7 +242,7 @@ LPARAMETERS toChilkatVFPBz2 AS [iBz2 OF iChilkatVFP.VCX]
 ** Fixed for Version 77: PercentDone callbacks were not working.
 ** 
 
-LOCAL loBz2EventHandler AS [Bz2Events OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loBz2EventHandler AS [Bz2Events OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPBz2 AS [iBz2 OF iChilkatVFP.VCX], loChilkatBz2 AS [Chilkat_9_5_0.Bz2], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
@@ -306,7 +306,7 @@ PROCEDURE CertEventCallback
 
 LPARAMETERS toChilkatVFPCert AS [iCert OF iChilkatVFP.VCX]
 
-LOCAL loCertEventHandler AS [CertEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loCertEventHandler AS [CertEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPCert AS [iCert OF iChilkatVFP.VCX], ;
 loChilkatCert AS [Chilkat_9_5_0.Cert], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
@@ -371,7 +371,7 @@ PROCEDURE CodeSignEventCallback
 
 LPARAMETERS toChilkatVFPCodeSign AS [iCodeSign OF iChilkatVFP.VCX]
 
-LOCAL loCodeSignEventHandler AS [CodeSignEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loCodeSignEventHandler AS [CodeSignEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPCodeSign AS [iCodeSign OF iChilkatVFP.VCX], ;
 loChilkatCodeSign AS [Chilkat_9_5_0.CodeSign], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
@@ -436,7 +436,7 @@ PROCEDURE CompressionEventCallback
 
 LPARAMETERS toChilkatVFPCompression AS [iCompression OF iChilkatVFP.VCX]
 
-LOCAL loCompressionEventHandler AS [CompressionEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loCompressionEventHandler AS [CompressionEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPCompression AS [iCompression OF iChilkatVFP.VCX], ;
 loChilkatCompression AS [Chilkat_9_5_0.Compression], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
@@ -501,7 +501,7 @@ PROCEDURE Crypt2EventCallback
 
 LPARAMETERS toChilkatVFPCrypt2 AS [iCrypt2 OF iChilkatVFP.VCX]
 
-LOCAL loCrypt2EventHandler AS [Crypt2Events OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loCrypt2EventHandler AS [Crypt2Events OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPCrypt2 AS [iCrypt2 OF iChilkatVFP.VCX], ;
 loChilkatCrypt2 AS [Chilkat_9_5_0.Crypt2], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
@@ -566,7 +566,7 @@ PROCEDURE DkimEventCallback
 
 LPARAMETERS toChilkatVFPDkim AS [iDkim OF iChilkatVFP.VCX]
 
-LOCAL loDkimEventHandler AS [DkimEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loDkimEventHandler AS [DkimEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPDkim AS [iDkim OF iChilkatVFP.VCX], loChilkatDkim AS [Chilkat_9_5_0.Dkim], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
@@ -630,7 +630,7 @@ PROCEDURE DnsEventCallback
 
 LPARAMETERS toChilkatVFPDns AS [iDns OF iChilkatVFP.VCX]
 
-LOCAL loDnsEventHandler AS [DnsEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loDnsEventHandler AS [DnsEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPDns AS [iDns OF iChilkatVFP.VCX], loChilkatDns AS [Chilkat_9_5_0.Dns], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
@@ -709,7 +709,7 @@ LPARAMETERS toChilkatVFPFtp2 AS [iFtp2 OF iChilkatVFP.VCX]
 ** Fixed for Version 59: Fixed SyncRemoteTree/SyncRemoteTree2 progress monitoring callbacks.
 **
 
-LOCAL loFtp2EventHandler AS [Ftp2Events OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loFtp2EventHandler AS [Ftp2Events OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPFtp2 AS [iFtp2 OF iChilkatVFP.VCX], loChilkatFtp2 AS [Chilkat_9_5_0.Ftp2], ;
 loChilkatVFPEventHandler AS [iFtp2EventHandler OF ChilkatVFP.VCX]
 
@@ -813,7 +813,7 @@ PROCEDURE GZipEventCallback
 
 LPARAMETERS toChilkatVFPGzip AS [iGzip OF iChilkatVFP.VCX]
 
-LOCAL loGzipEventHandler AS [GzipEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loGzipEventHandler AS [GzipEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPGzip AS [iGzip OF iChilkatVFP.VCX], loChilkatGzip AS [Chilkat_9_5_0.Gzip], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
@@ -898,7 +898,7 @@ LPARAMETERS toChilkatVFPHttp AS [iHttp OF iChilkatVFP.VCX]
 ** and is determined by the size of the request.
 ** 
 
-LOCAL loHttpEventHandler AS [HttpEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loHttpEventHandler AS [HttpEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPHttp AS [iHttp OF iChilkatVFP.VCX], loChilkatHttp AS [Chilkat_9_5_0.Http], ;
 loChilkatVFPEventHandler AS [iHTTPEventHandler OF ChilkatVFP.VCX]
 
@@ -995,7 +995,7 @@ PROCEDURE IMapEventCallback
 
 LPARAMETERS toChilkatVFPImap AS [iImap OF iChilkatVFP.VCX]
 
-LOCAL loImapEventHandler AS [ImapEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loImapEventHandler AS [ImapEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPImap AS [iImap OF iChilkatVFP.VCX], loChilkatImap AS [Chilkat_9_5_0.Imap], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
@@ -1059,7 +1059,7 @@ PROCEDURE MailManEventCallback
 
 LPARAMETERS toChilkatVFPMailMan AS [iMailMan OF iChilkatVFP.VCX]
 
-LOCAL loMailManEventHandler AS [MailManEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loMailManEventHandler AS [MailManEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPMailMan AS [iMailMan OF iChilkatVFP.VCX], ;
 loChilkatMailMan AS [Chilkat_9_5_0.MailMan], ;
 loChilkatVFPEventHandler AS [iMailManEventHandler OF ChilkatVFP.VCX]
@@ -1131,7 +1131,7 @@ PROCEDURE MhtEventCallback
 
 LPARAMETERS toChilkatVFPMht AS [iMht OF iChilkatVFP.VCX]
 
-LOCAL loMhtEventHandler AS [MhtEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loMhtEventHandler AS [MhtEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPMht AS [iMht OF iChilkatVFP.VCX], loChilkatMht AS [Chilkat_9_5_0.Mht], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
@@ -1195,7 +1195,7 @@ PROCEDURE OAuth2EventCallback
 
 LPARAMETERS toChilkatVFPOAuth2 AS [iOAuth2 OF iChilkatVFP.VCX]
 
-LOCAL loOAuth2EventHandler AS [OAuth2Events OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loOAuth2EventHandler AS [OAuth2Events OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPOAuth2 AS [iOAuth2 OF iChilkatVFP.VCX], loChilkatOAuth2 AS [Chilkat_9_5_0.OAuth2], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
@@ -1259,7 +1259,7 @@ PROCEDURE PdfEventCallback
 
 LPARAMETERS toChilkatVFPPdf AS [iPdf OF iChilkatVFP.VCX]
 
-LOCAL loPdfEventHandler AS [PdfEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loPdfEventHandler AS [PdfEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPPdf AS [iPdf OF iChilkatVFP.VCX], loChilkatPdf AS [Chilkat_9_5_0.Pdf], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
@@ -1323,7 +1323,7 @@ PROCEDURE PemEventCallback
 
 LPARAMETERS toChilkatVFPPem AS [iPem OF iChilkatVFP.VCX]
 
-LOCAL loPemEventHandler AS [PemEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loPemEventHandler AS [PemEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPPem AS [iPem OF iChilkatVFP.VCX], loChilkatPem AS [Chilkat_9_5_0.Pem], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
@@ -1387,7 +1387,7 @@ PROCEDURE PrivateKeyEventCallback
 
 LPARAMETERS toChilkatVFPPrivateKey AS [iPrivateKey OF iChilkatVFP.VCX]
 
-LOCAL loPrivateKeyEventHandler AS [PrivateKeyEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loPrivateKeyEventHandler AS [PrivateKeyEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPPrivateKey AS [iPrivateKey OF iChilkatVFP.VCX], ;
 loChilkatPrivateKey AS [Chilkat_9_5_0.PrivateKey], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
@@ -1452,7 +1452,7 @@ PROCEDURE RestEventCallback
 
 LPARAMETERS toChilkatVFPRest AS [iRest OF iChilkatVFP.VCX]
 
-LOCAL loRestEventHandler AS [RestEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loRestEventHandler AS [RestEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPRest AS [iRest OF iChilkatVFP.VCX], loChilkatRest AS [Chilkat_9_5_0.Rest], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
@@ -1516,7 +1516,7 @@ PROCEDURE RssEventCallback
 
 LPARAMETERS toChilkatVFPRss AS [iRss OF iChilkatVFP.VCX]
 
-LOCAL loRssEventHandler AS [RssEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loRssEventHandler AS [RssEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPRss AS [iRss OF iChilkatVFP.VCX], loChilkatRss AS [Chilkat_9_5_0.Rss], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
@@ -1580,7 +1580,7 @@ PROCEDURE SCardEventCallback
 
 LPARAMETERS toChilkatVFPSCard AS [iSCard OF iChilkatVFP.VCX]
 
-LOCAL loSCardEventHandler AS [SCardEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loSCardEventHandler AS [SCardEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPSCard AS [iSCard OF iChilkatVFP.VCX], loChilkatSCard AS [Chilkat_9_5_0.SCard], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
@@ -1644,7 +1644,7 @@ PROCEDURE ScpEventCallback
 
 LPARAMETERS toChilkatVFPScp AS [iScp OF iChilkatVFP.VCX]
 
-LOCAL loScpEventHandler AS [ScpEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loScpEventHandler AS [ScpEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPScp AS [iScp OF iChilkatVFP.VCX], loChilkatScp AS [Chilkat_9_5_0.Scp], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
@@ -1715,7 +1715,7 @@ LPARAMETERS toChilkatVFPSFtp AS [iSFtp OF iChilkatVFP.VCX]
 ** Fixed for version 73: The SyncTreeDownload method was not firing the DownloadRate callback.
 ** 
 
-LOCAL loSFtpEventHandler AS [SFtpEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loSFtpEventHandler AS [SFtpEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPSFtp AS [iSFtp OF iChilkatVFP.VCX], loChilkatSFtp AS [Chilkat_9_5_0.SFtp], ;
 loChilkatVFPEventHandler AS [iSFtpEventHandler OF ChilkatVFP.VCX]
 
@@ -1787,7 +1787,7 @@ PROCEDURE SocketEventCallback
 
 LPARAMETERS toChilkatVFPSocket AS [iSocket OF iChilkatVFP.VCX]
 
-LOCAL loSocketEventHandler AS [SocketEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loSocketEventHandler AS [SocketEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPSocket AS [iSocket OF iChilkatVFP.VCX], ;
 loChilkatSocket AS [Chilkat_9_5_0.Socket], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
@@ -1852,7 +1852,7 @@ PROCEDURE SpiderEventCallback
 
 LPARAMETERS toChilkatVFPSpider AS [iSpider OF iChilkatVFP.VCX]
 
-LOCAL loSpiderEventHandler AS [SpiderEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loSpiderEventHandler AS [SpiderEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPSpider AS [iSpider OF iChilkatVFP.VCX], ;
 loChilkatSpider AS [Chilkat_9_5_0.Spider], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
@@ -1917,7 +1917,7 @@ PROCEDURE SshEventCallback
 
 LPARAMETERS toChilkatVFPSsh AS [iSsh OF iChilkatVFP.VCX]
 
-LOCAL loSshEventHandler AS [SshEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loSshEventHandler AS [SshEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPSsh AS [iSsh OF iChilkatVFP.VCX], loChilkatSsh AS [Chilkat_9_5_0.Ssh], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
@@ -1981,7 +1981,7 @@ PROCEDURE SshTunnelEventCallback
 
 LPARAMETERS toChilkatVFPSshTunnel AS [iSshTunnel OF iChilkatVFP.VCX]
 
-LOCAL loSshTunnelEventHandler AS [SshTunnelEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loSshTunnelEventHandler AS [SshTunnelEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPSshTunnel AS [iSshTunnel OF iChilkatVFP.VCX], ;
 loChilkatSshTunnel AS [Chilkat_9_5_0.SshTunnel], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
@@ -2046,7 +2046,7 @@ PROCEDURE TarEventCallback
 
 LPARAMETERS toChilkatVFPTar AS [iTar OF iChilkatVFP.VCX]
 
-LOCAL loTarEventHandler AS [TarEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loTarEventHandler AS [TarEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPTar AS [iTar OF iChilkatVFP.VCX], loChilkatTar AS [Chilkat_9_5_0.Tar], ;
 loChilkatVFPEventHandler AS [iTarEventHandler OF ChilkatVFP.VCX]
 
@@ -2115,7 +2115,7 @@ PROCEDURE TaskEventCallback
 
 LPARAMETERS toChilkatVFPTask AS [iTask OF iChilkatVFP.VCX]
 
-LOCAL loTaskEventHandler AS [TaskEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loTaskEventHandler AS [TaskEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPTask AS [iTask OF iChilkatVFP.VCX], loChilkatTask AS [Chilkat_9_5_0.Task], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
 
@@ -2179,7 +2179,7 @@ PROCEDURE TaskChainEventCallback
 
 LPARAMETERS toChilkatVFPTaskChain AS [iTaskChain OF iChilkatVFP.VCX]
 
-LOCAL loTaskChainEventHandler AS [TaskChainEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loTaskChainEventHandler AS [TaskChainEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPTaskChain AS [iTaskChain OF iChilkatVFP.VCX], ;
 loChilkatTaskChain AS [Chilkat_9_5_0.TaskChain], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
@@ -2244,7 +2244,7 @@ PROCEDURE TrustedRootsEventCallback
 
 LPARAMETERS toChilkatVFPTrustedRoots AS [iTrustedRoots OF iChilkatVFP.VCX]
 
-LOCAL loTrustedRootsEventHandler AS [TrustedRootsEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loTrustedRootsEventHandler AS [TrustedRootsEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPTrustedRoots AS [iTrustedRoots OF iChilkatVFP.VCX], ;
 loChilkatTrustedRoots AS [Chilkat_9_5_0.TrustedRoots], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
@@ -2309,7 +2309,7 @@ PROCEDURE UnixCompressEventCallback
 
 LPARAMETERS toChilkatVFPUnixCompress AS [iUnixCompress OF iChilkatVFP.VCX]
 
-LOCAL loUnixCompressEventHandler AS [UnixCompressEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loUnixCompressEventHandler AS [UnixCompressEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPUnixCompress AS [iUnixCompress OF iChilkatVFP.VCX], ;
 loChilkatUnixCompress AS [Chilkat_9_5_0.UnixCompress], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
@@ -2374,7 +2374,7 @@ PROCEDURE UploadEventCallback
 
 LPARAMETERS toChilkatVFPUpload AS [iUpload OF iChilkatVFP.VCX]
 
-LOCAL loUploadEventHandler AS [UploadEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loUploadEventHandler AS [UploadEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPUpload AS [iUpload OF iChilkatVFP.VCX], ;
 loChilkatUpload AS [Chilkat_9_5_0.Upload], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
@@ -2448,7 +2448,7 @@ LPARAMETERS toChilkatVFPZip AS [iZip OF iChilkatVFP.VCX]
 ** where the name identifies the event, and the value contains information specific to the event.)
 ** 
 
-LOCAL loZipEventHandler AS [ZipEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loZipEventHandler AS [ZipEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPZip AS [iZip OF iChilkatVFP.VCX], loChilkatZip AS [Chilkat_9_5_0.Zip], ;
 loChilkatVFPEventHandler AS [iZipEventHandler OF ChilkatVFP.VCX]
 
@@ -2575,7 +2575,7 @@ PROCEDURE ZipCRCEventCallback
 
 LPARAMETERS toChilkatVFPZipCrc AS [iZipCrc OF iChilkatVFP.VCX]
 
-LOCAL loZipCrcEventHandler AS [ZipCrcEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loZipCrcEventHandler AS [ZipCrcEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPZipCrc AS [iZipCrc OF iChilkatVFP.VCX], ;
 loChilkatZipCrc AS [Chilkat_9_5_0.ZipCrc], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
@@ -2640,7 +2640,7 @@ PROCEDURE ZipEntryEventCallback
 
 LPARAMETERS toChilkatVFPZipEntry AS [iZipEntry OF iChilkatVFP.VCX]
 
-LOCAL loZipEntryEventHandler AS [ZipEntryEvents OF ChilkatVFPEventCallbacks.PRG], ;
+LOCAL loZipEntryEventHandler AS [ZipEntryEvents OF ChilkatVFPEventCallbacksV58.PRG], ;
 loChilkatVFPZipEntry AS [iZipEntry OF iChilkatVFP.VCX], ;
 loChilkatZipEntry AS [Chilkat_9_5_0.ZipEntry], ;
 loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]

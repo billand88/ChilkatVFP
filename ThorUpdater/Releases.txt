@@ -1,4 +1,15 @@
 
+### Version 1.41 -- Released 01/14/2025
+
+* Version 1.40 bug fix version.
+
+   1) Events can be set again.
+   2) An additional CallBack*.PRG was added in 1.40, but never called. Fixed.
+   3) Secrets class added to the list of Chilkat objects that can have an event handler.
+   4) Removed the three deprecated properties/methods from the BaseChilkat class. 
+   5) Added m. (m dot) prefixes to the BaseEventHandler class and subclasses.
+   6) Other random fixes.
+
 ### Version 1.40 -- Released 01/14/2025
 
 * Changed the name of the main ChilkatVFP library from Chilkat.VCX to ChilkatVFP.VCX.
@@ -16,7 +27,6 @@
 * Chilkat version 99 compatibility release.
 
 * Also added the enhancement/bug fix notes in the method documentation to the associated *ASync method if such a method existed.
-
 
 ### Version 1.33 -- Released 04/04/2024
 

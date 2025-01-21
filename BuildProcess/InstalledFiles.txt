@@ -1,0 +1,9 @@
+ChilkatVFP*.*
+ChMsgSvc.PRG
+FoxPro.H
+iChilkatVFP*.*
+MsgSvc*.*
+ReadMe.md
+SpiderTest.PRG
+ThorUpdater\*.*
+Documentation\*.*

@@ -13,7 +13,7 @@ AppID     = ChilkatVFP
 Version   = 1.41
 
 *Component of Thor or Tool. Use No for Tool.
-Component = Yes
+*Component = No
 
 *Remote repository on a git server. There are two ways for the remote repository.
 *- the builder assumes https://github.com/VFPX/{AppId}
