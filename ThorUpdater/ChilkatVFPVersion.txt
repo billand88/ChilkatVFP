@@ -1,10 +1,139 @@
-lparameters toUpdateObject
-local ldDate, ;
-	lnJulian, ;
-	lcJulian
-ldDate   = date(2025,01,19)
-lnJulian = val(sys(11, ldDate)) - val(sys(11, {^2000-01-01}))
-lcJulian = padl(transform(lnJulian), 4, '0')
-toUpdateObject.AvailableVersion = 'ChilkatVFP-1.41.' + lcJulian + ;
-	'-update-' + dtoc(ldDate, 1)
-return toUpdateObject
+Lparameters toUpdateObject
+Local lcDate, ldDate
+
+lcDate = '20250214'
+
+With m.toUpdateObject
+	.VersionNumber    = '1.42 - ' + lcDate
+	.AvailableVersion = 'VFPX Deployment-1.42-09176-' + lcDate
+	.Notes            = GetReleaseNotes()
+Endwith
+
+Return m.toUpdateObject
+
+
+* ================================================================================
+* ================================================================================
+
+Procedure GetReleaseNotes
+
+Text to lcNote NoShow
+# Release History
+
+## 2025-02-14 Version 1.42
+
+- Compatibility with Chilkat version 10.1.2.
+
+## 2025-01-19 Version 1.41
+
+- This is a bug fix version of the prior 1.40 release.
+
+Fixed/adjusted for this version:
+
+   1) Events can be set again.
+   2) An additional CallBack*.PRG was added in 1.40, but never called. Fixed.
+   3) Secrets class added to the list of Chilkat objects that can have an event handler.
+   4) Removed the three deprecated properties/methods from the BaseChilkat class. Went through the framework to remove all references. At least two classes (One of them HTTPRequest) couldn't instantiate in version 1.40 without this fix.
+   5) Added m. (m dot) prefixes to the BaseEventHandler class and subclasses.
+   6) Other random fixes.
+
+## 2025-01-14 Version 1.40
+
+First off: It turns out I need to change the name of the main library from Chilkat.VCX to ChilkatVFP.VCX. The reason why is explained in the Class Library Name Change.md document in the Documentation folder.
+
+   1) There is a new Versioning object to do the new versioning calculations. 
+   2) Added new Secrets class arriving in Chilkat version 10.1.0.
+   3) Added the ability to support Chilkat class retirements coming in version 11. Added a MsgSvc record pertaining to class retirements.
+   4) Changed all source code to support the new versioning.
+   5) Found two classes that didn't get the "m." prefix for variables as described in Version 1.31 changes as well as other random missed methods.
+
+## 2024-07-10 Version 1.34
+
+Chilkat version 99 compatibility release.
+
+Also added the enhancement/bug fix notes in the method documentation to the associated *ASync method if such a method existed.
+
+## 2024-04-04 Version 1.33
+
+  1) The MsgSvc program will be deprecated and replaced with ChMsgSvc.PRG.
+  2) There's a new instance class property called cMsgSvcLanguage. This property references the MsgSvc.DBF field to retrieve for message displays. 
+  3) Chilkat version 98 support. 
+  4) New document in the Documentation folder, "Using the Chilkat Class Library". This document goes over some solutions for implementing a language change within ChilkatVFP.
+
+## 2024-02-13 Version 1.32
+
+  1) Chilkat Version 97 compatibility.
+  2) Fixed code bugs and documentation bugs when I ran into them
+  3) The LogicalToBit method was fixed.
+  4) Added lots of documentation within the instance classes.	
+  5) Added the ChilkatChangeLog method to all instance classes to serve as historical documentation.
+
+## 2024-01-20 Version 1.31
+
+ 1) Added "m." (mdots) to all the memory variables within Chilkat.VCX where necessary.
+ 2) The StringTable, BinData and IMAP classes didn't even compile cleanly. Fixed.
+ 3) The SFTP event handling within the three ChilkatVFPEventCallbacks programs didn't have the extended events. Fixed.
+
+## 2023-11-15 Version 1.3
+
+ 1) Version 96 compatibility changes. 
+ 2) This update includes the new DNS/iDNS classes in Chilkat.VCX/iChilkat.VCX. 
+ 3) ChilkatVFPEventCallbacks.PRG gets three new event procedures. 
+ 4) Fixes and enhancements to the documentation.
+ 5) Found about a dozen or so missing ChilkatVFP methods and properties between Chilkat versions 90 - 95. 
+
+## 2023-10-13 Version 1.24
+
+- Found several additional Chilkat classes that lacked a Version property (and thereby couldn't instantiate correctly in ChilkatVFP).
+
+Added a TaskDownloadTest program to demonstrate very basic tasking. 
+
+## 2023-08-24 Version 1.23
+
+- Finished off compatibility changes for Chilkat version 95. Added one version 96 method.
+
+## 2023-07-18 Version 1.22
+
+ 1) Added iChilkat.VCT/VCX which subclasses the iBaseChilkat instance classes. 
+ 2) The cEventHandler class was set incorrectly for several classes, now fixed.
+ 3) The SpiderTest program was updated.
+
+## 2023-07-18 Version 1.21
+
+- Chilkat version 94 compatibility and a couple of minor fixes.
+
+## 2023-04-19 Version 1.2
+
+ 1) You can now pass a ChilkatVFP object as an object parameter to a Chilkat method.
+ 2) calling properties (and presumably methods) before their implementation would simply fail, now you are told why they failed.
+
+## Version 1.11
+
+- Bug fix version.
+
+ 1) You could not instantiate the BinData or the StringBuilder class, now fixed.
+ 2) Enhanced/tweaked/adjusted a few methods in the BaseChilkat class.
+ 3) Addded events to ChilkatVFPEventCallbacks.PRG.
+
+## 2022-11-04 Version 1.1
+
+ 1) Added support for all Chilkat event callbacks. See the How Events Work.md document in the Documentation folder.
+ 2) Added the cEventHandlerClass, lAddEventHandler and oEventHandler properties to the BaseChilkat class. 
+ 3) Added the BaseEventHandler class and about a dozen subclasses to support Chilkat event callbacks.
+ 4) ChilkatVFPEventCallbacks.PRG, ChilkatVFPEventCallbacksPreV52.PRG and ChilkatVFPEventCallbacksPreV58.PRG are added to support Chilkat event callbacks. 
+ 5) SpiderTest.PRG included as a Chilkat event implementation example.
+ 6) A couple SleepMs methods were not working correctly are fixed in this version.
+
+## 2022-10-16 Version 1.01
+
+- Chilkat version 92 compatibility.
+
+## 2022-09-18 Version 1.0
+
+- This is the first release (1.0) of ChilkatVFP.
+
+EndText
+
+Return lcNote
+
+EndProc

@@ -1,5 +1,10 @@
  History
 
+## Version 1.42
+*Released 02/14/2025*
+
+Compatibility with Chilkat version 10.1.2.
+
 ## Version 1.41
 
 *Released 01/19/2025*
