@@ -1,6 +1,6 @@
 AppName   = ChilkatVFP
 AppID     = ChilkatVFP
-Version   = 1.42.9176
+Version   = 1.43.9192
 Component = No
 
 ChangeLog = Documentation\History.md
