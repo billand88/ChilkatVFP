@@ -70,15 +70,12 @@ Project Manager: Bill Anderson - <chilkatvfp@gmail.com>
 
 This is a VFPX project that contains one VFP class library to wrap the Chilkat library objects: https://www.chilkatsoft.com/
 
-Version 1.41 Updates
+Version 1.50 -- Released 05/21/2025
 
-   1) Events can be set again.
-   2) An additional CallBack*.PRG was added in 1.40, but never called. Fixed.
-   3) Secrets class added to the list of Chilkat objects that can have an event handler.
-   4) Removed the three depcrecated properties/methods from the BaseChilkat class. Went through the framework to remove all references. At least two classes (One of them HTTPRequest) couldn't instantiate in version 1.40 without this fix.
-   5) Added m. (m dot) prefixes to the BaseEventHandler class and subclasses.
-   6) Other random fixes.
-  
+   1) Added ChilkatVFP.H with compile-time switch due to COM call change. See History.md.
+   2) Compatibility with Chilkat version 11.0.0.
+   3) Added code /MsgSvc record to test for class/property/method removal.
+   4) Documented newly decremented class/properties/methods.
 
 endtext
 return lcNotes

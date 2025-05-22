@@ -1,4 +1,26 @@
  History
+## Version 1.50
+*Released 05/21/2025*
+
+Big changes.
+
+Compatibility with Chilkat version 11.0.0. 
+
+The Chilkat COM call has officially changed from [Chilkat_9_5_0.(object)] to [Chilkat.(object)]. In order to support Chilkat version 11 and Chilkat version 9, a ChilkatVFP.H file has been added and referenced in all ChilkatVFP classes. ChilkatVFP.H has a variable at the top of the ChilkatVFP.H file.
+
+#DEFINE CHILKAT_VERSION_11.0.0_OR_GREATER
+
+**If you are using Chilkat version 11 or greater, this variable needs to be set to true, then recompile the ChilkatVFP and iChilkatVFP class libraries.** If you are supporting multiple Chilkat versions, set this variable/recompile before continuing. Otherwise, the Chilkat COM address will simply be wrong and could fail. (Note: If you are using Chilkat Version 10 or your registry has the appropriate entries from an earlier Chilkat version, you may not have an issue.)
+
+Several Chilkat classes were removed in Version 11 (Atom, Csp, KeyContainer, AuthAzureAD, Bounce, Rss, others). Many properties/methods were removed from the remaining Chilkat classes. All the undocumented properties/methods were removed from Chilkat, including all the properties/methods that dealt with a VFP DateTime value. ChilkatVFP will test for class/property/method removal and will bring up a dialog if so.
+
+Many methods/properties were added for naming/processing consistency across classes. As an example, lots of major classes removed the LastJsonData method (no parameter) in Chilkat version 11 and added a GetLastJsonData method (BinData object parameter). The BinData class is used more heavily now as a passed parameter.
+
+Many methods have been marked as decremented - still in use but eventually to be removed. The Charset class has been marked as decremented and will be removed in Chilkat Version 12. I suspect these newly decremented methods/properties will go away at that time.
+
+There is no issue with ChilkatVFP, as it remains compatible (based on the provided documentation) back to version 9.5.0.22 - and it will remain that way. No reason not to. If you don't want to upgrade your Chilkat version, ChilkatVFP will function as always, no issue. 
+
+Found four missing FTP2 properties that should have been coded up from the beginning of ChilkatVFP.
 
 ## Version 1.43
 *Released 03/02/2025*

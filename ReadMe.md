@@ -13,7 +13,7 @@ ChilkatVFP is a Github <a href="https://github.com/VFPX" target="_blank">VFPX</a
     b) Download/install a 30 day trial license (use one of the 32-bit ActiveX installers)
     c) Download/install a freeware Chilkat class or two.
 2) Add the ChilkatVFP.VCX library to your <b>SET([ClassLib])</b> settings.
-3) Ensure FoxPro.H is in your path.
+3) Ensure ChilkatVFP.H and FoxPro.H are in your path.
     
 You're good to go!
 
@@ -54,7 +54,7 @@ The full Chilkat library consists of ~~103~~ 106 classes (~~two~~ three deprecat
 * Properties and methods within the class names match the Chilkat class names (with only a couple of exceptions).
 * If the referenced Chilkat property/method was introduced in a certain version, ChilkatVFP will test to ensure said property/method is available.
 * If the referenced Chilkat class was introduced in a certain version, ChilkatVFP will test to ensure said class is available before instantiating.
-* If the referenced Chilkat class was deprecated in a certain version, ChilkatVFP will test to ensure said class is available before instantiating.
+* If the referenced Chilkat class was retired in a certain version, ChilkatVFP will test to ensure said class is available before instantiating.
 * For all the Chilkat methods, the associated ChilkatVFP documentation for that method is included at the top of the related ChilkatVFP method.
 * For all the Chilkat properties, the associated ChilkatVFP documentation for that property is contained in the related _Access method.
 * As much documentation as could fit into the description was added to all ChilkatVFP properties and methods. You can scroll the VFP property sheet and get a sense of what that method/property does.

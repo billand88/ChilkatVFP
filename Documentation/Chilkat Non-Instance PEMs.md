@@ -46,7 +46,6 @@ The properties of the BaseChilkat class are:
 |iBuildNumber| Integer property used to hold the build number for the Chilkat object. (*Note: This will be removed in a future ChilkatVFP version.*) |
 |iBuildPatch|Property used to hold the patch version of the running Chilkat version for this object.|
 |iCalculatedBuildNumber|Method used to generate a build number that can be used for comparisons.|
-|iInstanceBuildNumber| The instance object build number, if relevant. (*Note: This will be removed in a future ChilkatVFP version.*)|
 |iInstanceMajor|Property used to hold the major version number of when the Chilkat object existed.|
 |iInstanceMajor|Property used to hold the minor version number of when the Chilkat object existed.|
 |iInstancePatch|Property used to hold the patch version number of when the Chilkat object existed.|
@@ -79,14 +78,10 @@ The methods of the BaseChilkat class are:
 |ChilkatChangeLog|Documentation method used to hold the Chilkat class changes per release version.|
 |GetBuildNumber| Method used to determine the build number of the Chilkat object. |
 |GetChilkatObject| Method run to retrieve or create the Chilkat object. |
-|GetChilkatVersionObject|Method used to return a Chilkat object that contains a Version property.|
 |GetImplAddrStr_Access| Access method used to retrieve the GetImplAddrStr property. |
 |GetImplAddrStr_Assign| Assign method used to hold the GetImplAddrStr property of the referenced Chilkat object. |
-|iBuildNumber_Access| Access method used to retrieve the iBuildNumber property. (*Note: This will be removed in a future ChilkatVFP version.*)|
-|iBuildNumber_Assign| Assign method used to hold the iBuildNumber property, generated from the Version number of the Chilkat object. (*Note: This will be removed in a future ChilkatVFP version.*)|
 |iCalculatedBuildNumber_Access|Access method used to retrieve the iCalculatedBuildNumber property.|
 |Init_Post | Method used to run a post-initialization process. |
-|iInstanceBuildNumber_Assign| Assign method used to retrieve the iInstanceBuildNumber property. (*Note: This will be removed in a future ChilkatVFP version.*)|
 |iInstanceMajor_Assign|Access method used to retrieve the iInstanceMajor property.|
 |iInstanceMinor_Assign|Access method used to retrieve the iInstanceMinor property.|
 |iInstancePatch_Assign|Access method used to retrieve the iInstancePatch property.|
@@ -94,22 +89,25 @@ The methods of the BaseChilkat class are:
 |iRetirementMajor_Assign|Access method used to retrieve the iRetirementMajor property.|
 |iRetirementMinor_Assign|Access method used to retrieve the iRetirementMinor property.|
 |iRetirementPatch_Assign|Access method used to retrieve the iRetirementPatch property.|
-|IsImplemented| Method used to determine if the method or property being referenced has been implemented in the current version of the object. |
-|IsInstance| Method used to determine if class being referenced has been implemented in the current version of the software. (*Note: This will be removed in a future ChilkatVFP version.*)|
+|IsImplemented| Method used to determine if the method or property being referenced has been implemented in the current version of the object.|
 |IsPEMImplemented|Method used to determine if the method or property being referenced has been implemented in the current version of the object.|
+|IsPEMRemoved|Method used to determine if a PEM has been removed from the running version of the object.|
 |IsRetired|Method used to determine if the object has been retired (deprecated).|
 |LogicalToBit| Method run to covert a logical value to bit. |
 |lAddEventHandler_Assign| Assign method used to determine that an event handler will be bound to the Chilkat object. |
 |lReturnBitAsLogical_Assign| Assign method used to determine that bit values are returned as a Visual Foxpro logical value. |
-|lWriteChilkatProperty_Assign| Assign method used to determine if we are to write the value out to the Chilkat property name. |
-|MissingObjectError| Error method run for when there is a missing Chilkat object when running a method. |
-|oEventHandler_Assign| Assign method used to hold a reference to the event handler object. |
-|oMsgSvc_Access| Access method used to retrieve a reference to the MsgSvc object. |
+|lSupportsSemanticVersioning_Assign|Assign method used to hold the lSupportsSemanticVersioning property, generated from the Version number of the Chilkat object.|
+|lWriteChilkatProperty_Assign|Assign method used to determine if we are to write the value out to the Chilkat property name. |
+|MissingObjectError| Error method run for when there is a missing Chilkat object when running a method.|
+|oEventHandler_Assign| Assign method used to hold a reference to the event handler object.|
+|oMsgSvc_Access| Access method used to retrieve a reference to the MsgSvc object.|
 |oMsgSvc_Assign| Assign method used to hold a reference to the MsgSvc object. |
-|oVersioning_Access|Access method used to retrieve a reference to the oVersioning object. |
-|oVersioning_Assign|Assign method used to retrieve a reference to the oVersioning object. |
-|Version_Access| Access method used to retrieve the Version property of the referenced Chilkat object. |
-|Version_Assign| Assign method used to hold the Version property of the referenced Chilkat object. |
+|oProcess_Access| Access method used to retrieve the oProcess property. |
+|oProcess_Assign | Assign method used to hold the oProcess property of the referenced Chilkat object.|
+|oVersioning_Access| Access method used to retrieve a reference to the oVersioning object.|
+|oVersioning_Assign| Assign method used to retrieve a reference to the oVersioning object.|
+|Version_Access| Access method used to retrieve the Version property of the referenced Chilkat object.|
+|Version_Assign| Assign method used to hold the Version property of the referenced Chilkat object.|
 
 For clarification, the IsImplemented addresses properties and method implementations while IsInstance determines if a class exists. Both deal with versioning.
 
@@ -326,10 +324,12 @@ The methods of the ValidateProperty class are:
 |UncommonOptions_Cert| Method run to validate the data for the UncommonOptions property of the Cert object. |
 |UncommonOptions_CertChain| Method run to validate the data for the UncommonOptions property of the CertChain object. |
 |UncommonOptions_CodeSign| Method run to validate the data for the UncommonOptions property of the CodeSign object. |
+|UncommonOptions_Compression| Method run to validate the data for the UncommonOptions property of the Compression object. |
 |UncommonOptions_Crypt2| Method run to validate the data for the UncommonOptions property of the Crypt2 object. |
 |UncommonOptions_Csv| Method run to validate the data for the UncommonOptions property of the Csv object. |
 |UncommonOptions_Email| Method run to validate the data for the UncommonOptions property of the Email object. |
 |UncommonOptions_FTP2| Method run to validate the data for the UncommonOptions property of the FTP2 object. |
+|UncommonOptions_HMTLToText| Method run to validate the data for the UncommonOptions property of the HMTLToText object. |
 |UncommonOptions_HTTP| Method run to validate the data for the UncommonOptions property of the HTTP object. |
 |UncommonOptions_HTTPResponse| Method run to validate the data for the UncommonOptions property of the HTTPResponse object. |
 |UncommonOptions_IMAP| Method run to validate the data for the UncommonOptions property of the IMAP object. |

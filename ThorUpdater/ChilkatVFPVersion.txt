@@ -1,11 +1,11 @@
 Lparameters toUpdateObject
 Local lcDate, ldDate
 
-lcDate = '20250214'
+lcDate = '20250521'
 
 With m.toUpdateObject
-	.VersionNumber    = '1.43 - ' + lcDate
-	.AvailableVersion = 'VFPX Deployment-1.43-09192-' + lcDate
+	.VersionNumber    = '1.50 - ' + lcDate
+	.AvailableVersion = 'VFPX Deployment-1.50-09272-' + lcDate
 	.Notes            = GetReleaseNotes()
 Endwith
 
@@ -19,6 +19,12 @@ Procedure GetReleaseNotes
 
 Text to lcNote NoShow
 # Release History
+
+## 2025-05-21 Version 1.50
+
+   1) Added ChilkatVFP.H with compile time switch. See Documentation/History.md for details.
+   2) Compatibility with Chilkat version 11.0.0.
+   3) Added code to test for removed classes/properties/methods.
 
 ## 2025-03-02 Version 1.43
 

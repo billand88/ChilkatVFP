@@ -1,4 +1,19 @@
 
+### Version 1.50 -- Released 05/21/2025
+
+   1) Added ChilkatVFP.H with compile-time switch due to COM call change. See History.md.
+   2) Compatibility with Chilkat version 11.0.0.
+   3) Added code /MsgSvc record to test for class/property/method removal.
+   4) Documented newly decremented class/properties/methods.
+
+### Version 1.43 -- Released 03/02/2025
+
+Compatibility with Chilkat version 10.1.3.
+
+### Version 1.42 -- Released 02/14/2025
+
+Compatibility with Chilkat version 10.1.2.
+
 ### Version 1.41 -- Released 01/14/2025
 
 * Version 1.40 bug fix version.
