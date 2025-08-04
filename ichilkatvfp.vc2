@@ -9,7 +9,7 @@
 DEFINE CLASS iasn AS asn OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP ASN class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "iasn"
 	*</PropValue>
@@ -19,7 +19,7 @@ ENDDEFINE
 DEFINE CLASS iatom AS atom OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP Atom class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "iatom"
 	*</PropValue>
@@ -29,7 +29,7 @@ ENDDEFINE
 DEFINE CLASS iauthaws AS authaws OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP AuthAWS class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "iauthaws"
 	*</PropValue>
@@ -39,7 +39,7 @@ ENDDEFINE
 DEFINE CLASS iauthazuread AS authazuread OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP AuthAzureAD class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "iauthazuread"
 	*</PropValue>
@@ -49,7 +49,7 @@ ENDDEFINE
 DEFINE CLASS iauthazuresas AS authazuresas OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP AuthAzureSAS class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "iauthazuresas"
 	*</PropValue>
@@ -59,7 +59,7 @@ ENDDEFINE
 DEFINE CLASS iauthazurestorage AS authazurestorage OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP AuthAzureStorage class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "iauthazurestorage"
 	*</PropValue>
@@ -69,7 +69,7 @@ ENDDEFINE
 DEFINE CLASS iauthgoogle AS authgoogle OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP AuthGoogle class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "iauthgoogle"
 	*</PropValue>
@@ -79,7 +79,7 @@ ENDDEFINE
 DEFINE CLASS iauthutil AS authutil OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP AuthUtil class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "iauthutil"
 	*</PropValue>
@@ -89,7 +89,7 @@ ENDDEFINE
 DEFINE CLASS ibindata AS bindata OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP BinData class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ibindata"
 	*</PropValue>
@@ -99,7 +99,7 @@ ENDDEFINE
 DEFINE CLASS ibounce AS bounce OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP Bounce class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ibounce"
 	*</PropValue>
@@ -109,7 +109,7 @@ ENDDEFINE
 DEFINE CLASS ibz2 AS bz2 OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP Bz2 class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ibz2"
 	*</PropValue>
@@ -119,7 +119,7 @@ ENDDEFINE
 DEFINE CLASS icache AS cache OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP Cache class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "icache"
 	*</PropValue>
@@ -129,7 +129,7 @@ ENDDEFINE
 DEFINE CLASS icert AS cert OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP Cert class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "icert"
 	*</PropValue>
@@ -139,7 +139,7 @@ ENDDEFINE
 DEFINE CLASS icertchain AS certchain OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP CertChain class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "icertchain"
 	*</PropValue>
@@ -149,7 +149,7 @@ ENDDEFINE
 DEFINE CLASS icertstore AS certstore OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP CertStore class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "icertstore"
 	*</PropValue>
@@ -159,7 +159,7 @@ ENDDEFINE
 DEFINE CLASS icharset AS charset OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP Charset class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "icharset"
 	*</PropValue>
@@ -169,7 +169,7 @@ ENDDEFINE
 DEFINE CLASS ickdatetime AS ckdatetime OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP CkDateTime class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ickdatetime"
 	*</PropValue>
@@ -179,7 +179,7 @@ ENDDEFINE
 DEFINE CLASS ickstring AS ckstring OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP CkString class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ickstring"
 	*</PropValue>
@@ -189,7 +189,7 @@ ENDDEFINE
 DEFINE CLASS icodesign AS codesign OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP CodeSign class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "icodesign"
 	*</PropValue>
@@ -199,7 +199,7 @@ ENDDEFINE
 DEFINE CLASS icompression AS compression OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP Compression class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "icompression"
 	*</PropValue>
@@ -209,7 +209,7 @@ ENDDEFINE
 DEFINE CLASS icreatecs AS createcs OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP CreateCS class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "icreatecs"
 	*</PropValue>
@@ -219,7 +219,7 @@ ENDDEFINE
 DEFINE CLASS icrypt2 AS crypt2 OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP Crypt2 class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "icrypt2"
 	*</PropValue>
@@ -229,7 +229,7 @@ ENDDEFINE
 DEFINE CLASS icsp AS csp OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP CSP class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "icsp"
 	*</PropValue>
@@ -239,7 +239,7 @@ ENDDEFINE
 DEFINE CLASS icsr AS csr OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP CSR class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "icsr"
 	*</PropValue>
@@ -249,7 +249,7 @@ ENDDEFINE
 DEFINE CLASS icsv AS csv OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP CSV class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "icsv"
 	*</PropValue>
@@ -259,7 +259,7 @@ ENDDEFINE
 DEFINE CLASS idh AS dh OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP DH class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "idh"
 	*</PropValue>
@@ -269,7 +269,7 @@ ENDDEFINE
 DEFINE CLASS idirtree AS dirtree OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP DirTree class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "idirtree"
 	*</PropValue>
@@ -279,7 +279,7 @@ ENDDEFINE
 DEFINE CLASS idkim AS dkim OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP DKIM class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "idkim"
 	*</PropValue>
@@ -289,7 +289,7 @@ ENDDEFINE
 DEFINE CLASS idns AS dns OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP DNS class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "idns"
 	*</PropValue>
@@ -299,7 +299,7 @@ ENDDEFINE
 DEFINE CLASS idsa AS dsa OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP DSA class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "idsa"
 	*</PropValue>
@@ -309,7 +309,7 @@ ENDDEFINE
 DEFINE CLASS idtobj AS dtobj OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP DtObj class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "idtobj"
 	*</PropValue>
@@ -319,7 +319,7 @@ ENDDEFINE
 DEFINE CLASS iecc AS ecc OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP ECC class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "iecc"
 	*</PropValue>
@@ -329,7 +329,7 @@ ENDDEFINE
 DEFINE CLASS ieddsa AS eddsa OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP EdDSA class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ieddsa"
 	*</PropValue>
@@ -339,7 +339,7 @@ ENDDEFINE
 DEFINE CLASS iemail AS email OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP Email class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "iemail"
 	*</PropValue>
@@ -349,7 +349,7 @@ ENDDEFINE
 DEFINE CLASS iemailbundle AS emailbundle OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP EmailBundle class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "iemailbundle"
 	*</PropValue>
@@ -359,7 +359,7 @@ ENDDEFINE
 DEFINE CLASS ifileaccess AS fileaccess OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP FileAccess class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ifileaccess"
 	*</PropValue>
@@ -369,7 +369,7 @@ ENDDEFINE
 DEFINE CLASS iftp2 AS ftp2 OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP FTP2 class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "iftp2"
 	*</PropValue>
@@ -379,7 +379,7 @@ ENDDEFINE
 DEFINE CLASS iglobal AS global OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP Global class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "iglobal"
 	*</PropValue>
@@ -389,7 +389,7 @@ ENDDEFINE
 DEFINE CLASS igzip AS gzip OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP GZip class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "igzip"
 	*</PropValue>
@@ -399,7 +399,7 @@ ENDDEFINE
 DEFINE CLASS ihashtable AS hashtable OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP HashTable class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ihashtable"
 	*</PropValue>
@@ -409,7 +409,7 @@ ENDDEFINE
 DEFINE CLASS ihtmltotext AS htmltotext OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP HTMLToText class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ihtmltotext"
 	*</PropValue>
@@ -419,7 +419,7 @@ ENDDEFINE
 DEFINE CLASS ihtmltoxml AS htmltoxml OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP HTMLToXML class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ihtmltoxml"
 	*</PropValue>
@@ -429,7 +429,7 @@ ENDDEFINE
 DEFINE CLASS ihttp AS http OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP HTTP class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ihttp"
 	*</PropValue>
@@ -439,7 +439,7 @@ ENDDEFINE
 DEFINE CLASS ihttprequest AS httprequest OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP HTTPRequest class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ihttprequest"
 	*</PropValue>
@@ -449,7 +449,7 @@ ENDDEFINE
 DEFINE CLASS ihttpresponse AS httpresponse OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP HTTPResponse class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ihttpresponse"
 	*</PropValue>
@@ -459,7 +459,7 @@ ENDDEFINE
 DEFINE CLASS iimap AS imap OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP IMAP class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "iimap"
 	*</PropValue>
@@ -469,7 +469,7 @@ ENDDEFINE
 DEFINE CLASS ijavakeystore AS javakeystore OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP JavaKeyStore class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ijavakeystore"
 	*</PropValue>
@@ -479,7 +479,7 @@ ENDDEFINE
 DEFINE CLASS ijsonarray AS jsonarray OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP JSONArray class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ijsonarray"
 	*</PropValue>
@@ -489,7 +489,7 @@ ENDDEFINE
 DEFINE CLASS ijsonobject AS jsonobject OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP JSONObject class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ijsonobject"
 	*</PropValue>
@@ -499,7 +499,7 @@ ENDDEFINE
 DEFINE CLASS ijwe AS jwe OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP JWE class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ijwe"
 	*</PropValue>
@@ -509,7 +509,7 @@ ENDDEFINE
 DEFINE CLASS ijws AS jws OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP JWS class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ijws"
 	*</PropValue>
@@ -519,7 +519,7 @@ ENDDEFINE
 DEFINE CLASS ijwt AS jwt OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP JWT class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ijwt"
 	*</PropValue>
@@ -529,7 +529,7 @@ ENDDEFINE
 DEFINE CLASS ikeycontainer AS keycontainer OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP KeyContainer class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ikeycontainer"
 	*</PropValue>
@@ -539,7 +539,7 @@ ENDDEFINE
 DEFINE CLASS ilog AS log OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP Log class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ilog"
 	*</PropValue>
@@ -549,7 +549,7 @@ ENDDEFINE
 DEFINE CLASS imailboxes AS mailboxes OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP Mailboxes class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "imailboxes"
 	*</PropValue>
@@ -559,7 +559,7 @@ ENDDEFINE
 DEFINE CLASS imailman AS mailman OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP MailMan class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "imailman"
 	*</PropValue>
@@ -569,7 +569,7 @@ ENDDEFINE
 DEFINE CLASS imessageset AS messageset OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP MessageSet class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "imessageset"
 	*</PropValue>
@@ -579,7 +579,7 @@ ENDDEFINE
 DEFINE CLASS imht AS mht OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP MHT class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "imht"
 	*</PropValue>
@@ -589,7 +589,7 @@ ENDDEFINE
 DEFINE CLASS imime AS mime OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP MIME class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "imime"
 	*</PropValue>
@@ -599,7 +599,7 @@ ENDDEFINE
 DEFINE CLASS intlm AS ntlm OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP NTLM class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "intlm"
 	*</PropValue>
@@ -609,7 +609,7 @@ ENDDEFINE
 DEFINE CLASS ioauth1 AS oauth1 OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP OAuth1 class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ioauth1"
 	*</PropValue>
@@ -619,7 +619,7 @@ ENDDEFINE
 DEFINE CLASS ioauth2 AS oauth2 OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP OAuth2 class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ioauth2"
 	*</PropValue>
@@ -629,7 +629,7 @@ ENDDEFINE
 DEFINE CLASS ipdf AS pdf OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP PDF class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ipdf"
 	*</PropValue>
@@ -639,7 +639,7 @@ ENDDEFINE
 DEFINE CLASS ipem AS pem OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP PEM class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ipem"
 	*</PropValue>
@@ -649,7 +649,7 @@ ENDDEFINE
 DEFINE CLASS ipfx AS pfx OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP PFX class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ipfx"
 	*</PropValue>
@@ -659,7 +659,7 @@ ENDDEFINE
 DEFINE CLASS ipkcs11 AS pkcs11 OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP PKCS11 class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ipkcs11"
 	*</PropValue>
@@ -669,7 +669,7 @@ ENDDEFINE
 DEFINE CLASS iprivatekey AS privatekey OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP PrivateKey class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "iprivatekey"
 	*</PropValue>
@@ -679,7 +679,7 @@ ENDDEFINE
 DEFINE CLASS iprng AS prng OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP PRNG class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "iprng"
 	*</PropValue>
@@ -689,7 +689,7 @@ ENDDEFINE
 DEFINE CLASS ipublickey AS publickey OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP PublicKey class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ipublickey"
 	*</PropValue>
@@ -699,7 +699,7 @@ ENDDEFINE
 DEFINE CLASS irest AS rest OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP REST class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "irest"
 	*</PropValue>
@@ -709,7 +709,7 @@ ENDDEFINE
 DEFINE CLASS irsa AS rsa OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP RSA class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "irsa"
 	*</PropValue>
@@ -719,7 +719,7 @@ ENDDEFINE
 DEFINE CLASS irss AS rss OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP RSS class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "irss"
 	*</PropValue>
@@ -729,7 +729,7 @@ ENDDEFINE
 DEFINE CLASS iscard AS scard OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP SCard class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "iscard"
 	*</PropValue>
@@ -739,7 +739,7 @@ ENDDEFINE
 DEFINE CLASS iscminidriver AS scminidriver OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP ScMiniDriver class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "iscminidriver"
 	*</PropValue>
@@ -749,7 +749,7 @@ ENDDEFINE
 DEFINE CLASS iscp AS scp OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP SCP class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "iscp"
 	*</PropValue>
@@ -759,7 +759,7 @@ ENDDEFINE
 DEFINE CLASS isecrets AS secrets OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP Secrets class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "isecrets"
 	*</PropValue>
@@ -769,7 +769,7 @@ ENDDEFINE
 DEFINE CLASS isecurestring AS securestring OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP SecureString class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "isecurestring"
 	*</PropValue>
@@ -779,7 +779,7 @@ ENDDEFINE
 DEFINE CLASS iserversentevent AS serversentevent OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP ServerSentEvent class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "iserversentevent"
 	*</PropValue>
@@ -789,7 +789,7 @@ ENDDEFINE
 DEFINE CLASS isftp AS sftp OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP SFTP class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "isftp"
 	*</PropValue>
@@ -799,7 +799,7 @@ ENDDEFINE
 DEFINE CLASS isftpdir AS sftpdir OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP SFTPDir class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "isftpdir"
 	*</PropValue>
@@ -809,7 +809,7 @@ ENDDEFINE
 DEFINE CLASS isftpfile AS sftpfile OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP SFTPFile class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "isftpfile"
 	*</PropValue>
@@ -819,7 +819,7 @@ ENDDEFINE
 DEFINE CLASS isocket AS socket OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP Socket class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "isocket"
 	*</PropValue>
@@ -829,7 +829,7 @@ ENDDEFINE
 DEFINE CLASS ispider AS spider OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP Spider class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ispider"
 	*</PropValue>
@@ -839,7 +839,7 @@ ENDDEFINE
 DEFINE CLASS issh AS ssh OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP SSH class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "issh"
 	*</PropValue>
@@ -849,7 +849,7 @@ ENDDEFINE
 DEFINE CLASS isshkey AS sshkey OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP SSHKey class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "isshkey"
 	*</PropValue>
@@ -859,7 +859,7 @@ ENDDEFINE
 DEFINE CLASS isshtunnel AS sshtunnel OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP SSHTunnel class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "isshtunnel"
 	*</PropValue>
@@ -869,7 +869,7 @@ ENDDEFINE
 DEFINE CLASS istream AS stream OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP Stream class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "istream"
 	*</PropValue>
@@ -879,7 +879,7 @@ ENDDEFINE
 DEFINE CLASS istringarray AS stringarray OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP StringArray class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "istringarray"
 	*</PropValue>
@@ -889,7 +889,7 @@ ENDDEFINE
 DEFINE CLASS istringbuilder AS stringbuilder OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP StringBuilder class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "istringbuilder"
 	*</PropValue>
@@ -899,7 +899,7 @@ ENDDEFINE
 DEFINE CLASS istringtable AS stringtable OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP StringTable class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "istringtable"
 	*</PropValue>
@@ -909,7 +909,7 @@ ENDDEFINE
 DEFINE CLASS itar AS tar OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP Tar class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "itar"
 	*</PropValue>
@@ -919,7 +919,7 @@ ENDDEFINE
 DEFINE CLASS itask AS task OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP Task class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "itask"
 	*</PropValue>
@@ -929,7 +929,7 @@ ENDDEFINE
 DEFINE CLASS itaskchain AS taskchain OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP TaskChain class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "itaskchain"
 	*</PropValue>
@@ -939,7 +939,7 @@ ENDDEFINE
 DEFINE CLASS itrustedroots AS trustedroots OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP TtrustedRoots class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "itrustedroots"
 	*</PropValue>
@@ -949,7 +949,7 @@ ENDDEFINE
 DEFINE CLASS iunixcompress AS unixcompress OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP UnixCompress class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "iunixcompress"
 	*</PropValue>
@@ -959,7 +959,7 @@ ENDDEFINE
 DEFINE CLASS iupload AS upload OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP Upload class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "iupload"
 	*</PropValue>
@@ -969,7 +969,7 @@ ENDDEFINE
 DEFINE CLASS iurl AS url OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP URL class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "iurl"
 	*</PropValue>
@@ -979,7 +979,7 @@ ENDDEFINE
 DEFINE CLASS iwebsocket AS websocket OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP WebSocket class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "iwebsocket"
 	*</PropValue>
@@ -989,7 +989,7 @@ ENDDEFINE
 DEFINE CLASS ixml AS xml OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP XML class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ixml"
 	*</PropValue>
@@ -999,7 +999,7 @@ ENDDEFINE
 DEFINE CLASS ixmlcertvault AS xmlcertvault OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP XMLCertVault class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ixmlcertvault"
 	*</PropValue>
@@ -1009,7 +1009,7 @@ ENDDEFINE
 DEFINE CLASS ixmldsig AS xmldsig OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP XMLDSig class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ixmldsig"
 	*</PropValue>
@@ -1019,7 +1019,7 @@ ENDDEFINE
 DEFINE CLASS ixmldsiggen AS xmldsiggen OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP XMLDSigGen class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ixmldsiggen"
 	*</PropValue>
@@ -1029,7 +1029,7 @@ ENDDEFINE
 DEFINE CLASS ixmp AS xmp OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP XMP class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ixmp"
 	*</PropValue>
@@ -1039,7 +1039,7 @@ ENDDEFINE
 DEFINE CLASS izip AS zip OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP ZIP class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "izip"
 	*</PropValue>
@@ -1049,7 +1049,7 @@ ENDDEFINE
 DEFINE CLASS izipcrc AS zipcrc OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP ZIPCRC class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "izipcrc"
 	*</PropValue>
@@ -1059,7 +1059,7 @@ ENDDEFINE
 DEFINE CLASS izipentry AS zipentry OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP ZIPEntry class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "chilkatvfp.h"
+	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "izipentry"
 	*</PropValue>

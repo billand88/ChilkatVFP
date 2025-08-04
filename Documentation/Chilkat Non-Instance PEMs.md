@@ -327,6 +327,7 @@ The methods of the ValidateProperty class are:
 |UncommonOptions_Compression| Method run to validate the data for the UncommonOptions property of the Compression object. |
 |UncommonOptions_Crypt2| Method run to validate the data for the UncommonOptions property of the Crypt2 object. |
 |UncommonOptions_Csv| Method run to validate the data for the UncommonOptions property of the Csv object. |
+|UncommonOptions_DirTree| Method run to validate the data for the UncommonOptions property of the DirTree object. |
 |UncommonOptions_Email| Method run to validate the data for the UncommonOptions property of the Email object. |
 |UncommonOptions_FTP2| Method run to validate the data for the UncommonOptions property of the FTP2 object. |
 |UncommonOptions_HMTLToText| Method run to validate the data for the UncommonOptions property of the HMTLToText object. |

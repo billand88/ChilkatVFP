@@ -6,7 +6,7 @@ Somewhere else I describe it as "muddy". The VFP Class Browser gives a high-leve
 
 2) In some cases, the Chilkat documentation indicates a property or method exists when that is simply not the case. This doesn't happen often, but it's there. In this case I followed the documentation and added it. Some examples: SFTPDir and SFTPFile are both missing LastBinaryResult and LastStringResultLen for starters. Crypt2 is missing a lot of documented ASync methods. (Note: These are fixed in more recent versions of Chilkat.)
 
-3) The Version property is missing for the Chilkat CkString, BinData, StringBuilder SecureString, ServerSentEvent, Mailboxex, MessageSet, URL, HashTable, SFTPDir and SFTPFile objects. I can see why it could be missing in the CkString class, a really old class. But there's no reason BinData and StringBuilder don't have the Version property. These are "active" classes. 
+3) The Version property is missing for the Chilkat CkString, BinData, StringBuilder SecureString, ServerSentEvent, Mailboxes, MessageSet, URL, HashTable, SFTPDir and SFTPFile objects. I can see why it could be missing in the CkString class, a really old class. But there's no reason BinData and StringBuilder don't have the Version property. These are "active" classes. 
 
 4) This is littered everywhere in the Chilkat on line documentation: If the non-asynchronous message came in after, say version 40 or so and is correctly documented as such, the related Async method would state it came in the same version. If the Async method is documented to be before version 52 it is wrong. The Async methods came as part of version 52. ChilkatVFP corrects this.
 

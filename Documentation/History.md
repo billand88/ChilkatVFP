@@ -1,4 +1,13 @@
- History
+
+History
+
+## Version 1.51
+ *Released 08/04/2025*
+ 
+Compatibility with Chilkat version 11.1.0. 
+
+Fixed the internal program that calculated the numbers for the ChilkatVFP By the Numbers document.
+
 ## Version 1.50
 *Released 05/21/2025*
 
