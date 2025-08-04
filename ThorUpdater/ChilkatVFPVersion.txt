@@ -5,7 +5,7 @@ lcDate = '20250804'
 
 With m.toUpdateObject
 	.VersionNumber    = '1.51 - ' + lcDate
-	.AvailableVersion = 'VFPX Deployment-1.50-09347-' + lcDate
+	.AvailableVersion = 'VFPX Deployment-1.51-09347-' + lcDate
 	.Notes            = GetReleaseNotes()
 Endwith
 
