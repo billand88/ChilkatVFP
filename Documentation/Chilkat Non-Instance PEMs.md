@@ -230,6 +230,7 @@ The methods of the ValidateProperty class are:
 |--------|--------------------------------|
 |Algorithm_Compression| Method run to validate the data for the Compression Algorithm property. |
 |Algorithm_EdDSA| Method run to validate the data for the EdDSA Algorithm property. |
+|Ask| Method run to validate the data for the Ai Ask property. |
 |AuthMethod| Method run to validate the data for the AuthMethod property. |
 |AWSSignatureVersion| Method run to validate the data for the AWSSignatureVersion property. |
 |AWSSubResources| Method run to validate the data for the AWSSubResources property. |
@@ -300,6 +301,7 @@ The methods of the ValidateProperty class are:
 |PKCS8EncryptAlg| Method run to validate the data for the PKCS8EncryptAlg property. |
 |PreferredCharset| Method run to validate the data for the PreferredCharset property. |
 |PrivateKeyFormat| Method run to validate the data for the PrivateKeyFormat property. |
+|Provider| Method run to validate the data for the Ai Provider property. |
 |ProxyAuthMethod| Method run to validate the data for the ProxyAuthMethod property. |
 |ProxyMethod| Method run to validate the data for the ProxyMethod property. |
 |PublicKeyFormat| Method run to validate the data for the PublicKeyFormat property. |

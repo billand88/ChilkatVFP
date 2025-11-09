@@ -37,6 +37,70 @@ ENDIF NOT ([ICHILKATVFP.VCX] $ UPPER(SET([CLASSLIB])))
 
 SET PATH TO [\] ADDITIVE
 
+*************************
+PROCEDURE AiEventCallback
+*************************
+
+LPARAMETERS toChilkatVFPAi AS [iAi OF iChilkatVFP.VCX]
+
+LOCAL loAiEventHandler AS [AiEvents OF ChilkatVFPEventCallbacks.PRG], ;
+loChilkatVFPAi AS [iAi OF iChilkatVFP.VCX], loChilkatAi AS [Chilkat.Ai], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
+
+loChilkatVFPAi = toChilkatVFPAi
+
+STORE NULL TO loAiEventHandler, loChilkatAi
+
+DO ChilkatVFPEventCallbackSetup
+
+** Didn't pass an object test
+IF (NOT TYPE([loChilkatVFPAi.Name]) == T_CHARACTER)
+
+  loChilkatVFPAi = CREATEOBJECT([iAi])
+
+ENDIF (NOT TYPE([loChilkatVFPAi.Name]) == T_CHARACTER)
+** End didn't pass an object test
+
+loAiEventHandler = CREATEOBJECT([AiEvents])
+
+WITH loChilkatVFPAi 
+
+  loChilkatAi = .oChilkat
+  loChilkatVFPEventHandler = .oEventHandler
+
+ENDWITH
+
+EVENTHANDLER(loChilkatAi, loAiEventHandler)
+
+DEFINE CLASS AiEvents AS SESSION OLEPUBLIC
+IMPLEMENTS _IChilkatEvents IN "Chilkat.Ai"
+
+PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
+RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_BinaryData(tqData AS VarBinary)
+RETURN loChilkatVFPEventHandler.BinaryData(tqData)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_PercentDone(tiPercentDone AS Integer, tiAbort AS Integer)
+RETURN loChilkatVFPEventHandler.PercentDone(tiPercentDone, tiAbort)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character)
+RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
+RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_TextData(tcData AS Character)
+RETURN loChilkatVFPEventHandler.TextData(tcData)
+ENDPROC
+
+ENDDEFINE
+
 ***************************
 PROCEDURE AtomEventCallback
 ***************************

@@ -1,6 +1,15 @@
 
 History
 
+## Version 1.52
+ *Released 11/09/2025*
+
+New Ai class!
+ 
+Compatibility with Chilkat version 11.2.0. 
+
+Minor fixes in the code and comments.
+
 ## Version 1.51
  *Released 08/04/2025*
  

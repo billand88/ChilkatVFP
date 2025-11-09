@@ -6,10 +6,10 @@
 *
 *< LIBCOMMENT: Subclassed Chilkat classes class library. />
 *
-DEFINE CLASS iasn AS asn OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP ASN class.
+DEFINE CLASS iai AS ai OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP AI class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "Foxpro.H"
+	#INCLUDE "foxpro.h"
 	*<PropValue>
 		Name = "iasn"
 	*</PropValue>

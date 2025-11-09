@@ -1,4 +1,10 @@
 
+### Version 1.52 -- Released 11/09/2025
+
+   1) New Ai class!
+   2) Compatibility with Chilkat version 11.2.0.
+   3) Various minor documentation and coding fixes noted while adding code.
+
 ### Version 1.51 -- Released 08/04/2025
 
 
