@@ -1,6 +1,14 @@
 
 History
-
+## Version 1.53
+ *Released 12/18/2025*
+ 
+ Expanded AI capabilities!
+ 
+ Compatibility with Chilkat version 11.3.0. 
+ 
+ Added 2 missing PDF methods.
+ 
 ## Version 1.52
  *Released 11/09/2025*
 

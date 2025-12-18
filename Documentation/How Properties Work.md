@@ -16,7 +16,7 @@ The initial release version of the Chilkat class library is over 21 megabytes in
 Chilkat methods and properties can return any of these values. Methods can return a Void, which is in essence returning no value at all. Chilkat properties can be read only.
 Chilkat handles Boolean values by returning/setting a 0 for false and 1 for a true value, depending on context. It can also mean failure versus success for Chilkat methods.
  
-Chilkat will only return/accept a DateTime value/parameter for undocumented/deprecated methods and properties.
+Chilkat will only return/accept a DateTime value/parameter for undocumented/deprecated methods and properties. (Note: This feature was later removed in Version 11.)
 
 ## ChilkatVFP Variable/Parameter Types
 

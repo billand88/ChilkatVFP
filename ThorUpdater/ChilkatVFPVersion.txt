@@ -1,11 +1,11 @@
 Lparameters toUpdateObject
 Local lcDate, ldDate
 
-lcDate = '20251109'
+lcDate = '20251218'
 
 With m.toUpdateObject
-	.VersionNumber    = '1.52 - ' + lcDate
-	.AvailableVersion = 'VFPX Deployment-1.52-09444-' + lcDate
+	.VersionNumber    = '1.53 - ' + lcDate
+	.AvailableVersion = 'VFPX Deployment-1.53.9483-' + lcDate
 	.Notes            = GetReleaseNotes()
 Endwith
 
@@ -19,6 +19,12 @@ Procedure GetReleaseNotes
 
 Text to lcNote NoShow
 # Release History
+
+## 2025-12-18 Version 1.53
+
+   1) Expanded AI capabilities!
+   2) Compatibility with Chilkat version 11.3.0. 
+   3) Added 2 missing PDF methods.
 
 ## 2025-11-09 Version 1.52
 
