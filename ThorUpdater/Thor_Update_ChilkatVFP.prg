@@ -70,11 +70,10 @@ Project Manager: Bill Anderson - <chilkatvfp@gmail.com>
 
 This is a VFPX project that contains one VFP class library to wrap the Chilkat library objects: https://www.chilkatsoft.com/
 
-Version 1.53 -- Released 12/18/2025
+Version 1.54 -- Released 04/24/2026
 
-   1) Expanded AI capabilities!
-   2) Compatibility with Chilkat version 11.3.0. 
-   3) Added 2 missing PDF methods.
+   1) Expanded AI capabilities, including a new JS class to pass JSON to AI.
+   2) Compatibility with Chilkat version 11.4.0. 
 
 endtext
 return lcNotes

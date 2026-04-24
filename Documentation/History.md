@@ -1,6 +1,13 @@
 
 History
 ## Version 1.53
+ *Released 04/24/2026*
+ 
+Expanded AI capabilities, including a new JS class to pass JSON to AI.
+
+Compatibility with Chilkat version 11.4.0. 
+
+## Version 1.53
  *Released 12/18/2025*
  
  Expanded AI capabilities!

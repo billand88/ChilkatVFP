@@ -1,7 +1,7 @@
 *==============================================================================
 * Purpose:           ChilkatVFP Event Callbacks
 * Author:            Bill Anderson
-* Notice:            Copyright (c) 2022 - 2025 The Anderson Files LLC, All Rights Reserved.
+* Notice:            Copyright (c) 2022 - 2026 The Anderson Files LLC, All Rights Reserved.
 * Returns:           Logical, indicating success.
 * Date Added:        10/07/2022
 *==============================================================================
@@ -1089,6 +1089,70 @@ EVENTHANDLER(loChilkatImap, loImapEventHandler)
 
 DEFINE CLASS ImapEvents AS SESSION OLEPUBLIC
 IMPLEMENTS _IChilkatEvents IN "Chilkat.Imap"
+
+PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
+RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_BinaryData(tqData AS VarBinary)
+RETURN loChilkatVFPEventHandler.BinaryData(tqData)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_PercentDone(tiPercentDone AS Integer, tiAbort AS Integer)
+RETURN loChilkatVFPEventHandler.PercentDone(tiPercentDone, tiAbort)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character)
+RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
+RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_TextData(tcData AS Character)
+RETURN loChilkatVFPEventHandler.TextData(tcData)
+ENDPROC
+
+ENDDEFINE
+
+*************************
+PROCEDURE JsEventCallback
+*************************
+
+LPARAMETERS toChilkatVFPJs AS [iJs OF iChilkatVFP.VCX]
+
+LOCAL loJsEventHandler AS [JsEvents OF ChilkatVFPEventCallbacks.PRG], ;
+loChilkatVFPJs AS [iJs OF iChilkatVFP.VCX], loChilkatJs AS [Chilkat.Js], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
+
+loChilkatVFPJs = toChilkatVFPJs
+
+STORE NULL TO loJsEventHandler, loChilkatJs
+
+DO ChilkatVFPEventCallbackSetup
+
+** Didn't pass an object test
+IF (NOT TYPE([loChilkatVFPJs.Name]) == T_CHARACTER)
+
+  loChilkatVFPJs = CREATEOBJECT([iJs])
+
+ENDIF (NOT TYPE([loChilkatVFPJs.Name]) == T_CHARACTER)
+** End didn't pass an object test
+
+loJsEventHandler = CREATEOBJECT([JsEvents])
+
+WITH loChilkatVFPJs 
+
+  loChilkatJs = .oChilkat
+  loChilkatVFPEventHandler = .oEventHandler
+
+ENDWITH
+
+EVENTHANDLER(loChilkatJs, loJsEventHandler)
+
+DEFINE CLASS JsEvents AS SESSION OLEPUBLIC
+IMPLEMENTS _IChilkatEvents IN "Chilkat.Js"
 
 PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
 RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)

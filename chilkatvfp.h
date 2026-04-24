@@ -707,6 +707,11 @@
 
 ************************************************
 
+** Js Com Call
+** The Js Class was created in Version 11.4.0. No versioning necessary.
+
+************************************************
+
 ** JsonArray Com Call
 
 #DEFINE CHILKAT_JSONARRAY_COM_CALL

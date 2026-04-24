@@ -1,7 +1,7 @@
 *==============================================================================
 * Purpose:           ChilkatVFP Event Callbacks
 * Author:            Bill Anderson
-* Notice:            Copyright (c) 2022 - 2025 The Anderson Files LLC, All Rights Reserved.
+* Notice:            Copyright (c) 2022 - 2026 The Anderson Files LLC, All Rights Reserved.
 * Returns:           Logical, indicating success.
 * Date Added:        10/07/2022
 *==============================================================================

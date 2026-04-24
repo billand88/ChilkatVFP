@@ -11,7 +11,7 @@ DEFINE CLASS iai AS ai OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP AI cl
 
 	#INCLUDE "foxpro.h"
 	*<PropValue>
-		Name = "iasn"
+		Name = "iai"
 	*</PropValue>
 
 ENDDEFINE
@@ -472,6 +472,16 @@ DEFINE CLASS ijavakeystore AS javakeystore OF "chilkatvfp.vcx" 		&& Subclass of 
 	#INCLUDE "Foxpro.H"
 	*<PropValue>
 		Name = "ijavakeystore"
+	*</PropValue>
+
+ENDDEFINE
+
+DEFINE CLASS ijs AS js OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP Js class.
+ 	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
+
+	#INCLUDE "foxpro.h"
+	*<PropValue>
+		Name = "ijs"
 	*</PropValue>
 
 ENDDEFINE
