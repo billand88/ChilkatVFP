@@ -1,11 +1,11 @@
 Lparameters toUpdateObject
 Local lcDate, ldDate
 
-lcDate = '20260424'
+lcDate = '20260603'
 
 With m.toUpdateObject
-	.VersionNumber    = '1.54 - ' + lcDate
-	.AvailableVersion = 'VFPX Deployment-1.54.9610-' + lcDate
+	.VersionNumber    = '1.55 - ' + lcDate
+	.AvailableVersion = 'VFPX Deployment-1.55.9650-' + lcDate
 	.Notes            = GetReleaseNotes()
 Endwith
 
@@ -19,6 +19,12 @@ Procedure GetReleaseNotes
 
 Text to lcNote NoShow
 # Release History
+
+## 2025-06-03 Version 1.55
+
+   1) New HttpCurl class - executes curl commands and can automatically resolve dependent values needed by a request.
+   2) Expanded Secrets capability, adding EnableSecrets property to several classes.
+   3) Compatibility with Chilkat version 11.5.0. 
 
 ## 2025-04-24 Version 1.54
 

@@ -1,6 +1,15 @@
 
 History
-## Version 1.53
+## Version 1.55
+ *Released 06/03/2026*
+
+New HttpCurl class - executes curl commands and can automatically resolve dependent values needed by a request.
+
+Expanded Secrets capability, adding EnableSecrets property to several classes.
+
+Compatibility with Chilkat version 11.5.0. 
+
+## Version 1.54
  *Released 04/24/2026*
  
 Expanded AI capabilities, including a new JS class to pass JSON to AI.

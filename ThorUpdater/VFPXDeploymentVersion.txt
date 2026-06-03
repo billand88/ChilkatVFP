@@ -1,0 +1,16 @@
+Lparameters toUpdateObject
+Local lcDate, ldDate
+
+lcDate = '20260603'
+
+With m.toUpdateObject
+	.VersionNumber    = '1.55 - ' + lcDate
+	.AvailableVersion = 'ChilkatVCX-1.55-9650-' + lcDate
+	.Notes            = GetReleaseNotes()
+Endwith
+
+Return m.toUpdateObject
+
+
+* ================================================================================
+* ================================================================================

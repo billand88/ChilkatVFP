@@ -5,6 +5,13 @@
 
 ************************************************
 
+** Ai Com Call
+** The Ai Class was created in Version 11.2.0. No versioning necessary.
+
+CHILKAT_ASN_COM_CALL = [Chilkat.Ai] && Variable not needed in ChilkatVFP
+
+************************************************
+
 ** ASN Com Call
 
 #DEFINE CHILKAT_ASN_COM_CALL
@@ -643,6 +650,13 @@
 
 ************************************************
 
+** HttpCurl Com Call
+** The Ai Class was created in Version 11.5.0. No versioning necessary.
+
+CHILKAT_HTTPCURL_COM_CALL = [Chilkat.HttpCurl] && Variable not needed in ChilkatVFP
+
+************************************************
+
 ** HttpRequest Com Call
 
 #DEFINE CHILKAT_HTTPREQUEST_COM_CALL
@@ -709,6 +723,8 @@
 
 ** Js Com Call
 ** The Js Class was created in Version 11.4.0. No versioning necessary.
+
+CHILKAT_JS_COM_CALL = [Chilkat.Js] && Variable not needed in ChilkatVFP
 
 ************************************************
 
@@ -1141,6 +1157,8 @@
 ** Secrets Com Call
 ** The Secrets Class was introduced in Version 10.1.0. 
 ** No versioning necessary.
+
+CHILKAT_SECRETS_COM_CALL = [Chilkat.Secrets] && Variable not needed in ChilkatVFP
 
 ************************************************
 

@@ -436,6 +436,16 @@ DEFINE CLASS ihttp AS http OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP H
 
 ENDDEFINE
 
+DEFINE CLASS ihttpcurl AS httpcurl OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP HTTPCurl class.
+ 	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
+
+	#INCLUDE "foxpro.h"
+	*<PropValue>
+		Name = "ihttpcurl"
+	*</PropValue>
+
+ENDDEFINE
+
 DEFINE CLASS ihttprequest AS httprequest OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP HTTPRequest class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 

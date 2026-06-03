@@ -1052,6 +1052,69 @@ ENDPROC
 
 ENDDEFINE
 
+*******************************
+PROCEDURE HttpCurlEventCallback
+*******************************
+
+LPARAMETERS toChilkatVFPHttpCurl AS [iHttpCurl OF iChilkatVFP.VCX]
+
+LOCAL loHttpCurlEventHandler AS [HttpCurlEvents OF ChilkatVFPEventCallbacks.PRG], ;
+loChilkatVFPHttpCurl AS [iHttpCurl OF iChilkatVFP.VCX], ;
+loChilkatHttpCurl AS [Chilkat.HttpCurl], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
+
+loChilkatVFPHttpCurl = toChilkatVFPHttpCurl 
+
+STORE NULL TO loHttpCurlEventHandler, loChilkatHttpCurl
+
+DO ChilkatVFPEventCallbackSetup
+
+** Didn't pass an object test
+IF (NOT TYPE([loChilkatVFPHttpCurl.Name]) == T_CHARACTER)
+
+  loChilkatVFPHttpCurl = CREATEOBJECT([iHttpCurl])
+
+ENDIF (NOT TYPE([loChilkatVFPHttpCurl.Name]) == T_CHARACTER)
+** End didn't pass an object test
+
+loHttpCurlEventHandler = CREATEOBJECT([HttpCurlEvents])
+
+WITH loChilkatVFPHttpCurl 
+
+  loChilkatHttpCurl = .oChilkat
+  loChilkatVFPEventHandler = .oEventHandler
+
+ENDWITH
+
+EVENTHANDLER(loChilkatHttpCurl, loHttpCurlEventHandler)
+
+DEFINE CLASS HttpCurlEvents AS SESSION OLEPUBLIC
+IMPLEMENTS _IChilkatEvents IN "Chilkat.HttpCurl"
+
+PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
+RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_BinaryData(tqData AS VarBinary)
+RETURN loChilkatVFPEventHandler.BinaryData(tqData)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_PercentDone(tiPercentDone AS Integer, tiAbort AS Integer)
+RETURN loChilkatVFPEventHandler.PercentDone(tiPercentDone, tiAbort)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character)
+RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
+RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_TextData(tcData AS Character)
+RETURN loChilkatVFPEventHandler.TextData(tcData)
+ENDPROC
+
 ***************************
 PROCEDURE IMapEventCallback
 ***************************
