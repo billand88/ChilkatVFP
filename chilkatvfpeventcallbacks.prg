@@ -1115,6 +1115,8 @@ PROCEDURE _IChilkatEvents_TextData(tcData AS Character)
 RETURN loChilkatVFPEventHandler.TextData(tcData)
 ENDPROC
 
+ENDDEFINE
+
 ***************************
 PROCEDURE IMapEventCallback
 ***************************
