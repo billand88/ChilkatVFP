@@ -10,7 +10,7 @@ AppID     = ChilkatVFP
 
 *Version number
 *A string, or enter pjx to use _VFP.ActiveProject.VersionNumber or, if defined PJXFile
-Version   = 1.55.9650
+Version   = 1.56.9686
 
 *Component of Thor or Tool. Use No for Tool.
 *Component = No

@@ -1,11 +1,11 @@
 Lparameters toUpdateObject
 Local lcDate, ldDate
 
-lcDate = '20260603'
+lcDate = '20260709'
 
 With m.toUpdateObject
-	.VersionNumber    = '1.55 - ' + lcDate
-	.AvailableVersion = 'VFPX Deployment-1.55.9650-' + lcDate
+	.VersionNumber    = '1.56 - ' + lcDate
+	.AvailableVersion = 'VFPX Deployment-1.56.9686-' + lcDate
 	.Notes            = GetReleaseNotes()
 Endwith
 
@@ -19,6 +19,14 @@ Procedure GetReleaseNotes
 
 Text to lcNote NoShow
 # Release History
+
+## 2025-07-09 Version 1.56
+
+   1) Code cleanup version. 
+
+	a) The DebugLogFilePath property was slipstreamed in for some Chilkat classes, I added them.
+	b) The Assign methods with version code for Chilkat properties/methods was made more consistent.
+	c) Some bug fixes and additional options were added to Chilkat property validation code.
 
 ## 2025-06-03 Version 1.55
 

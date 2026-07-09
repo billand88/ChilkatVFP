@@ -28,8 +28,10 @@ CHILKAT_ASN_COM_CALL = [Chilkat.Ai] && Variable not needed in ChilkatVFP
 
 ************************************************
 
-** Atom Com Call
+** Atom Com Call          [Chilkat_9_5_0.Atom]
 ** The Atom Class was retired in Version 11. No versioning necessary.
+
+CHILKAT_ATOM_COM_CALL = [Chilkat_9_5_0.Atom] && Variable not needed in ChilkatVFP
 
 ************************************************
 
@@ -49,8 +51,10 @@ CHILKAT_ASN_COM_CALL = [Chilkat.Ai] && Variable not needed in ChilkatVFP
 
 ************************************************
 
-** AuthAzureAD Com Call
+** AuthAzureAD Com Call       
 ** The AuthAzureAD Class was retired in Version 11. No versioning necessary.
+
+CHILKAT_AUTHAZUREAD_COM_CALL = [Chilkat_9_5_0.AuthAzureAD] && Variable not needed in ChilkatVFP
 
 ************************************************
 
@@ -102,8 +106,10 @@ CHILKAT_ASN_COM_CALL = [Chilkat.Ai] && Variable not needed in ChilkatVFP
 
 ************************************************
 
-** AuthUtil Com Call
+** AuthUtil Com Call             
 ** The AuthUtil Class was retired in Version 11. No versioning necessary.
+
+CHILKAT_AUTHUTIL_COM_CALL = [Chilkat_9_5_0.AuthUtil] && Variable not needed in ChilkatVFP
 
 ************************************************
 
@@ -123,8 +129,10 @@ CHILKAT_ASN_COM_CALL = [Chilkat.Ai] && Variable not needed in ChilkatVFP
 
 ************************************************
 
-** Bounce Com Call
+** Bounce Com Call            
 ** The Bounce Class was retired in Version 11. No versioning necessary.
+
+CHILKAT_BOUNCE_COM_CALL = [Chilkat_9_5_0.Bounce] && Variable not needed in ChilkatVFP
 
 ************************************************
 
@@ -304,8 +312,10 @@ CHILKAT_ASN_COM_CALL = [Chilkat.Ai] && Variable not needed in ChilkatVFP
 
 ************************************************
 
-** CreateCs Com Call
+** CreateCs Com Call              
 ** The CreateCs Class was retired in Version 11. No versioning necessary.
+
+CHILKAT_CREATECS_COM_CALL = [Chilkat_9_5_0.CreateCs] && Variable not needed in ChilkatVFP
 
 ************************************************
 
@@ -325,8 +335,10 @@ CHILKAT_ASN_COM_CALL = [Chilkat.Ai] && Variable not needed in ChilkatVFP
 
 ************************************************
 
-** Csp Com Call
+** Csp Com Call              
 ** The Csp Class was retired in Version 11. No versioning necessary.
+
+CHILKAT_CSP_COM_CALL = [Chilkat_9_5_0.Csp] && Variable not needed in ChilkatVFP
 
 ************************************************
 
@@ -811,6 +823,8 @@ CHILKAT_JS_COM_CALL = [Chilkat.Js] && Variable not needed in ChilkatVFP
 ** KeyContainer Com Call
 ** The KeyContainer Class was retired in Version 11. No versioning necessary.
 
+CHILKAT_KEYCONTAINER_COM_CALL = [Chilkat_9_5_0.KeyContainer] && Variable not needed in ChilkatVFP
+
 ************************************************
 
 ** Log Com Call
@@ -1103,6 +1117,8 @@ CHILKAT_JS_COM_CALL = [Chilkat.Js] && Variable not needed in ChilkatVFP
 
 ** Rss Com Call
 ** The Rss Class was retired in Version 11. No versioning necessary.
+
+CHILKAT_RSS_COM_CALL = [Chilkat_9_5_0.Rss] && Variable not needed in ChilkatVFP
 
 ************************************************
 

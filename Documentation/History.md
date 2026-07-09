@@ -1,6 +1,17 @@
 
 History
-## Version 1.55
+## Version 1.56
+ *Released 07/09/2026*
+
+ Code cleanup version. 
+
+The DebugLogFilePath property was slipstreamed in for some Chilkat classes, I added them.
+
+The Assign methods with version code for Chilkat properties/methods was made more consistent.
+
+Some bug fixes and additional options were added to Chilkat property validation code.
+
+ ## Version 1.55
  *Released 06/03/2026*
 
 New HttpCurl class - executes curl commands and can automatically resolve dependent values needed by a request.

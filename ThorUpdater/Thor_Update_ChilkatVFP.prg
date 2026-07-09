@@ -70,10 +70,13 @@ Project Manager: Bill Anderson - <chilkatvfp@gmail.com>
 
 This is a VFPX project that contains one VFP class library to wrap the Chilkat library objects: https://www.chilkatsoft.com/
 
-Version 1.55 -- Released 06/03/2026
+Version 1.56 -- Released 07/09/2026
 
-   1) New HttpCurl class - executes curl commands and can automatically resolve dependent values needed by a request.
-   2) Expanded Secrets capability, adding EnableSecrets property to several classes.
-   3) Compatibility with Chilkat version 11.5.0. 
+   1) Code cleanup version. 
+
+      a) The DebugLogFilePath property was slipstreamed in for some Chilkat classes, I added them.
+      b) The Assign methods with version code for Chilkat properties/methods was made more consistent.
+      c) Some bug fixes and additional options were added to Chilkat property validation code.
+
 endtext
 return lcNotes
