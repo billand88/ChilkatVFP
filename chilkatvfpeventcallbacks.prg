@@ -1318,6 +1318,71 @@ ENDPROC
 ENDDEFINE
 
 **************************
+PROCEDURE McpEventCallback
+**************************
+
+LPARAMETERS toChilkatVFPMcp AS [iMcp OF iChilkatVFP.VCX]
+
+LOCAL loMcpEventHandler AS [McpEvents OF ChilkatVFPEventCallbacks.PRG], ;
+loChilkatVFPMcp AS [iMcp OF iChilkatVFP.VCX], ;
+loChilkatMcp AS [Chilkat.Mcp], ;
+loChilkatVFPEventHandler AS [iBaseEventHandler OF ChilkatVFP.VCX]
+
+loChilkatVFPMcp = toChilkatVFPMcp 
+
+STORE NULL TO loMcpEventHandler, loChilkatMcp
+
+DO ChilkatVFPEventCallbackSetup
+
+** Didn't pass an object test
+IF (NOT TYPE([loChilkatVFPMcp.Name]) == T_CHARACTER)
+
+  loChilkatVFPMcp = CREATEOBJECT([iMcp])
+
+ENDIF (NOT TYPE([loChilkatVFPMcp.Name]) == T_CHARACTER)
+** End didn't pass an object test
+
+loMcpEventHandler = CREATEOBJECT([McpEvents])
+
+WITH loChilkatVFPMcp 
+
+  loChilkatMcp = .oChilkat
+  loChilkatVFPEventHandler = .oEventHandler
+
+ENDWITH
+
+EVENTHANDLER(loChilkatMcp, loMcpEventHandler)
+
+DEFINE CLASS McpEvents AS SESSION OLEPUBLIC
+IMPLEMENTS _IChilkatEvents IN "Chilkat.Mcp"
+
+PROCEDURE _IChilkatEvents_AbortCheck(tiAbort AS Integer)
+RETURN loChilkatVFPEventHandler.AbortCheck(tiAbort)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_BinaryData(tqData AS VarBinary)
+RETURN loChilkatVFPEventHandler.BinaryData(tqData)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_PercentDone(tiPercentDone AS Integer, tiAbort AS Integer)
+RETURN loChilkatVFPEventHandler.PercentDone(tiPercentDone, tiAbort)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_ProgressInfo(tcName AS Character, tcValue AS Character)
+RETURN loChilkatVFPEventHandler.ProgressInfo(tcName, tcValue)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_TaskCompleted(toTask AS [Chilkat.Task])
+RETURN loChilkatVFPEventHandler.TaskCompleted(toTask)
+ENDPROC
+
+PROCEDURE _IChilkatEvents_TextData(tcData AS Character)
+RETURN loChilkatVFPEventHandler.TextData(tcData)
+ENDPROC
+
+ENDDEFINE
+
+**************************
 PROCEDURE MhtEventCallback
 **************************
 

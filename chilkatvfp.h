@@ -1,5 +1,5 @@
 
-#DEFINE CHILKAT_VERSION_11.0.0_OR_GREATER   .F.
+#DEFINE CHILKAT_VERSION_11.0.0_OR_GREATER   .T.
 
 #INCLUDE Foxpro.H
 
@@ -663,7 +663,7 @@ CHILKAT_CSP_COM_CALL = [Chilkat_9_5_0.Csp] && Variable not needed in ChilkatVFP
 ************************************************
 
 ** HttpCurl Com Call
-** The Ai Class was created in Version 11.5.0. No versioning necessary.
+** The HttpCurl Class was created in Version 11.5.0. No versioning necessary.
 
 CHILKAT_HTTPCURL_COM_CALL = [Chilkat.HttpCurl] && Variable not needed in ChilkatVFP
 
@@ -872,6 +872,13 @@ CHILKAT_KEYCONTAINER_COM_CALL = [Chilkat_9_5_0.KeyContainer] && Variable not nee
    CHILKAT_MAILMAN_COM_CALL = [Chilkat_9_5_0.Mailman]
 
 #ENDIF CHILKAT_VERSION_11.0.0_OR_GREATER
+
+************************************************
+
+** Mcp Com Call
+** The Mcp Class was created in Version 11.6.0. No versioning necessary.
+
+CHILKAT_MCP_COM_CALL = [Chilkat.Mcp] && Variable not needed in ChilkatVFP
 
 ************************************************
 

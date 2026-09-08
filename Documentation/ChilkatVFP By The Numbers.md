@@ -14,23 +14,23 @@ Note that the totals are somewhat skewed. When I match a Chilkat method in Chilk
 
 I ran the numbers and here's what I got:
 
-ChilkatVFP version - **1.56**
+ChilkatVFP version - **1.57**
 
-Total Properties - **2608**
+Total Properties - **2637**
 
-Total Methods - **9610**
+Total Methods - **9697**
 
-Total Access methods - **2562**
+Total Access methods - **2590**
 
-Total Assign methods - **2571**
+Total Assign methods - **2599**
 
 --
 
-Total Elements - **12218**
+Total Elements - **12334**
 
-Total NonAccess/Assign Methods - **4377**
+Total NonAccess/Assign Methods - **4508**
 
-Total Properties and NonAccess/Assign Methods - **7085**
+Total Properties and NonAccess/Assign Methods - **7145**
 
 --
 

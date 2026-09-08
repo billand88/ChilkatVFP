@@ -586,6 +586,16 @@ DEFINE CLASS imailman AS mailman OF "chilkatvfp.vcx" 		&& Subclass of the Chilka
 
 ENDDEFINE
 
+DEFINE CLASS imcp AS mcp OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP Mcp class.
+ 	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
+
+	#INCLUDE "foxpro.h"
+	*<PropValue>
+		Name = "imcp"
+	*</PropValue>
+
+ENDDEFINE
+
 DEFINE CLASS imessageset AS messageset OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP MessageSet class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 

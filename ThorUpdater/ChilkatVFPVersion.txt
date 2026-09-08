@@ -1,11 +1,11 @@
 Lparameters toUpdateObject
 Local lcDate, ldDate
 
-lcDate = '20260709'
+lcDate = '20260603'
 
 With m.toUpdateObject
-	.VersionNumber    = '1.56 - ' + lcDate
-	.AvailableVersion = 'VFPX Deployment-1.56.9686-' + lcDate
+	.VersionNumber    = '1.57 - ' + lcDate
+	.AvailableVersion = 'VFPX Deployment-1.57.9747-' + lcDate
 	.Notes            = GetReleaseNotes()
 Endwith
 
@@ -20,21 +20,28 @@ Procedure GetReleaseNotes
 Text to lcNote NoShow
 # Release History
 
-## 2025-07-09 Version 1.56
+### 2026-09-08 Version 1.57
+
+   1) New Mcp class - An open protocol that standardizes how applications supply context and callable tools to AI models.
+   2) Chilkat updates: AI - Added structured output via JSON schema and unified web searches. Crypt2 added Argon2 support. Table rendering via HtmlToText class cleaned up, also various correctness fixes.
+   3) Found 4 empty AI methods in the custom AI class, populated them as well as other minor code adjustments.
+   4) Compatibility with Chilkat version 11.6.1 (Version 11.6.0 wasn't complete).
+
+### 2026-07-09 Version 1.56
 
    1) Code cleanup version. 
 
-	a) The DebugLogFilePath property was slipstreamed in for some Chilkat classes, I added them.
-	b) The Assign methods with version code for Chilkat properties/methods was made more consistent.
-	c) Some bug fixes and additional options were added to Chilkat property validation code.
+      a) The DebugLogFilePath property was slipstreamed in for some Chilkat classes, I added them.
+      b) The Assign methods with version code for Chilkat properties/methods was made more consistent.
+      c) Some bug fixes and additional options were added to Chilkat property validation code.
 
-## 2025-06-03 Version 1.55
+## 2026-06-03 Version 1.55
 
    1) New HttpCurl class - executes curl commands and can automatically resolve dependent values needed by a request.
    2) Expanded Secrets capability, adding EnableSecrets property to several classes.
    3) Compatibility with Chilkat version 11.5.0. 
 
-## 2025-04-24 Version 1.54
+## 2026-04-24 Version 1.54
 
    1) Expanded AI capabilities, including a new JS class to pass JSON to AI.
    2) Compatibility with Chilkat version 11.4.0. 

@@ -1,5 +1,17 @@
 
 History
+
+## Version 1.57
+ *Released 09/08/2026*
+
+New Mcp class - An open protocol that standardizes how applications supply context and callable tools to AI models.
+
+AI - Added structured output via JSON schema and unified web searches. Crypt2 added Argon2 support. Table rendering via HtmlToText cleaned up, also various correctness fixes.
+
+Found 4 empty AI methods in the custom AI class, populated them as well as other minor adjustments.
+
+Compatibility with Chilkat version 11.6.1. (Version 11.6.0 had missing methods.)
+
 ## Version 1.56
  *Released 07/09/2026*
 
