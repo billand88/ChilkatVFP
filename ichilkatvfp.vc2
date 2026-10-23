@@ -919,7 +919,7 @@ ENDDEFINE
 DEFINE CLASS istringbuilder AS stringbuilder OF "chilkatvfp.vcx" 		&& Subclass of the ChilkatVFP StringBuilder class.
  	*< CLASSDATA: Baseclass="custom" Timestamp="" Scale="Pixels" Uniqueid="" />
 
-	#INCLUDE "Foxpro.H"
+	#INCLUDE "foxpro.h"
 	*<PropValue>
 		Name = "istringbuilder"
 	*</PropValue>

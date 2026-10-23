@@ -8,7 +8,7 @@
 ** Ai Com Call
 ** The Ai Class was created in Version 11.2.0. No versioning necessary.
 
-CHILKAT_ASN_COM_CALL = [Chilkat.Ai] && Variable not needed in ChilkatVFP
+CHILKAT_AI_COM_CALL = [Chilkat.Ai] && Variable not needed in ChilkatVFP
 
 ************************************************
 

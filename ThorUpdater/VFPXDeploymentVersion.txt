@@ -1,11 +1,11 @@
 Lparameters toUpdateObject
 Local lcDate, ldDate
 
-lcDate = '20260908'
+lcDate = '20261023'
 
 With m.toUpdateObject
-	.VersionNumber    = '1.57 - ' + lcDate
-	.AvailableVersion = 'ChilkatVCX-1.57-9747-' + lcDate
+	.VersionNumber    = '1.58 - ' + lcDate
+	.AvailableVersion = 'ChilkatVCX-1.58-9792-' + lcDate
 	.Notes            = GetReleaseNotes()
 Endwith
 

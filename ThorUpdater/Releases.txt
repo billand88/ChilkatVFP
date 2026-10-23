@@ -1,4 +1,18 @@
+### Version 1.58 -- Released 10/23/2026
 
+   Another code cleanup version. 
+
+   1) AI class - Fixed various typos in the code.
+   2) Code in the Destroy method within the Chilkat instance classes (StringBuilder, BinData, HashTable and a couple others) was moved to the Release method.
+   3) Added some missing UncommonOptions_* keywords to the ValidateProperty class.
+
+### Version 1.57 -- Released 09/08/2026
+
+   1) New Mcp class - An open protocol that standardizes how applications supply context and callable tools to AI models.
+   2) Chilkat updates: AI - Added structured output via JSON schema and unified web searches. Crypt2 added Argon2 support. Table rendering via HtmlToText class cleaned up, also various correctness fixes.
+   3) Found 4 empty AI methods in the custom AI class, populated them as well as other minor code adjustments.
+   4) Compatibility with Chilkat version 11.6.1 (Version 11.6.0 wasn't complete).
+	
 ### Version 1.56 -- Released 07/09/2026
 
    1) Code cleanup version. 

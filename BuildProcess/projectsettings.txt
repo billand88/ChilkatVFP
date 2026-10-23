@@ -1,6 +1,6 @@
 *ProjectSettings.txt to create Thor deployment
 *See https://github.com/VFPX/VFPXDeployment/blob/main/docs/Documentation.md for help.
-*Paths relative are based on git toplevel directory
+*Paths relative are based on git top level directory
 
 *The name to show in Thor. Mandatory
 AppName   = ChilkatVFP
@@ -10,7 +10,7 @@ AppID     = ChilkatVFP
 
 *Version number
 *A string, or enter pjx to use _VFP.ActiveProject.VersionNumber or, if defined PJXFile
-Version   = 1.57.9747
+Version   = 1.58.9792
 
 *Component of Thor or Tool. Use No for Tool.
 *Component = No

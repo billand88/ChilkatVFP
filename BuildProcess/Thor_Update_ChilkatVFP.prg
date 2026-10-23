@@ -1,48 +1,82 @@
-*File to control Thor CFU for application ChilkatVFP
-lparameters;
-	toUpdateObject
+lparameters toUpdateObject
+local lcAppName, ;
+	lcAppID, ;
+	lcRepositoryURL, ;
+	lcDownloadsURL, ;
+	lcVersionFileURL, ;
+	lcZIPFileURL, ;
+	lcRegisterWithThor
 
-local;
-	lcRepositoryURL    as string, ;
-	lcDownloadsBranch  as string, ;
-	lcDownloadsURL     as string, ;
-	lcVersionFileURL   as string, ;
-	lcZIPFileURL       as string, ;
-	lcRegisterWithThor as string
+* Set the project settings; edit these for your specific project.
 
-* Get the URL for the version and ZIP files.
-
-lcRepositoryURL   = 'https://github.com/billand88/ChilkatVFP'
+lcAppName       = 'ChilkatVFP'
+	&& the name of the project
+lcAppID         = 'ChilkatVFP'
+	&& similar to lcAppName but must be URL-friendly (no spaces or other
+	&& illegal URL characters)
+lcRepositoryURL = 'https://github.com/billand88/ChilkatVFP'
 	&& the URL for the project's repository
-lcDownloadsBranch = 'main'
-lcDownloadsURL    = strtran(m.lcRepositoryURL, 'github.com', ;
-	'raw.githubusercontent.com') + '/' + m.lcDownloadsBranch + '/ThorUpdater/'
-lcVersionFileURL  = m.lcDownloadsURL + 'ChilkatVFPVersion.txt' &&'ChilkatVFPVersion.txt'
+
+* If the version file and zip file are in the ThorUpdater folder of the
+* master branch of a GitHub repository, these don't need to be edited.
+* Otherwise, set lcVersionFileURL and lcZIPFileURL to the correct URLs.
+
+lcDownloadsURL   = strtran(lcRepositoryURL, 'github.com', ;
+	'raw.githubusercontent.com') + '/master/ThorUpdater/'
+lcVersionFileURL = lcDownloadsURL + lcAppID + 'Version.txt'
 	&& the URL for the file containing code to get the available version number
-lcZIPFileURL      = m.lcDownloadsURL + 'ChilkatVFP.zip'
+lcZIPFileURL     = lcDownloadsURL + lcAppID + '.zip'
 	&& the URL for the zip file containing the project
 
+* This is code to execute after the project has been installed by Thor for the
+* first time. Edit this if you want do something different (such as running
+* the installed code) or display a different message (such as replacing
+* "Components" with "Apps" if you set .Component to No as discussed below.
+* You can use code like this if you want to execute the installed code; Thor
+* replaces ##InstallFolder## with the installation path for the project:
+*
+* 'do "##InstallFolder##MyProject.prg"'
 
 text to lcRegisterWithThor noshow textmerge
-	messagebox('From the Thor menu, choose "More -> Open Folder -> Components" to see the folder where ChilkatVFP was installed', 0, 'ChilkatVFP Installed', 5000)
+	messagebox('From the Thor menu, choose "More -> Open Folder -> Components" to see the folder where <<lcAppName>> was installed', 0, '<<lcAppName>> Installed', 5000)
 endtext
 
-* Set the properties of the passed updater object.
+* Set the properties of the passed updater object. You likely won't need to edit this code except as noted.
 
-with m.toUpdateObject
-	.ApplicationName      = 'ChilkatVFP'
-	.VersionLocalFilename = 'ChilkatVFPVersionFile.txt'
-	.VersionFileURL       = m.lcVersionFileURL
-	.SourceFileUrl        = m.lcZIPFileURL
-	.Component            = 'No'
-	.Link                 = m.lcRepositoryURL
-	.LinkPrompt           = 'ChilkatVFP Home Page'
-	.ProjectCreationDate  = date(2022, 09, 18)
-	.Dependencies         = ''	&& a comma or space delimited list of other Thor applications (ApplicationName) that this project depends on
-	.RegisterWithThor     = m.lcRegisterWithThor
-
+with toUpdateObject
+	.ApplicationName      = lcAppName
+	.Component            = 'Yes'
+		&& Set this to Yes if you want the project to be a Thor Component or No
+		&& if you want it to be Thor App
+	.VersionLocalFilename = lcAppID + 'VersionFile.txt'
+	.VersionFileURL       = lcVersionFileURL
+	.SourceFileUrl        = lcZIPFileURL
+ 	.Component            = 'Yes'
+	.Link                 = lcRepositoryURL
+	.LinkPrompt           = lcAppName + ' Home Page'
+	.Notes                = GetNotes()
+  .RegisterWithThor     = lcRegisterWithThor
 endwith
+return toUpdateObject
 
-return m.toUpdateObject
+* Get the notes for the project. Edit this code as necessary.
 
-*created by VFPX Deployment, 12/28/2023 9:38:27 AM
+procedure GetNotes
+local lcNotes
+text to lcNotes noshow
+ChilkatVFP
+
+Project Manager: Bill Anderson - <chilkatvfp@gmail.com>
+
+This is a VFPX project that contains one VFP class library to wrap the Chilkat library objects: https://www.chilkatsoft.com/
+
+Version 1.58 -- Released 10/23/2026
+
+   Another code cleanup version. 
+
+   1) AI class - Fixed various typos in the code.
+   2) Code in the Destroy method within the Chilkat instance classes (StringBuilder, BinData, HashTable and a couple others) was moved to the Release method.
+   3) Added some missing UncommonOptions_* keywords to the ValidateProperty class.
+
+endtext
+return lcNotes

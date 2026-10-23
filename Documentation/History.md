@@ -1,6 +1,17 @@
 
 History
 
+## Version 1.58
+*Released 10/23/2026*
+
+Another code cleanup version.
+
+AI - Fixed various typos in the code.
+
+Code in the Destroy method within the Chilkat instance classes (StringBuilder, BinData, HashTable and a couple others) was moved to the Release method.
+
+Added some missing UncommonOptions_* keywords to the ValidateProperty class.
+
 ## Version 1.57
  *Released 09/08/2026*
 
