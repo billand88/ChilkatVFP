@@ -1,11 +1,11 @@
 Lparameters toUpdateObject
 Local lcDate, ldDate
 
-lcDate = '20260603'
+lcDate = '20261023'
 
 With m.toUpdateObject
-	.VersionNumber    = '1.57 - ' + lcDate
-	.AvailableVersion = 'VFPX Deployment-1.57.9747-' + lcDate
+	.VersionNumber    = '1.58 - ' + lcDate
+	.AvailableVersion = 'VFPX Deployment-1.58.9792-' + lcDate
 	.Notes            = GetReleaseNotes()
 Endwith
 
@@ -19,6 +19,14 @@ Procedure GetReleaseNotes
 
 Text to lcNote NoShow
 # Release History
+
+### Version 1.58 -- Released 10/23/2026
+
+   Another code cleanup version. 
+
+   1) AI class - Fixed various typos in the code.
+   2) Code in the Destroy method within the Chilkat instance classes (StringBuilder, BinData, HashTable and a couple others) was moved to the Release method.
+   3) Added some missing UncommonOptions_* keywords to the ValidateProperty class.
 
 ### 2026-09-08 Version 1.57
 

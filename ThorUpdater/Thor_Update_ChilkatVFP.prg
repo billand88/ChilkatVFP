@@ -70,13 +70,13 @@ Project Manager: Bill Anderson - <chilkatvfp@gmail.com>
 
 This is a VFPX project that contains one VFP class library to wrap the Chilkat library objects: https://www.chilkatsoft.com/
 
-Version 1.56 -- Released 07/09/2026
+Version 1.58 -- Released 10/23/2026
 
-   1) Code cleanup version. 
+   Another code cleanup version. 
 
-      a) The DebugLogFilePath property was slipstreamed in for some Chilkat classes, I added them.
-      b) The Assign methods with version code for Chilkat properties/methods was made more consistent.
-      c) Some bug fixes and additional options were added to Chilkat property validation code.
+   1) AI class - Fixed various typos in the code.
+   2) Code in the Destroy method within the Chilkat instance classes (StringBuilder, BinData, HashTable and a couple others) was moved to the Release method.
+   3) Added some missing UncommonOptions_* keywords to the ValidateProperty class.
 
 endtext
 return lcNotes
